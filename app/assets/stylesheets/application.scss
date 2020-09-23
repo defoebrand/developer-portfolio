@@ -15,7 +15,14 @@
 // @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "portal.scss";
-// @import "websites.scss";
+@import "websites.scss";
+@import "games.scss";
+@import "apps.scss";
+
+* {
+  box-sizing: border-box;
+  margin: 5px;
+}
 
 html {
   background-color: black;
