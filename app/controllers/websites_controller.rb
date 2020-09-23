@@ -1,5 +1,5 @@
 class WebsitesController < ApplicationController
-  before_action :set_website, only: [:show, :edit, :update, :destroy]
+  before_action :set_website, only: %i[show edit update destroy]
 
   # GET /websites
   # GET /websites.json
@@ -9,8 +9,7 @@ class WebsitesController < ApplicationController
 
   # GET /websites/1
   # GET /websites/1.json
-  def show
-  end
+  def show; end
 
   # GET /websites/new
   def new
@@ -18,8 +17,7 @@ class WebsitesController < ApplicationController
   end
 
   # GET /websites/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /websites
   # POST /websites.json
@@ -62,13 +60,14 @@ class WebsitesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_website
-      @website = Website.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def website_params
-      params.fetch(:website, {})
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_website
+    @website = Website.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def website_params
+    params.fetch(:website, {})
+  end
 end
