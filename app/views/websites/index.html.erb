@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Websites</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @websites.each do |website| %>
+      <tr>
+        <td><%= link_to 'Show', website %></td>
+        <td><%= link_to 'Edit', edit_website_path(website) %></td>
+        <td><%= link_to 'Destroy', website, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Website', new_website_path %>
