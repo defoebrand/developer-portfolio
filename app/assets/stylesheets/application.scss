@@ -18,16 +18,53 @@
 @import "websites.scss";
 @import "games.scss";
 @import "apps.scss";
+@import "about.scss";
 
 * {
   box-sizing: border-box;
-  margin: 5px;
 }
 
-html {
+body {
   background-color: black;
 }
-//
-// nav {
-//   border: 15px solid black;
-// }
+
+main {
+  height: 100vh;
+}
+
+nav {
+  height: 100vh;
+  padding: 5px;
+  top: 0;
+
+  a {
+    position: relative;
+
+    .fa {
+      font-size: 2em;
+      padding: 10px;
+    }
+
+    .fa:hover {
+      color: yellow;
+    }
+
+    .tip {
+      position: absolute;
+      visibility: hidden;
+      top: 15px;
+      left: 65px;
+      min-width: max-content;
+      padding: 2px 5px;
+      color: gray;
+      font-weight: bold;
+      background-color: white;
+      border-radius: 5px;
+    }
+
+  }
+
+  a:hover .tip {
+    visibility: visible;
+  }
+}
