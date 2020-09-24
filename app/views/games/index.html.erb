@@ -1,31 +1,33 @@
 <body class='games'>
-  <div class="d-flex flex-column justify-content-center align-items-center my-5">
+  <main class="d-flex border border-warning justify-content-center align-items-center pl-5">
+    <div class="d-flex flex-column justify-content-center align-items-center my-5 text-center ml-4">
 
-<p id="notice"><%= notice %></p>
 
-<h1>Games</h1>
+      <p id="notice"><%= notice %></p>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <h1>Games</h1>
 
-  <tbody>
-    <% @games.each do |game| %>
-      <tr>
-        <td><%= link_to 'Show', game %></td>
-        <td><%= link_to 'Edit', edit_game_path(game) %></td>
-        <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <table>
+        <thead>
+          <tr>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
-<br>
+        <tbody>
+          <% @games.each do |game| %>
+            <tr>
+              <td><%= link_to 'Show', game %></td>
+              <td><%= link_to 'Edit', edit_game_path(game) %></td>
+              <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
 
-<%= link_to 'New Game', new_game_path %>
-</div>
+      <br>
 
+      <%= link_to 'New Game', new_game_path %>
+    </div>
+  </main>
 </body>
