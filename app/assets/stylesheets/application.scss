@@ -50,7 +50,7 @@ nav {
     .fa:hover,
     .fab:hover,
     .fas:hover {
-      color: yellow;
+      filter: invert(100%);
     }
 
     .tip {
