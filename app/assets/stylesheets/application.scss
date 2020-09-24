@@ -14,7 +14,7 @@
 */
 // @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "portal.scss";
+@import "home.scss";
 @import "websites.scss";
 @import "games.scss";
 @import "apps.scss";
@@ -40,12 +40,16 @@ nav {
   a {
     position: relative;
 
-    .fa {
+    .fa,
+    .fab,
+    .fas {
       font-size: 2em;
       padding: 10px;
     }
 
-    .fa:hover {
+    .fa:hover,
+    .fab:hover,
+    .fas:hover {
       color: yellow;
     }
 
