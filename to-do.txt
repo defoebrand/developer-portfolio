@@ -1,0 +1,10 @@
+add email contact form to bottom corner
+
+check auto-prefixer for different browser
+
+swap color pattern from light to dark
+
+
+brief few sentences to describe personality
+what inspires you
+why you're a developer
