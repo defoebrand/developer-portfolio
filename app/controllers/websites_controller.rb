@@ -26,6 +26,7 @@ class WebsitesController < ApplicationController
 
     respond_to do |format|
       if @website.save
+        ContactMailer.with(user: @user).contact_me.deliver_now
         format.html { redirect_to websites_path, notice: 'Website was successfully created.' }
         format.json { render :show, status: :created, location: @website }
       else

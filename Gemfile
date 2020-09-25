@@ -54,5 +54,6 @@ end
 gem 'bootstrap', '~> 5.0.0.alpha1'
 gem 'devise'
 gem 'jquery-rails'
+gem 'mail'
 gem 'sprockets-rails', '~> 3.2', '>= 3.2.1'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
