@@ -2,13 +2,13 @@
   <main class="d-flex border border-warning justify-content-center align-items-center pl-5">
     <div class="d-flex flex-column justify-content-center align-items-center my-5 text-center ml-4">
 
-      <% if notice || alert %>
-        <p id="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-      <% end %>
-
       <h1>Games</h1>
       <p>Coming Soon!</p>
+
+      <% if notice || alert %>
+      <p id="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <% end %>
 
       <table>
         <thead>
@@ -29,9 +29,9 @@
       </table>
 
       <br>
-      <% if user_signed_in? and current_user.name == 'Brandon' %>
-        <%= link_to 'New Game', new_game_path, :class => 'fixed-bottom mb-2' %>
-      <% end %>
+        <% if user_signed_in? and current_user.name == 'Brandon' %>
+          <%= link_to 'New Game', new_game_path, :class => 'fixed-bottom mb-2 add' %>
+        <% end %>
     </div>
   </main>
 </body>

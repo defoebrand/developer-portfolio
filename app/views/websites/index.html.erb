@@ -2,15 +2,15 @@
   <main class="d-flex border border-warning justify-content-center align-items-center">
     <div class="d-flex flex-column justify-content-center align-items-center text-center fixed-top mt-3 content">
 
-    <header class="d-inline-flex fixed-top mt-2 text-center justify-content-center align-items-center">
+    <header class="d-inline-flex flex-column fixed-top mt-2 text-center justify-content-center align-items-center">
+      <h1>Websites</h1>
       <% if notice || alert %>
         <p id="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
       <% end %>
-      <h1>Websites</h1>
     </header>
 
-      <div class="container-fluid d-flex flex-wrap justify-content-around align-items-center mr-3 pr-3 mt-2">
+      <div class="container-fluid d-flex flex-wrap justify-content-around align-items-center mr-3 pr-3 mt-4">
         <% @websites.each do |website| %>
           <div class="d-flex my-5 flex-wrap justify-content-around align-items-center">
             <div class="col-sm text p-2">
@@ -32,9 +32,8 @@
           </div>
         <% end %>
       </div>
-
       <% if user_signed_in? and current_user.name == 'Brandon' %>
-        <%= link_to 'New Website', new_website_path, :class => 'fixed-bottom mb-2' %>
+        <%= link_to 'New Website', new_website_path, :class => 'fixed-bottom mb-2 add' %>
       <% end %>
   </div>
 </main>
