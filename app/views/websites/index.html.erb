@@ -4,90 +4,30 @@
 
       <p id="notice"><%= notice %></p>
 
-      <h1>Websites</h1>
-<!--
-      <table>
-        <thead>
-          <tr>
-            <th scope="col" colspan="12"></th>
-          </tr>
-        </thead> -->
+      <h1 class='fixed-top mt-2'>Websites</h1>
 
-        <!-- <tbody class='border'> -->
-          <%# @websites.each do |website| %>
-            <!-- <tr class='d-flex flex-column border'> -->
-              <!-- <td><%# website.title %></td> -->
-              <!-- <td><%# website.description %></td> -->
-              <!-- <td><%# image_tag("#{website.image}", :alt => "pro-photo", :size => '260x180') %></td> -->
-              <!-- <td><%# link_to 'Preview', website.url %>
-              <!-- <td><%# link_to 'Show', website %></td>
-              <td><%# link_to 'Edit', edit_website_path(website) %></td>
-              <%# link_to 'Destroy', website, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
-            <!-- </tr> -->
-          <%# end %>
-        <!-- </tbody> -->
-      <!-- </table> -->
-
-      <br>
-
-        <div class="container-fluid d-flex flex-wrap justify-content-around align-items-center mr-3 pr-3">
-          <% @websites.each do |website| %>
-            <div class="d-flex my-5 flex-wrap justify-content-around align-items-center">
-              <div class="col-sm text p-2">
-                <p class='title'>
-                  <%= website.title %>
-                </p>
-                <div class="w-100"></div>
-                <p class="description">
-                  <%= website.description %>
-                </p>
-                <%= link_to 'Preview', website.url %>
-                <div class="w-100"></div>
-                <%= link_to 'Destroy', website, method: :delete, data: { confirm: 'Are you sure?' } %>
-                <%= link_to 'Edit', edit_website_path(website) %>
-              </div>
-              <%= image_tag("#{website.image}", :alt => "Website Mockup", :class => 'img-fluid img-thumbnail mock-up') %>
+      <div class="container-fluid d-flex flex-wrap justify-content-around align-items-center mr-3 pr-3">
+        <% @websites.each do |website| %>
+          <div class="d-flex my-5 flex-wrap justify-content-around align-items-center">
+            <div class="col-sm text p-2">
+              <p class='title'>
+                <%= website.title %>
+              </p>
+              <div class="w-100"></div>
+              <p class="description">
+                <%= website.description %>
+              </p>
+              <%= link_to 'Preview', website.url %>
+              <div class="w-100"></div>
+              <%= link_to 'Edit', edit_website_path(website) %>
+              <%= link_to 'Destroy', website, method: :delete, data: { confirm: 'Are you sure?' } %>
             </div>
-          <% end %>
-        </div>
+            <%= image_tag("#{website.image}", :alt => "Website Mockup", :class => 'img-fluid img-thumbnail mock-up') %>
+          </div>
+        <% end %>
+      </div>
 
-      <!-- <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-        <div class="carousel-inner">
-              <%# @websites.each do |website| %>
-              <%# @websites %>
-              <%# if website == Website.first %>
-              <div class="carousel-item active">
-                <%# else %>
-                <!-- <div class="carousel-item">
-                <%# end %>
-                  <div class="col-sm">
-                    <p class='title'>
-                      <%# website.title %>
-                    </p>
-                    <div class="w-100"></div>
-                    <p class="description">
-                      <%# website.description %>
-                    </p>
-                    <%# link_to 'Preview', website.url %>
-                    <div class="w-100"></div>
-                    <%# link_to 'Destroy', website, method: :delete, data: { confirm: 'Are you sure?' } %>
-                  </div>
-                  <%# image_tag("#{website.image}", :alt => "pro-photo", :class => 'img-fluid img-thumbnail mock-up') %>
-              </div>
-              <%# end %>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div> -->
-    <div class="fixed-bottom">
-      <%= link_to 'New Website', new_website_path %>
-    </div>
+      <%= link_to 'New Website', new_website_path, :class => 'fixed-bottom mb-2' %>
   </div>
 </main>
 </body>
