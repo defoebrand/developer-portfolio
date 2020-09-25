@@ -2,11 +2,15 @@
   <main class="d-flex border border-warning justify-content-center align-items-center">
     <div class="d-flex flex-column justify-content-center align-items-center text-center fixed-top mt-3 content">
 
-      <p id="notice"><%= notice %></p>
+    <header class="d-inline-flex fixed-top mt-2 text-center justify-content-center align-items-center">
+      <% if notice || alert %>
+        <p id="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      <% end %>
+      <h1>Websites</h1>
+    </header>
 
-      <h1 class='fixed-top mt-2'>Websites</h1>
-
-      <div class="container-fluid d-flex flex-wrap justify-content-around align-items-center mr-3 pr-3">
+      <div class="container-fluid d-flex flex-wrap justify-content-around align-items-center mr-3 pr-3 mt-2">
         <% @websites.each do |website| %>
           <div class="d-flex my-5 flex-wrap justify-content-around align-items-center">
             <div class="col-sm text p-2">
@@ -19,15 +23,19 @@
               </p>
               <%= link_to 'Preview', website.url %>
               <div class="w-100"></div>
-              <%= link_to 'Edit', edit_website_path(website) %>
-              <%= link_to 'Destroy', website, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <% if user_signed_in? and current_user.name == 'Brandon' %>
+                <%= link_to 'Edit', edit_website_path(website) %>
+                <%= link_to 'Destroy', website, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
             </div>
             <%= image_tag("#{website.image}", :alt => "Website Mockup", :class => 'img-fluid img-thumbnail mock-up') %>
           </div>
         <% end %>
       </div>
 
-      <%= link_to 'New Website', new_website_path, :class => 'fixed-bottom mb-2' %>
+      <% if user_signed_in? and current_user.name == 'Brandon' %>
+        <%= link_to 'New Website', new_website_path, :class => 'fixed-bottom mb-2' %>
+      <% end %>
   </div>
 </main>
 </body>

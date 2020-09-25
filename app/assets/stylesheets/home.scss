@@ -3,6 +3,12 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .home {
+  section {
+    width: max-content;
+    top: 0;
+    right: 0;
+  }
+
   h1 {
     color: rgb(197, 41, 217);
   }
