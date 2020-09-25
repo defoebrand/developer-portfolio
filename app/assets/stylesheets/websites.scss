@@ -2,11 +2,41 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .websites {
-  h1 {
-    color: green;
-  }
+  // overflow-y: scroll;
+  .content {
+    margin-left: 75px;
 
-  a {
-    color: blue;
+    h1 {
+      color: green;
+      position: fixed;
+      top: 15px;
+    }
+
+    a {
+      color: blue;
+    }
+
+    .text {
+      width: 250px;
+
+      .title {
+        color: white;
+      }
+
+      .description {
+        color: white;
+        // display: none;
+        // @media screen and (min-width: 560px) {
+        //   display: block;
+        // }
+      }
+    }
+
+    .mock-up {
+      max-width: 200px;
+      min-width: 100px;
+      height: auto;
+      margin: auto;
+    }
   }
 }

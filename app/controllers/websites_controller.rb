@@ -26,7 +26,7 @@ class WebsitesController < ApplicationController
 
     respond_to do |format|
       if @website.save
-        format.html { redirect_to @website, notice: 'Website was successfully created.' }
+        format.html { redirect_to websites_path, notice: 'Website was successfully created.' }
         format.json { render :show, status: :created, location: @website }
       else
         format.html { render :new }
@@ -68,6 +68,6 @@ class WebsitesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def website_params
-    params.require(:website).permit(:title, :description, :url)
+    params.require(:website).permit(:title, :description, :url, :image)
   end
 end
