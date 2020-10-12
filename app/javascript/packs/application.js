@@ -30,26 +30,33 @@ document.addEventListener("turbolinks:load", function() {
     //   $(this).css("background-color", "pink");
     // });
 
-    $('.m-3').mouseover(function(event) {
+    $('.web-form').mouseover(function(event) {
+      $('.title-change').toggleClass('title-changed');
+      $('.title-change').text('coder');
       $('.interest-change').toggleClass('interest-changed');
       $('.interest-change').text('debug code');
     });
 
-    $('.m-3').mouseover(function(event) {
-      $('.interest-changed').toggleClass('interest-change');
-      $('.interest-changed').text('solve problems');
-    });
-
-
-    $('.m-3').mouseover(function(event) {
+    $('.employee-form').mouseover(function(event) {
       $('.title-change').toggleClass('title-changed');
-      $('.title-change').text('coder');
+      $('.title-change').text('hard worker');
+      $('.interest-change').toggleClass('interest-changed');
+      $('.interest-change').text('solve problems');
     });
 
-    $('.m-3').mouseover(function(event) {
-      $('.title-changed').toggleClass('title-change');
-      $('.title-changed').text('teacher');
+    $('.tutor-form').mouseover(function(event) {
+      $('.title-change').toggleClass('title-changed');
+      $('.title-change').text('teacher');
+      $('.interest-changed').toggleClass('interest-change');
+      $('.interest-changed').text('help others');
     });
+
+
+
+    // $('.m-3').mouseover(function(event) {
+    //   $('.title-changed').toggleClass('title-change');
+    //   $('.title-changed').text('teacher');
+    // });
 
     // $('.account-menu').click(function(event) {
     //   $('.ac-hidden').toggleClass('ac-visible');
