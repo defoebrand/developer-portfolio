@@ -19,3 +19,46 @@ require("channels")
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+
+document.addEventListener("turbolinks:load", function() {
+
+  $(document).ready(function() {
+
+    // $(".home").hover(function() {
+    //   $(this).css("background-color", "yellow");
+    // }, function() {
+    //   $(this).css("background-color", "pink");
+    // });
+
+    $('.m-3').mouseover(function(event) {
+      $('.interest-change').toggleClass('interest-changed');
+      $('.interest-change').text('debug code');
+    });
+
+    $('.m-3').mouseover(function(event) {
+      $('.interest-changed').toggleClass('interest-change');
+      $('.interest-changed').text('solve problems');
+    });
+
+
+    $('.m-3').mouseover(function(event) {
+      $('.title-change').toggleClass('title-changed');
+      $('.title-change').text('coder');
+    });
+
+    $('.m-3').mouseover(function(event) {
+      $('.title-changed').toggleClass('title-change');
+      $('.title-changed').text('teacher');
+    });
+
+    // $('.account-menu').click(function(event) {
+    //   $('.ac-hidden').toggleClass('ac-visible');
+    // });
+
+    // $('.m-3').hover(function(event) {
+    //   $('.interest-change').html('debug code');
+    // });
+
+  });
+
+});

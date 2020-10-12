@@ -11,17 +11,14 @@
     </section>
     <div class="d-flex flex-column justify-content-center align-items-center text-center ml-4">
       <h1 class='m-3'>Hello! I'm Brandon!</h1>
-      <h3 class='m-3'>I'm a coder</h3>
-      <h5 class='m-3'>I love to debug code</h5>
-      <%# hello = %w[hey hi hello] %>
-      <%# 3.times do |x|%>
-        <%# hello[x] %>
-      <%# end %>
+      <h3 class='m-3'>I'm a <span class='title-change'>coder</span></h3>
+      <h5 class='m-3'>I love to <span class='interest-change'>debug code</span></h5>
+
       <p class='m-3'>How can I help you?</p>
         <div class="d-flex flex-column flex-sm-row m-3">
-        <button>I need a website</button>
-        <button>I need an employee</button>
-        <button>I need a tutor</button>
+        <button><%= link_to 'I need a website', web_form_path %></button>
+        <button><%= link_to 'I need an employee', employee_form_path %></button>
+        <button><%= link_to 'I need a tutor', tutor_form_path %></button>
       </div>
       <%# link_to 'about', portal_about_path %>
     </div>
