@@ -3,10 +3,9 @@ class ContactMailer < ApplicationMailer
 
   def contact_me
     @my = User.first
-    kristina = 'kristi.kazlauskaite@gmail.com'
+    me = 'defoe.brand@gmail.com'
     @contact = Contact.first
-    @url = 'http://example.com/login'
-    # mail(to: @my.email, subject: 'Welcome to My Awesome Site')
-    mail(to: kristina, subject: 'Welcome to My Awesome Site')
+    # @url = 'http://example.com/login'
+    mail(to: me, subject: 'Email from Portfolio')
   end
 end

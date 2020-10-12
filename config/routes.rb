@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   get '/web_form', to: 'portal#web_form'
   post '/web_form', to: 'portal#web_form_send'
   get '/employee_form', to: 'portal#employee_form'
+  post '/employee_form', to: 'portal#web_form_send'
   get '/tutor_form', to: 'portal#tutor_form'
+  post '/tutor_form', to: 'portal#web_form_send'
   root 'portal#index'
   # root 'index.html.erb'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
