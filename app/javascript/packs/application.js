@@ -47,8 +47,8 @@ document.addEventListener("turbolinks:load", function() {
     $('.tutor-form').mouseover(function(event) {
       $('.title-change').toggleClass('title-changed');
       $('.title-change').text('teacher');
-      $('.interest-changed').toggleClass('interest-change');
-      $('.interest-changed').text('help others');
+      $('.interest-change').toggleClass('interest-changed');
+      $('.interest-change').text('help others');
     });
 
 

@@ -11,6 +11,27 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= form.label :title %><br />
+    <%= form.text_field :title, autofocus: true, autocomplete: "Title" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :url %><br />
+    <%= form.text_field :url, autocomplete: "URL" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %><br />
+    <%= form.text_field :description, autocomplete: "Description" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %><br />
+    <%= form.text_field :image, autocomplete: "Image Path" %>
+  </div>
+
+
   <div class="actions">
     <%= form.submit %>
   </div>
