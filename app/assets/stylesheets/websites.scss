@@ -1,0 +1,48 @@
+// Place all the styles related to the Websites controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.websites {
+  // overflow-y: scroll;
+  header {
+    margin-left: 75px;
+  }
+
+  .content {
+    margin-left: 75px;
+
+    h1 {
+      color: green;
+    }
+
+    a {
+      color: blue;
+    }
+
+    .text {
+      width: 250px;
+
+      .title {
+        color: white;
+      }
+
+      .description {
+        color: white;
+        // display: none;
+        // @media screen and (min-width: 560px) {
+        //   display: block;
+        // }
+      }
+    }
+
+    .mock-up {
+      max-width: 200px;
+      min-width: 100px;
+      height: auto;
+      margin: auto;
+    }
+
+    .add {
+      margin-left: 75px;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+// Place all the styles related to the Portal controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.home {
+  section {
+    width: max-content;
+    top: 0;
+    right: 0;
+  }
+
+  h1 {
+    color: rgb(197, 41, 217);
+  }
+
+  a {
+    color: magenta;
+  }
+
+  button {
+    a {
+      color: blue;
+    }
+  }
+
+  div {
+    background-color: black;
+  }
+
+  h3 {
+    color: green;
+  }
+
+  p {
+    color: white;
+  }
+
+  button {
+    margin: 2px;
+  }
+}

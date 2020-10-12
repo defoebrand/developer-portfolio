@@ -1,0 +1,37 @@
+<%= form_with(model: website, local: true) do |form| %>
+  <% if website.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(website.errors.count, "error") %> prohibited this website from being saved:</h2>
+
+      <ul>
+        <% website.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %><br />
+    <%= form.text_field :title, autofocus: true, autocomplete: "Title" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :url %><br />
+    <%= form.text_field :url, autocomplete: "URL" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %><br />
+    <%= form.text_field :description, autocomplete: "Description" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %><br />
+    <%= form.text_field :image, autocomplete: "Image Path" %>
+  </div>
+
+  <div class="actions mt-3 text-center">
+    <%= form.submit %>
+  </div>
+<% end %>
