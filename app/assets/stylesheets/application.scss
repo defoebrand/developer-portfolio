@@ -1,0 +1,74 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+*/
+// @import "bootstrap-sprockets";
+@import "bootstrap";
+@import "home.scss";
+@import "websites.scss";
+@import "games.scss";
+@import "apps.scss";
+@import "about.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+}
+
+main {
+  height: 100vh;
+}
+
+nav {
+  height: 100vh;
+  padding: 5px;
+  top: 0;
+
+  a {
+    position: relative;
+
+    .fa,
+    .fab,
+    .fas {
+      font-size: 2em;
+      padding: 10px;
+    }
+
+    .fa:hover,
+    .fab:hover,
+    .fas:hover {
+      filter: invert(100%);
+    }
+
+    .tip {
+      position: absolute;
+      visibility: hidden;
+      top: 15px;
+      left: 65px;
+      min-width: max-content;
+      padding: 2px 5px;
+      color: gray;
+      font-weight: bold;
+      background-color: white;
+      border-radius: 5px;
+    }
+
+  }
+
+  a:hover .tip {
+    visibility: visible;
+  }
+}

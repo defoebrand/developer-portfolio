@@ -1,0 +1,43 @@
+<body class='web_form'>
+  <main class="d-flex border border-warning justify-content-center align-items-center pl-5">
+    <div class="d-flex flex-column justify-content-center align-items-center my-5 text-center ml-4">
+      <h1>Hello!</h1>
+
+      <%= form_for :contact do |form| %>
+        <% if @contact.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+            <ul>
+              <% @contact.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="field">
+          <%= form.label :name %><br />
+          <%= form.text_field :name, autofocus: true, autocomplete: "Name" %>
+        </div>
+
+        <div class="field">
+          <%= form.label :email %><br />
+          <%= form.text_field :email, autocomplete: "email" %>
+        </div>
+
+        <div class="field">
+          <%= form.label :message %><br />
+          <%= form.text_field :message, autocomplete: "Message" %>
+        </div>
+
+
+        <div class="actions mt-3 text-center">
+          <%=  form.submit "Send" %>
+        </div>
+      <% end %>
+
+
+    </div>
+  </main>
+</body>

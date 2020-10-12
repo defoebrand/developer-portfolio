@@ -15,3 +15,57 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets
+
+document.addEventListener("turbolinks:load", function() {
+
+  $(document).ready(function() {
+
+    // $(".home").hover(function() {
+    //   $(this).css("background-color", "yellow");
+    // }, function() {
+    //   $(this).css("background-color", "pink");
+    // });
+
+    $('.web-form').mouseover(function(event) {
+      $('.title-change').toggleClass('title-changed');
+      $('.title-change').text('coder');
+      $('.interest-change').toggleClass('interest-changed');
+      $('.interest-change').text('debug code');
+    });
+
+    $('.employee-form').mouseover(function(event) {
+      $('.title-change').toggleClass('title-changed');
+      $('.title-change').text('hard worker');
+      $('.interest-change').toggleClass('interest-changed');
+      $('.interest-change').text('solve problems');
+    });
+
+    $('.tutor-form').mouseover(function(event) {
+      $('.title-change').toggleClass('title-changed');
+      $('.title-change').text('teacher');
+      $('.interest-changed').toggleClass('interest-change');
+      $('.interest-changed').text('help others');
+    });
+
+
+
+    // $('.m-3').mouseover(function(event) {
+    //   $('.title-changed').toggleClass('title-change');
+    //   $('.title-changed').text('teacher');
+    // });
+
+    // $('.account-menu').click(function(event) {
+    //   $('.ac-hidden').toggleClass('ac-visible');
+    // });
+
+    // $('.m-3').hover(function(event) {
+    //   $('.interest-change').html('debug code');
+    // });
+
+  });
+
+});
