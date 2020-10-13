@@ -6,6 +6,11 @@
     margin-left: 75px;
   }
 
+  a {
+    color: #e4c809;
+    font-family: Gotham;
+  }
+
   .content {
     position: fixed;
     top: 0;
@@ -19,11 +24,6 @@
       color: red;
       font-family: Helvet;
       font-weight: 700;
-    }
-
-    a {
-      color: yellow;
-      font-family: Gotham;
     }
 
     .text {

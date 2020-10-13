@@ -21,7 +21,8 @@
                   <p class="description">
                     <%= game.description %>
                   </p>
-                  <%= link_to 'Preview', game.url %>
+                  <%= link_to 'Play Game', game.url %>
+                  <%= link_to 'View Code', game.code %>
                   <div class="w-100"></div>
                   <% if user_signed_in? and current_user.role == 'admin' %>
                     <%= link_to 'Edit', edit_website_path(game) %>

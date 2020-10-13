@@ -21,7 +21,8 @@
                     <p class="description">
                       <%= app.description %>
                     </p>
-                    <%= link_to 'Preview', app.url %>
+                    <%= link_to 'Use App', app.url %>
+                    <%= link_to 'View Code', app.code %>
                     <div class="w-100"></div>
                     <% if user_signed_in? and current_user.role == 'admin' %>
                       <%= link_to 'Edit', edit_app_path(app) %>

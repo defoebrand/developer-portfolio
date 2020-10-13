@@ -6,6 +6,11 @@
     margin-left: 75px;
   }
 
+  a {
+    color: #117bdd;
+    font-family: Gotham;
+  }
+
   .content {
     position: fixed;
     top: 0;
@@ -19,11 +24,6 @@
       color: green;
       font-family: Helvet;
       font-weight: 700;
-    }
-
-    a {
-      color: blue;
-      font-family: Gotham;
     }
 
     .text {
