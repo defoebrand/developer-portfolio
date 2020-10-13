@@ -1,4 +1,4 @@
-websites_pathclass WebsitesController < ApplicationController
+class WebsitesController < ApplicationController
   before_action :set_website, only: %i[show edit update destroy]
 
   # GET /websites
