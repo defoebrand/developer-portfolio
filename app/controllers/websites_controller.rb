@@ -1,4 +1,4 @@
-class WebsitesController < ApplicationController
+websites_pathclass WebsitesController < ApplicationController
   before_action :set_website, only: %i[show edit update destroy]
 
   # GET /websites
@@ -41,7 +41,7 @@ class WebsitesController < ApplicationController
   def update
     respond_to do |format|
       if @website.update(website_params)
-        format.html { redirect_to @website, notice: 'Website was successfully updated.' }
+        format.html { redirect_to websites_path, notice: 'Website was successfully updated.' }
         format.json { render :show, status: :ok, location: @website }
       else
         format.html { render :edit }
