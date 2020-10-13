@@ -1,7 +1,7 @@
 <body class="home">
 
   <main class="d-flex border border-warning justify-content-center align-items-center pl-5">
-    <section class="position-absolute d-flex flex-column text-center mt-3 mr-3">
+    <section class="position-absolute d-flex flex-column text-center mt-3 mr-3 logging">
       <% if user_signed_in? %>
         <%= "Hello #{current_user.name}!"%>
         <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
@@ -15,7 +15,7 @@
       <h5 class='m-3'>I love to <span class='interest-change'>debug code</span></h5>
 
       <p class='m-3'>How can I help you?</p>
-        <div class="d-flex flex-column flex-sm-row m-3">
+        <div class="d-flex flex-column flex-sm-row m-3 content">
         <button class='web-form'><%= link_to 'I need a website', web_form_path %></button>
         <button class='employee-form'><%= link_to 'I need an employee', employee_form_path %></button>
         <button class='tutor-form'><%= link_to 'I need a tutor', tutor_form_path %></button>
@@ -26,61 +26,6 @@
 <!-- <button type="button" name="button" class='btn-sm'>
   <img src="/pro-photo.jpg" alt="Brandon" class="img-thumbnail float-right w-50">
 </button> -->
-
-<!-- <div class="container border">
-  <h1 class='m-3'>Hello World!</h1>
-</div>
-
-<nav class='d-flex flex-column flex-sm-row justify-content-center align-items-center border border-danger'>
-<%# link_to 'Websites', websites_path %>
-<br >
-<%# link_to 'Games', games_path %>
-<br >
-<%# link_to 'Apps', apps_path %>
-<br >
-<a href="https://github.com/defoebrand">GitHub</a>
-<a href="https://twitter.com/defoebrand">Twitter</a>
-<a href="https://www.linkedin.com/in/defoebrand/">LinkedIn</a>
-<a href="https://medium.com/@defoebrand">Medium</a>
-</nav>
-
- <div class="container">
-  <div class="row">
-    <div class="col-3">
-    </div>
-    <div class="col-9">
-
-    </div>
-    <div class="col-3">
-    </div>
-
-  </div>
-</div>
-
-
-<div class="container-fluid bg-warning">
-  <div class="row">
-    <div class="col-sm ml-5">
-      One of three columns
-    </div>
-    <div class="col-md">
-      One of three columns
-    </div>
-    <div class="col-sm">
-      One of three columns
-    </div>
-  </div>
-</div>
-
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
 
 <%# image_tag("rss.jpg", :alt => "rss feed") %>
 

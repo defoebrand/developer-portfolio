@@ -1,6 +1,22 @@
 // Place all the styles related to the Portal controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@font-face {
+  font-family: Charming;
+  src: url("/CHAR1B.TTF");
+}
+@font-face {
+  font-family: Gotham;
+  src: url("/GothamBook.ttf");
+}
+@font-face {
+  font-family: Helvet;
+  src: url("/HelveticaNeue Medium.ttf");
+}
+@font-face {
+  font-family: Provical;
+  src: url("/Provicali-w116n.ttf");
+}
 
 .home {
   section {
@@ -10,7 +26,13 @@
   }
 
   h1 {
-    color: rgb(197, 41, 217);
+    color: #c529d9;
+  }
+
+  h1,
+  h3,
+  h5 {
+    font-family: Provical;
   }
 
   a {
@@ -18,8 +40,14 @@
   }
 
   button {
+    border-radius: 33%;
+    border: 0;
+    padding: 5px 10px;
+    margin: 10px;
+
     a {
       color: blue;
+      text-decoration: none;
     }
   }
 
@@ -35,7 +63,18 @@
     color: white;
   }
 
-  button {
-    margin: 2px;
+  h5 {
+    color: #48a9a6;
+  }
+
+  .logging {
+    font-family: Charming;
+  }
+
+  .content {
+    justify-content: space-around;
+    align-items: center;
+    min-width: 200px;
+    max-width: 500px;
   }
 }

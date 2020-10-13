@@ -23,7 +23,7 @@
                     </p>
                     <%= link_to 'Preview', app.url %>
                     <div class="w-100"></div>
-                    <% if user_signed_in? and current_user.name == 'Brandon' %>
+                    <% if user_signed_in? and current_user.role == 'admin' %>
                       <%= link_to 'Edit', edit_app_path(app) %>
                       <%= link_to 'Destroy', app, method: :delete, data: { confirm: 'Are you sure?' } %>
                   <% end %>
@@ -32,7 +32,7 @@
                 </div>
               <% end %>
             </div>
-            <% if user_signed_in? and current_user.name == 'Brandon' %>
+            <% if user_signed_in? and current_user.role == 'admin' %>
               <%= link_to 'New App', new_app_path, :class => 'fixed-bottom mb-2 add' %>
             <% end %>
         </div>

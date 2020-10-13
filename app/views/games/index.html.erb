@@ -23,7 +23,7 @@
                   </p>
                   <%= link_to 'Preview', game.url %>
                   <div class="w-100"></div>
-                  <% if user_signed_in? and current_user.name == 'Brandon' %>
+                  <% if user_signed_in? and current_user.role == 'admin' %>
                     <%= link_to 'Edit', edit_website_path(game) %>
                     <%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %>
                 <% end %>
@@ -32,7 +32,7 @@
               </div>
             <% end %>
           </div>
-          <% if user_signed_in? and current_user.name == 'Brandon' %>
+          <% if user_signed_in? and current_user.role == 'admin' %>
             <%= link_to 'New Game', new_game_path, :class => 'fixed-bottom mb-2 add' %>
           <% end %>
       </div>
