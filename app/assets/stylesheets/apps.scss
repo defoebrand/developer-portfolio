@@ -2,15 +2,52 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .apps {
-  h1 {
-    color: orange;
-  }
-
-  a {
-    color: brown;
-  }
-
-  .add {
+  header {
     margin-left: 75px;
+  }
+
+  .content {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: scroll;
+    margin-left: 75px;
+
+    h1 {
+      color: orange;
+    }
+
+    a {
+      color: brown;
+    }
+
+    .text {
+      width: 250px;
+
+      .title {
+        color: white;
+      }
+
+      .description {
+        color: white;
+        // display: none;
+        // @media screen and (min-width: 560px) {
+        //   display: block;
+        // }
+      }
+    }
+
+    .mock-up {
+      max-width: 200px;
+      min-width: 100px;
+      height: auto;
+      margin: auto;
+    }
+
+    .add {
+      margin-left: 75px;
+    }
   }
 }

@@ -1,38 +1,40 @@
 <body class="apps">
-  <main class="d-flex border border-warning justify-content-center align-items-center pl-5">
-    <div class="d-flex flex-column justify-content-center align-items-center my-5 text-center ml-4">
+  <main class="d-flex border border-warning justify-content-center align-items-center">
+    <div class="d-flex flex-column justify-content-start align-items-center text-center mt-3 content">
 
-      <h1>Apps</h1>
-      <p>Coming Soon!</p>
+      <header class="d-inline-flex flex-column fixed-top mt-2 text-center justify-content-center align-items-center">
+        <h1>Apps</h1>
+        <% if notice || alert %>
+          <p id="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+        <% end %>
+      </header>
 
-      <% if notice || alert %>
-      <p id="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <% end %>
-
-      <table>
-        <thead>
-          <tr>
-            <th colspan="3"></th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <% @apps.each do |app| %>
-            <tr>
-              <td><%= link_to 'Show', app %></td>
-              <td><%= link_to 'Edit', edit_app_path(app) %></td>
-              <td><%= link_to 'Destroy', app, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-
-      <br>
-      <% if user_signed_in? and current_user.name == 'Brandon' %>
-        <%= link_to 'New App', new_app_path, :class => 'fixed-bottom mb-2 add' %>
-      <% end %>
-
-    </div>
-  </main>
-</body>
+            <div class="container-fluid d-flex flex-wrap justify-content-around align-items-center mr-3 pr-3 mt-4">
+              <% @apps.each do |app| %>
+                <div class="d-flex my-5 flex-wrap justify-content-around align-items-center">
+                  <div class="col-sm text p-2">
+                    <p class='title'>
+                      <%= app.title %>
+                    </p>
+                    <div class="w-100"></div>
+                    <p class="description">
+                      <%= app.description %>
+                    </p>
+                    <%= link_to 'Preview', app.url %>
+                    <div class="w-100"></div>
+                    <% if user_signed_in? and current_user.name == 'Brandon' %>
+                      <%= link_to 'Edit', edit_app_path(app) %>
+                      <%= link_to 'Destroy', app, method: :delete, data: { confirm: 'Are you sure?' } %>
+                  <% end %>
+                  </div>
+                  <%= image_tag("#{app.image}", :alt => "App Mockup", :class => 'img-fluid img-thumbnail mock-up') %>
+                </div>
+              <% end %>
+            </div>
+            <% if user_signed_in? and current_user.name == 'Brandon' %>
+              <%= link_to 'New App', new_app_path, :class => 'fixed-bottom mb-2 add' %>
+            <% end %>
+        </div>
+      </main>
+      </body>
