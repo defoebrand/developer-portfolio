@@ -24,47 +24,68 @@ document.addEventListener("turbolinks:load", function() {
 
   $(document).ready(function() {
 
-    // $(".home").hover(function() {
-    //   $(this).css("background-color", "yellow");
-    // }, function() {
-    //   $(this).css("background-color", "pink");
-    // });
 
     $('.web-form').mouseover(function(event) {
-      $('.title-change').toggleClass('title-changed');
       $('.title-change').text('coder');
-      $('.interest-change').toggleClass('interest-changed');
       $('.interest-change').text('debug code');
     });
 
     $('.employee-form').mouseover(function(event) {
-      $('.title-change').toggleClass('title-changed');
-      $('.title-change').text('hard worker');
-      $('.interest-change').toggleClass('interest-changed');
+      $('.title-change').text('self-starter');
       $('.interest-change').text('solve problems');
     });
 
     $('.tutor-form').mouseover(function(event) {
-      $('.title-change').toggleClass('title-changed');
       $('.title-change').text('teacher');
-      $('.interest-change').toggleClass('interest-changed');
       $('.interest-change').text('help others');
     });
 
-
-
-    // $('.m-3').mouseover(function(event) {
-    //   $('.title-changed').toggleClass('title-change');
-    //   $('.title-changed').text('teacher');
+    // $('.up').click(function(event) {
+    //   let top_value = $(".content").css("top");
+    //   top_value = top_value.slice(0, -2);
+    //   let adjusted_value = (Number(top_value) + 300) + "px"
+    //   $('.content').animate({
+    //     top: adjusted_value
+    //   });
+    //   // $('.content').css("top", adjusted_value)
+    // });
+    //
+    //
+    // $('.down').click(function(event) {
+    //   let top_value = $(".content").css("top");
+    //   top_value = top_value.slice(0, -2);
+    //   let adjusted_value = (Number(top_value) - 300) + "px"
+    //   $('.content').animate({
+    //     top: adjusted_value
+    //   });
+    //   // $('.content').css("top", adjusted_value)
     // });
 
-    // $('.account-menu').click(function(event) {
-    //   $('.ac-hidden').toggleClass('ac-visible');
+    // $('.up').scroll(function() {
+    //   let top_value = $(".content").css("top");
+    //   top_value = top_value.slice(0, -2);
+    //   let adjusted_value = (Number(top_value) - 275) + "px"
+    //   $('.content').animate({
+    //     top: adjusted_value
+    //   });
+    //   // $('.content').css("top", adjusted_value)
     // });
 
-    // $('.m-3').hover(function(event) {
-    //   $('.interest-change').html('debug code');
+    // $("div").scroll(function() {
+    //   $("span").text(x += 1);
     // });
+
+    // $('.websites').hover(function(event) {
+    //   $('.fixed-top').animate({
+    //     top: "-50px"
+    //   });
+    // });
+    // $('.websites').mouseleave(function(event) {
+    //   $('.fixed-top').animate({
+    //     top: "0"
+    //   });
+    // });
+
 
   });
 
