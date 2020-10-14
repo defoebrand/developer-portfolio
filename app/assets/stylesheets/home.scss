@@ -40,13 +40,15 @@
   }
 
   button {
-    border-radius: 33%;
+    // border-radius: 33%;
     border: 0;
     padding: 5px 10px;
     margin: 10px;
+    font-weight: 700;
+    background-color: #48a9a6;
 
     a {
-      color: blue;
+      color: #241824;
       text-decoration: none;
     }
   }
@@ -67,8 +69,16 @@
     color: #48a9a6;
   }
 
-  .logging {
+  .logout {
     font-family: Charming;
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+    letter-spacing: 0.3rem;
+  }
+
+  .login {
+    color: gray;
   }
 
   .content {

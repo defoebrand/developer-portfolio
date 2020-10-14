@@ -1,12 +1,11 @@
 <body class="home">
 
   <main class="d-flex border border-warning justify-content-center align-items-center pl-5">
-    <section class="position-absolute d-flex flex-column text-center mt-3 mr-3 logging">
+    <section class="position-absolute d-flex flex-column text-center mt-3 mr-3">
       <% if user_signed_in? %>
-        <%= "Hello #{current_user.name}!"%>
-        <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+        <%= link_to "Hello #{current_user.name}!", destroy_user_session_path, method: :delete, class: 'logout' %>
       <% else %>
-        <%= link_to 'Sign_in', new_user_session_path %>
+        <%= link_to '<i class="fas fa-cog"></i>'.html_safe, new_user_session_path, class: 'login' %>
       <% end %>
     </section>
     <div class="d-flex flex-column justify-content-center align-items-center text-center ml-4">
@@ -16,9 +15,9 @@
 
       <p class='m-3'>How can I help you?</p>
         <div class="d-flex flex-column flex-sm-row m-3 content">
-        <button class='web-form'><%= link_to 'I need a website', web_form_path %></button>
-        <button class='employee-form'><%= link_to 'I need an employee', employee_form_path %></button>
-        <button class='tutor-form'><%= link_to 'I need a tutor', tutor_form_path %></button>
+        <button class='web-form btn'><%= link_to 'I need a website', web_form_path %></button>
+        <button class='employee-form btn'><%= link_to 'I need an employee', employee_form_path %></button>
+        <button class='tutor-form btn'><%= link_to 'I need a tutor', tutor_form_path %></button>
       </div>
       <%# link_to 'about', portal_about_path %>
     </div>
