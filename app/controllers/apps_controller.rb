@@ -22,10 +22,11 @@ class AppsController < ApplicationController
   # POST /apps
   # POST /apps.json
   def create
-    @app = App.new(app_params)
+    @app = App.new(app_params.except(:stacks))
 
     respond_to do |format|
       if @app.save
+        add_stacks(website_params)
         format.html { redirect_to apps_path, notice: 'App was successfully created.' }
         format.json { render :show, status: :created, location: @app }
       else
@@ -39,7 +40,8 @@ class AppsController < ApplicationController
   # PATCH/PUT /apps/1.json
   def update
     respond_to do |format|
-      if @app.update(app_params)
+      if @app.update(app_params.except(:stacks))
+        add_stacks(website_params)
         format.html { redirect_to apps_path, notice: 'App was successfully updated.' }
         format.json { render :show, status: :ok, location: @app }
       else
@@ -52,6 +54,7 @@ class AppsController < ApplicationController
   # DELETE /apps/1
   # DELETE /apps/1.json
   def destroy
+    @app.stacks.clear
     @app.destroy
     respond_to do |format|
       format.html { redirect_to apps_url, notice: 'App was successfully destroyed.' }
@@ -68,6 +71,18 @@ class AppsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def app_params
-    params.require(:app).permit(:title, :description, :url, :image)
+    params.require(:app).permit(:title, :description, :url, :image, :code, stacks: [])
+  end
+
+  def add_stacks(app_params)
+    @app.stacks.clear
+    @array = []
+    app_params.slice(:stacks).values.flatten.each do |stack_name|
+      @array << stack_name unless stack_name.empty?
+    end
+    @stacks = Stack.all # eager_load(:tracktions)
+    @array.size.times do |xyz|
+      @app.stacks << @stacks.find_by(name: @array[xyz])
+    end
   end
 end

@@ -36,6 +36,17 @@
       <%= form.text_field :image, autocomplete: "Image Path" %>
     </div>
 
+    <div class="icon-box">
+      <%= form.collection_check_boxes :stacks, Stack.all, :name, :name do |stack| %>
+        <div>
+          <div class="container">
+            <%= stack.check_box %>
+            <%= stack.value %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

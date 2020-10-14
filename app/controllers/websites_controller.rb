@@ -41,7 +41,8 @@ class WebsitesController < ApplicationController
   # PATCH/PUT /websites/1.json
   def update
     respond_to do |format|
-      if @website.update(website_params)
+      if @website.update(website_params.except(:stacks))
+        add_stacks(website_params)
         format.html { redirect_to websites_path, notice: 'Website was successfully updated.' }
         format.json { render :show, status: :ok, location: @website }
       else
@@ -54,6 +55,7 @@ class WebsitesController < ApplicationController
   # DELETE /websites/1
   # DELETE /websites/1.json
   def destroy
+    @website.stacks.clear
     @website.destroy
     respond_to do |format|
       format.html { redirect_to websites_url, notice: 'Website was successfully destroyed.' }

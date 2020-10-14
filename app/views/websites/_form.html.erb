@@ -40,8 +40,6 @@
     <%= form.collection_check_boxes :stacks, Stack.all, :name, :name do |stack| %>
       <div>
         <div class="container">
-          <%# checked_box?(stack) %>
-          <%# stack.text.html_safe %>
           <%= stack.check_box %>
           <%= stack.value %>
         </div>
