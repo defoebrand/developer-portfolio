@@ -26,8 +26,14 @@
       font-weight: 700;
     }
 
+    .site-card {
+      width: 80vw;
+      height: 75vh;
+    }
+
     .text {
-      width: 250px;
+      min-width: 150px;
+      max-width: 650px;
 
       .title {
         color: white;
@@ -35,18 +41,12 @@
 
       .description {
         color: white;
-        // display: none;
-        // @media screen and (min-width: 560px) {
-        //   display: block;
-        // }
       }
     }
 
     .mock-up {
-      max-width: 200px;
-      min-width: 100px;
-      height: auto;
-      margin: auto;
+      flex-grow: 1;
+      max-width: 650px;
     }
 
     .add {

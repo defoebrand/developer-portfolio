@@ -12,7 +12,7 @@
 
           <div class="container-fluid d-flex flex-wrap justify-content-around align-items-center mr-3 pr-3 mt-4">
             <% @games.each do |game| %>
-              <div class="d-flex my-5 flex-wrap justify-content-around align-items-center">
+              <div class="d-flex my-5 flex-wrap justify-content-around align-items-center p-3 site-card">
                 <div class="col-sm text p-2">
                   <p class='title'>
                     <%= game.title %>
@@ -29,7 +29,7 @@
                     <%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %>
                 <% end %>
                 </div>
-                <%= image_tag("#{game.image}", :alt => "Game Mockup", :class => 'img-fluid img-thumbnail mock-up') %>
+                <%= image_tag("#{game.image}", :alt => "#{game.title} Mockup", :class => 'img-fluid img-thumbnail mock-up') %>
               </div>
             <% end %>
           </div>
