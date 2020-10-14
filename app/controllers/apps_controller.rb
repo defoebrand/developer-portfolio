@@ -26,7 +26,7 @@ class AppsController < ApplicationController
 
     respond_to do |format|
       if @app.save
-        add_stacks(website_params)
+        add_stacks(app_params)
         format.html { redirect_to apps_path, notice: 'App was successfully created.' }
         format.json { render :show, status: :created, location: @app }
       else
@@ -41,7 +41,7 @@ class AppsController < ApplicationController
   def update
     respond_to do |format|
       if @app.update(app_params.except(:stacks))
-        add_stacks(website_params)
+        add_stacks(app_params)
         format.html { redirect_to apps_path, notice: 'App was successfully updated.' }
         format.json { render :show, status: :ok, location: @app }
       else
@@ -71,7 +71,7 @@ class AppsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def app_params
-    params.require(:app).permit(:title, :description, :url, :image, :code, stacks: [])
+    params.require(:app).permit(:title, :description, :url, :code, :image, stacks: [])
   end
 
   def add_stacks(app_params)

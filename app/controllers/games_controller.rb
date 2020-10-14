@@ -26,7 +26,7 @@ class GamesController < ApplicationController
 
     respond_to do |format|
       if @game.save
-        add_stacks(website_params)
+        add_stacks(game_params)
         format.html { redirect_to games_path, notice: 'Game was successfully created.' }
         format.json { render :index, status: :created, location: @game }
       else
@@ -41,7 +41,7 @@ class GamesController < ApplicationController
   def update
     respond_to do |format|
       if @game.update(game_params.except(:stacks))
-        add_stacks(website_params)
+        add_stacks(game_params)
         format.html { redirect_to games_path, notice: 'Game was successfully updated.' }
         format.json { render :index, status: :ok, location: @game }
       else
