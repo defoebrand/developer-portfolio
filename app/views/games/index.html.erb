@@ -21,6 +21,15 @@
                   <p class="description">
                     <%= game.description %>
                   </p>
+                  <div class="d-none d-md-block">
+                    <% unless game.stacks.empty? %>
+                      <% game.stacks.each do |stack|%>
+                      <p class="btn btn-primary">
+                        <%= stack.name %>
+                      </p>
+                      <% end %>
+                    <% end %>
+                  </div>
                   <%= link_to 'Play Game', game.url %>
                   <%= link_to 'View Code', game.code %>
                   <div class="w-100"></div>

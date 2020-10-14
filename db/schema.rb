@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_13_150219) do
+ActiveRecord::Schema.define(version: 2020_10_14_153021) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,11 @@ ActiveRecord::Schema.define(version: 2020_10_13_150219) do
     t.text "description"
     t.string "image"
     t.string "code"
+  end
+
+  create_table "apps_stacks", id: false, force: :cascade do |t|
+    t.bigint "stack_id", null: false
+    t.bigint "app_id", null: false
   end
 
   create_table "contact_form_submissions", force: :cascade do |t|
@@ -47,6 +52,22 @@ ActiveRecord::Schema.define(version: 2020_10_13_150219) do
     t.text "description"
     t.string "image"
     t.string "code"
+  end
+
+  create_table "games_stacks", id: false, force: :cascade do |t|
+    t.bigint "stack_id", null: false
+    t.bigint "game_id", null: false
+  end
+
+  create_table "stacks", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "stacks_websites", id: false, force: :cascade do |t|
+    t.bigint "stack_id", null: false
+    t.bigint "website_id", null: false
   end
 
   create_table "users", force: :cascade do |t|

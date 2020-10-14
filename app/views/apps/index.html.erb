@@ -21,7 +21,15 @@
                     <p class="description">
                       <%= app.description %>
                     </p>
-                    <h1 class="d-none d-md-block">HELLO</h1>
+                    <div class="d-none d-md-block">
+                      <% unless app.stacks.empty? %>
+                        <% app.stacks.each do |stack|%>
+                        <p class="btn btn-primary">
+                          <%= stack.name %>
+                        </p>
+                        <% end %>
+                      <% end %>
+                    </div>
                     <%= link_to 'Use App', app.url %>
                     <%= link_to 'View Code', app.code %>
                     <div class="w-100"></div>

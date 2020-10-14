@@ -21,6 +21,15 @@
               <p class="description">
                 <%= website.description %>
               </p>
+              <div class="d-none d-md-block">
+                <% unless website.stacks.empty? %>
+                  <% website.stacks.each do |stack|%>
+                  <p class="btn btn-primary">
+                    <%= stack.name %>
+                  </p>
+                  <% end %>
+                <% end %>
+              </div>
               <%= link_to 'Visit Website', website.url %>
               <%= link_to 'View Code', website.code %>
               <div class="w-100"></div>
