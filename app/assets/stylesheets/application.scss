@@ -40,6 +40,8 @@ nav {
 
   a {
     position: relative;
+    // font-size: max(1%, 10px);
+    font-size: calc(10px + 0.5vw);
 
     .fa,
     .fab,

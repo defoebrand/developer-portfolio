@@ -13,22 +13,22 @@
 
   <div class="field">
     <%= form.label :title %><br />
-    <%= form.text_field :title, autofocus: true, autocomplete: "Title" %>
+    <%= form.text_field :title, autofocus: true, autocomplete: "Title", :maxlength => 25, :size => 20  %>
   </div>
 
   <div class="field">
     <%= form.label :url %><br />
     <%= form.text_field :url, autocomplete: "URL" %>
   </div>
-  
+
   <div class="field">
     <%= form.label :code %><br />
     <%= form.text_field :code, autocomplete: "URL" %>
   </div>
-  
+
   <div class="field">
     <%= form.label :description %><br />
-    <%= form.text_field :description, autocomplete: "Description" %>
+    <%= form.text_field :description, autocomplete: "Description", :maxlength => 250, :size => 20  %>
   </div>
 
   <div class="field">
