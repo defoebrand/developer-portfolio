@@ -24,9 +24,7 @@
               <div class="d-none d-md-block">
                 <% unless website.stacks.empty? %>
                   <% website.stacks.each do |stack|%>
-                  <p class="btn btn-primary">
-                    <%= stack.name %>
-                  </p>
+                    <%=  content_tag(:p, stack.name, class: "btn btn-#{stack.color}") %>
                   <% end %>
                 <% end %>
               </div>
