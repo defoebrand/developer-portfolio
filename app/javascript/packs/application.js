@@ -40,6 +40,31 @@ document.addEventListener("turbolinks:load", function() {
       $('.interest-change').text('help others');
     });
 
+    $('.click-for-more-website').click(function(event) {
+      // $('.website-pop-out').toggleClass('show-pop-out');
+      $('.website-pop-out').toggle();
+      $('.employee-pop-out').hide();
+      $('.tutor-pop-out').hide();
+    });
+
+
+    $('.click-for-more-employee').click(function(event) {
+      // $('.employee-pop-out').toggleClass('show-pop-out');
+      $('.employee-pop-out').toggle();
+      $('.website-pop-out').hide();
+      $('.tutor-pop-out').hide();
+    });
+
+
+    $('.click-for-more-tutor').click(function(event) {
+      // $('.tutor-pop-out').toggleClass('show-pop-out');
+      $('.tutor-pop-out').toggle();
+      $('.website-pop-out').hide();
+      $('.employee-pop-out').hide();
+    });
+
+
+
     // $('.up').click(function(event) {
     //   let top_value = $(".content").css("top");
     //   top_value = top_value.slice(0, -2);

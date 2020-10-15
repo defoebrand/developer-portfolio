@@ -1,4 +1,4 @@
-add email contact form to bottom corner
+
 
 check auto-prefixer for different browser
 
@@ -8,3 +8,34 @@ swap color pattern from light to dark
 brief few sentences to describe personality
 what inspires you
 why you're a developer
+
+
+short description in about me section
+languages / frameworks / skills in about me section
+ - elevator pitch
+
+add chat function
+
+consider adding amazon aws for images
+
+add message sent notification and redirect to ....
+
+
+add portfolio to websites section
+
+
+short sales pitch in home page on hover of image or on click of button
+ - second click for form
+
+
+keep stacks in small size but rearrange for mobile - keep visible somehow
+
+
+consider long desktop description and short mobile description
+ - consider link to desktop description in mobile view
+
+consider background for titles in project pages or hide behind images
+ - or TNWesque or title header that images scroll under
+
+
+background gradient and other colors (fonts)?
