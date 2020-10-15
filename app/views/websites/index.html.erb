@@ -1,5 +1,5 @@
 <body class="websites">
-  <main class="d-flex border border-warning justify-content-center align-items-center">
+  <main class="d-flex justify-content-center align-items-center">
     <div class="d-flex flex-column justify-content-start align-items-center text-center mt-3 content">
 
     <header class="d-inline-flex flex-column fixed-top mt-2 text-center justify-content-center align-items-center">
@@ -12,7 +12,7 @@
 
       <div class="container-fluid d-flex flex-wrap justify-content-around align-items-center mr-3 pr-3">
         <% @websites.each do |website| %>
-          <div class="d-flex my-5 flex-wrap justify-content-around align-items-center pr-3 site-card">
+          <div class="d-flex mt-2 mb-5 my-md-5 flex-wrap justify-content-around align-items-center pr-3 site-card">
             <div class="col-sm text p-2">
               <p class='title'>
                 <%= website.title %>

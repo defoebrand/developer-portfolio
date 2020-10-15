@@ -1,6 +1,6 @@
 <body class="home">
 
-  <main class="d-flex border border-warning justify-content-center align-items-center pl-5">
+  <main class="d-flex justify-content-center align-items-center pl-5">
     <section class="position-absolute d-flex flex-column text-center mt-3 mr-3">
       <% if user_signed_in? %>
         <%= link_to "Hello #{current_user.name}!", destroy_user_session_path, method: :delete, class: 'logout' %>
