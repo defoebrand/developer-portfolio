@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 class AppsController < ApplicationController
   before_action :set_app, only: %i[show edit update destroy]
+  before_action :check_is_admin?, only: %i[new edit create update destroy]
 
   # GET /apps
   # GET /apps.json
