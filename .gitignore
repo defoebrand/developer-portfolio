@@ -37,3 +37,5 @@ yarn-debug.log*
 
 # Local Netlify folder
 .netlify
+
+/ssl_folder
