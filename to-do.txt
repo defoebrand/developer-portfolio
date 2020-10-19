@@ -1,3 +1,19 @@
+add ssl certificate
+
+address differences in  pop-up box positioning
+
+work on about me page
+
+style title / description of projects
+
+check out layout issues in chrome
+
+open social links in separate tab
+
+clean up GitHub repos
+
+
+
 
 
 check auto-prefixer for different browser
@@ -36,6 +52,3 @@ consider long desktop description and short mobile description
 
 consider background for titles in project pages or hide behind images
  - or TNWesque or title header that images scroll under
-
-
-background gradient and other colors (fonts)?
