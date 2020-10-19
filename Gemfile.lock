@@ -232,7 +232,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.2)
   mail
-  pg (>= 0.18, < 2.0)
+  pg
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.3)
   sass-rails (>= 6)
