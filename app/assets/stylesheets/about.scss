@@ -1,6 +1,4 @@
 .about {
-  overflow: hidden;
-
   h1 {
     color: gold;
   }
@@ -10,25 +8,34 @@
   }
 
   .content {
-    min-width: 140px;
-    width: 560px;
-    // width: 1120px;
+    position: fixed;
+    top: 35px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-left: 75px;
 
-    .iframe-container {
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-      padding-top: 56.25%;
-    }
+    .me {
+      min-width: 140px;
+      width: 560px;
+      overflow-y: scroll;
 
-    .iframe-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
+      .iframe-container {
+        position: relative;
+        overflow-y: scroll;
+        width: 100%;
+        padding-top: 56.25%;
+      }
+
+      .iframe-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 }

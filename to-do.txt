@@ -1,5 +1,3 @@
-add ssl certificate
-
 address differences in  pop-up box positioning
 
 work on about me page
