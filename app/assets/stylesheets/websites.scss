@@ -57,10 +57,14 @@
       flex-grow: 1;
       width: 200px;
       max-width: 650px;
+      position: relative;
       // max-height: 100%;
       // margin-bottom: 300px;
       // overflow-y: hidden;
       img {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
       }
     }
