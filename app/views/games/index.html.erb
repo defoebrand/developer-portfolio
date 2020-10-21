@@ -2,47 +2,47 @@
   <main class="d-flex justify-content-center align-items-center">
     <div class="d-flex flex-column justify-content-start align-items-center text-center mt-3 content">
       <header class="d-inline-flex flex-column fixed-top mt-2 text-center justify-content-center align-items-center">
-      <h1>Games</h1>
-      <% if notice || alert %>
-        <p id="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-      <% end %>
-    </header>
+        <h1>Games</h1>
+        <% if notice || alert %>
+          <p id="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+        <% end %>
+      </header>
 
-
-          <div class="container-fluid d-flex flex-wrap justify-content-around align-items-center mr-3 pr-3">
-            <% @games.each do |game| %>
-              <div class="d-flex mt-2 mb-5 my-md-5 flex-wrap justify-content-around align-items-center pr-3 site-card">
-                <div class="col-sm text p-2">
-                  <p class='title'>
-                    <%= game.title %>
-                  </p>
-                  <div class="w-100"></div>
-                  <p class="description">
-                    <%= game.description %>
-                  </p>
-                  <div class="d-none d-md-block">
-                    <% unless game.stacks.empty? %>
-                      <% game.stacks.each do |stack|%>
-                        <%=  content_tag(:p, stack.name, class: "btn btn-#{stack.color}") %>
-                      <% end %>
-                    <% end %>
-                  </div>
-                  <%= link_to 'Play Game', game.url %>
-                  <%= link_to 'View Code', game.code %>
-                  <div class="w-100"></div>
-                  <% if user_signed_in? and current_user.role == 'admin' %>
-                    <%= link_to 'Edit', edit_game_path(game) %>
-                    <%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <div class="container-fluid d-flex flex-wrap justify-content-around align-items-center mr-3 pr-3">
+        <% @games.each do |game| %>
+          <div class="d-flex mt-2 mb-5 my-md-5 flex-wrap justify-content-around align-items-center pr-3 site-card">
+            <div class="col-sm text p-2">
+              <h4 class='title'>
+                <b>
+                  <%= game.title %></b>
+              </h4>
+              <div class="w-100"></div>
+              <p class="description">
+                <%= game.description %>
+              </p>
+              <div class="d-none d-md-block">
+                <% unless game.stacks.empty? %>
+                  <% game.stacks.each do |stack|%>
+                    <%= content_tag(:p, stack.name, class: "btn btn-#{stack.color}") %>
+                  <% end %>
                 <% end %>
-                </div>
-                <%= image_tag("#{game.image}", :alt => "#{game.title} Mockup", :class => 'img-fluid img-thumbnail mock-up') %>
               </div>
-            <% end %>
+              <%= link_to 'Play Game', game.url %>
+              <%= link_to 'View Code', game.code %>
+              <div class="w-100"></div>
+              <% if user_signed_in? and current_user.role == 'admin' %>
+                <%= link_to 'Edit', edit_game_path(game) %>
+                <%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <% end %>
+            </div>
+            <%= image_tag("#{game.image}", :alt => "#{game.title} Mockup", :class => 'img-fluid img-thumbnail mock-up') %>
           </div>
-          <% if user_signed_in? and current_user.role == 'admin' %>
-            <%= link_to 'New Game', new_game_path, :class => 'fixed-bottom mb-2 add' %>
-          <% end %>
+        <% end %>
       </div>
-    </main>
-    </body>
+      <% if user_signed_in? and current_user.role == 'admin' %>
+        <%= link_to 'New Game', new_game_path, :class => 'fixed-bottom mb-2 add' %>
+      <% end %>
+    </div>
+  </main>
+</body>

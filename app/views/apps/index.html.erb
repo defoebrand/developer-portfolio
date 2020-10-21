@@ -10,39 +10,40 @@
         <% end %>
       </header>
 
-            <div class="container-fluid d-flex flex-wrap justify-content-around align-items-center mr-3 pr-3">
-              <% @apps.each do |app| %>
-                <div class="d-flex mt-2 mb-5 my-md-5 flex-wrap justify-content-around align-items-center pr-3 site-card">
-                  <div class="col-sm text p-2">
-                    <p class='title'>
-                      <%= app.title %>
-                    </p>
-                    <div class="w-100"></div>
-                    <p class="description">
-                      <%= app.description %>
-                    </p>
-                    <div class="d-none d-md-block">
-                      <% unless app.stacks.empty? %>
-                        <% app.stacks.each do |stack|%>
-                          <%=  content_tag(:p, stack.name, class: "btn btn-#{stack.color}") %>
-                        <% end %>
-                      <% end %>
-                    </div>
-                    <%= link_to 'Use App', app.url %>
-                    <%= link_to 'View Code', app.code %>
-                    <div class="w-100"></div>
-                    <% if user_signed_in? and current_user.role == 'admin' %>
-                      <%= link_to 'Edit', edit_app_path(app) %>
-                      <%= link_to 'Destroy', app, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <div class="container-fluid d-flex flex-wrap justify-content-around align-items-center mr-3 pr-3">
+        <% @apps.each do |app| %>
+          <div class="d-flex mt-2 mb-5 my-md-5 flex-wrap justify-content-around align-items-center pr-3 site-card">
+            <div class="col-sm text p-2">
+              <h4 class='title'>
+                <b>
+                  <%= app.title %></b>
+              </h4>
+              <div class="w-100"></div>
+              <p class="description">
+                <%= app.description %>
+              </p>
+              <div class="d-none d-md-block">
+                <% unless app.stacks.empty? %>
+                  <% app.stacks.each do |stack|%>
+                    <%= content_tag(:p, stack.name, class: "btn btn-#{stack.color}") %>
                   <% end %>
-                  </div>
-                  <%= image_tag("#{app.image}", :alt => "#{app.title} Mockup", :class => 'img-fluid img-thumbnail mock-up') %>
-                </div>
+                <% end %>
+              </div>
+              <%= link_to 'Use App', app.url %>
+              <%= link_to 'View Code', app.code %>
+              <div class="w-100"></div>
+              <% if user_signed_in? and current_user.role == 'admin' %>
+                <%= link_to 'Edit', edit_app_path(app) %>
+                <%= link_to 'Destroy', app, method: :delete, data: { confirm: 'Are you sure?' } %>
               <% end %>
             </div>
-            <% if user_signed_in? and current_user.role == 'admin' %>
-              <%= link_to 'New App', new_app_path, :class => 'fixed-bottom mb-2 add' %>
-            <% end %>
-        </div>
-      </main>
-      </body>
+            <%= image_tag("#{app.image}", :alt => "#{app.title} Mockup", :class => 'img-fluid img-thumbnail mock-up') %>
+          </div>
+        <% end %>
+      </div>
+      <% if user_signed_in? and current_user.role == 'admin' %>
+        <%= link_to 'New App', new_app_path, :class => 'fixed-bottom mb-2 add' %>
+      <% end %>
+    </div>
+  </main>
+</body>

@@ -72,6 +72,14 @@
     color: #48a9a6;
   }
 
+  .notice {
+    position: fixed;
+    top: 10px;
+    left: calc(50% - 50px);
+    right: calc(50% - 87.5px);
+    min-width: max-content;
+  }
+
   .logout {
     font-family: Charming;
     color: white;
@@ -166,5 +174,4 @@
       display: block;
     }
   }
-
 }

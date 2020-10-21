@@ -10,7 +10,7 @@ open social links in separate tab
 
 clean up GitHub repos
 
-
+fix sidebar icon size in mobile landscape view
 
 
 
@@ -26,7 +26,6 @@ why you're a developer
 
 short description in about me section
 languages / frameworks / skills in about me section
- - elevator pitch
 
 add chat function
 

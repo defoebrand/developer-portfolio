@@ -2,21 +2,23 @@
   <main class="d-flex justify-content-center align-items-center">
     <div class="d-flex flex-column justify-content-start align-items-center text-center mt-3 content">
 
-    <header class="d-inline-flex flex-column fixed-top mt-2 text-center justify-content-center align-items-center">
-      <h1>Websites</h1>
-      <% if notice || alert %>
-        <p id="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-      <% end %>
-    </header>
+      <header class="d-inline-flex flex-column fixed-top mt-2 text-center justify-content-center align-items-center">
+        <h1>Websites</h1>
+        <% if notice || alert %>
+          <p id="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+        <% end %>
+      </header>
 
       <div class="container-fluid d-flex flex-wrap justify-content-around align-items-center mr-3 pr-3">
         <% @websites.each do |website| %>
           <div class="d-flex mt-2 mb-5 my-md-5 flex-wrap justify-content-around align-items-center pr-3 site-card">
             <div class="col-sm text p-2">
-              <p class='title'>
-                <%= website.title %>
-              </p>
+              <h4 class='title'>
+                <b>
+                  <%= website.title %>
+                </b>
+              </h4>
               <div class="w-100"></div>
               <p class="description">
                 <%= website.description %>
@@ -24,7 +26,7 @@
               <div class="d-none d-md-block">
                 <% unless website.stacks.empty? %>
                   <% website.stacks.each do |stack|%>
-                    <%=  content_tag(:p, stack.name, class: "btn btn-#{stack.color}") %>
+                    <%= content_tag(:p, stack.name, class: "btn btn-#{stack.color}") %>
                   <% end %>
                 <% end %>
               </div>
@@ -34,7 +36,7 @@
               <% if user_signed_in? and current_user.role == 'admin' %>
                 <%= link_to 'Edit', edit_website_path(website) %>
                 <%= link_to 'Destroy', website, method: :delete, data: { confirm: 'Are you sure?' } %>
-            <% end %>
+              <% end %>
             </div>
             <%= image_tag("#{website.image}", :alt => "#{website.title} Mockup", :class => 'img-fluid img-thumbnail mock-up') %>
           </div>
@@ -43,6 +45,6 @@
       <% if user_signed_in? and current_user.role == 'admin' %>
         <%= link_to 'New Website', new_website_path, :class => 'fixed-bottom mb-2 add' %>
       <% end %>
-  </div>
-</main>
+    </div>
+  </main>
 </body>

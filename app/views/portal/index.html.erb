@@ -1,5 +1,7 @@
-<body class="home">
-
+<body class='home'>
+  <% if notice %>
+    <p class='notice'><%= notice %></p>
+  <% end %>
   <main class="d-flex justify-content-center align-items-center pl-5">
     <section class="position-absolute d-flex flex-column text-center mt-3 mr-3">
       <% if user_signed_in? %>

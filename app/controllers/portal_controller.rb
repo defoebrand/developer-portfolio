@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 class PortalController < ApplicationController
+  before_action :set_contact, only: %i[web_form tutor_form employee_form]
   # GET /portal
   # GET /portal.json
   def index; end
@@ -7,17 +10,17 @@ class PortalController < ApplicationController
 
   # GET /web_form
   def web_form
-    @contact = Contact.new
+    # @contact = Contact.new
   end
 
   # GET /tutor_form
   def tutor_form
-    @contact = Contact.new
+    # @contact = Contact.new
   end
 
   # GET /employee_form
   def employee_form
-    @contact = Contact.new
+    # @contact = Contact.new
   end
 
   # POST /web_form
@@ -26,7 +29,9 @@ class PortalController < ApplicationController
     @user = Contact.first
     ContactMailer.with(user: @user).contact_me.deliver_now
     Contact.first.destroy
-    redirect_to root_path
+    # flash[:notice] = 'Hello'
+    # render :index
+    redirect_to root_path, notice: 'Your message was sent!'
   end
 
   private
@@ -39,5 +44,11 @@ class PortalController < ApplicationController
   # Only allow a list of trusted parameters through.
   def contact_params
     params.require(:contact).permit(:name, :email, :message)
+  end
+
+  private
+
+  def set_contact
+    @contact = Contact.new
   end
 end
