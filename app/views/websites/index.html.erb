@@ -38,7 +38,9 @@
                 <%= link_to 'Destroy', website, method: :delete, data: { confirm: 'Are you sure?' } %>
               <% end %>
             </div>
-            <%= image_tag("#{website.image}", :alt => "#{website.title} Mockup", :class => 'img-fluid img-thumbnail mock-up') %>
+            <div class='img-fluid img-thumbnail mock-up'>
+              <%= image_tag("#{website.image}", :alt => "#{website.title} Mockup") %>
+            </div>
           </div>
         <% end %>
       </div>
