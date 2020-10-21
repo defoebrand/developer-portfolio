@@ -1,7 +1,5 @@
 address differences in  pop-up box positioning
 
-check out layout issues in chrome
-
 clean up GitHub repos
 
 
