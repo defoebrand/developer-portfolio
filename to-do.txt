@@ -1,17 +1,8 @@
 address differences in  pop-up box positioning
 
-work on about me page
-
-style title / description of projects
-
 check out layout issues in chrome
 
-open social links in separate tab
-
 clean up GitHub repos
-
-fix sidebar icon size in mobile landscape view
-
 
 
 check auto-prefixer for different browser
@@ -31,8 +22,6 @@ add chat function
 
 consider adding amazon aws for images
 
-add message sent notification and redirect to ....
-
 
 add portfolio to websites section
 
@@ -46,6 +35,3 @@ keep stacks in small size but rearrange for mobile - keep visible somehow
 
 consider long desktop description and short mobile description
  - consider link to desktop description in mobile view
-
-consider background for titles in project pages or hide behind images
- - or TNWesque or title header that images scroll under
