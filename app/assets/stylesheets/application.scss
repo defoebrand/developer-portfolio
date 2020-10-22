@@ -107,3 +107,12 @@ main {
 .show-description {
   color: white;
 }
+
+.scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scroll::-webkit-scrollbar {
+  display: none;
+}

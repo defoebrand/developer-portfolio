@@ -1,12 +1,10 @@
 .about {
+  a,
   h1 {
     color: white;
   }
 
-  a {
-    color: white;
-  }
-
+  .me,
   b {
     color: #bfcbb9;
   }
@@ -15,16 +13,12 @@
     position: fixed;
     top: 15px;
     bottom: 0;
-    left: calc(10vw + 5px);
+    left: 0;
     right: 0;
-    @media screen and (min-width: 468px) {
-      left: calc(2.5vw + 5px);
-    }
 
     .me {
       min-width: 140px;
       overflow-y: auto;
-      color: #bfcbb9;
 
       .iframe-container {
         position: relative;

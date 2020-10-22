@@ -1,6 +1,6 @@
 <body class='games'>
   <main class="d-flex justify-content-center align-items-center">
-    <div class="d-flex flex-column justify-content-start align-items-center text-center mt-3 content">
+    <div class="d-flex flex-column justify-content-start align-items-center text-center mt-3 content scroll">
 
       <header class="d-inline-flex flex-column fixed-top mt-2 text-center justify-content-center align-items-center">
         <h1>Games</h1>
@@ -26,14 +26,14 @@
               <p class="description">
                 <%= game.description %>
               </p>
-              <div class="d-none d-md-block">
-                <% unless game.stacks.empty? %>
+              <% unless game.stacks.empty? %>
+                <div class="stacks">
                   <% game.stacks.each do |stack|%>
                     <%= content_tag(:p, stack.name, class: "btn btn-#{stack.color}") %>
                   <% end %>
-                <% end %>
-              </div>
-              <p class="see-more d-md-none">
+                </div>
+              <% end %>
+              <p class="see-more">
                 <%= link_to 'See More', game_path(game.title) %>
               </p>
               <%= link_to 'Play Game', game.url %>

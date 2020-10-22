@@ -1,6 +1,6 @@
 <body class="websites">
   <main class="d-flex justify-content-center align-items-center">
-    <div class="d-flex flex-column justify-content-start align-items-center text-center mt-3 content">
+    <div class="d-flex flex-column justify-content-start align-items-center text-center mt-3 content scroll">
 
       <header class="d-inline-flex flex-column fixed-top mt-2 text-center justify-content-center align-items-center">
         <h1>Websites</h1>
@@ -26,13 +26,13 @@
               <p class="description">
                 <%= website.description %>
               </p>
-              <div class="stacks">
-                <% unless website.stacks.empty? %>
+              <% unless website.stacks.empty? %>
+                <div class="stacks">
                   <% website.stacks.each do |stack|%>
                     <%= content_tag(:p, stack.name, class: "btn btn-#{stack.color}") %>
                   <% end %>
-                <% end %>
-              </div>
+                </div>
+              <% end %>
               <p class="see-more">
                 <%= link_to 'See More', website_path(website.title) %>
               </p>
