@@ -2,9 +2,6 @@ address differences in  pop-up box positioning
 
 clean up GitHub repos
 
-
-check auto-prefixer for different browser
-
 swap color pattern from light to dark
 
 
@@ -26,10 +23,3 @@ add portfolio to websites section
 
 short sales pitch in home page on hover of image or on click of button
  - second click for form
-
-
-keep stacks in small size but rearrange for mobile - keep visible somehow
-
-
-consider long desktop description and short mobile description
- - consider link to desktop description in mobile view

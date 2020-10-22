@@ -51,6 +51,9 @@ nav {
     // font-size: max(1%, 10px);
     font-size: calc(10px + 0.5vw);
     @media screen and (max-height: 375px) {
+      font-size: calc(7.55px + 0.5vw);
+    }
+    @media screen and (max-height: 300px) {
       font-size: calc(5px + 0.5vw);
     }
 

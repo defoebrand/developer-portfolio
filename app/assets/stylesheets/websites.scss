@@ -68,7 +68,7 @@
     }
   }
 }
-@media screen and (min-height: 361px) {
+@media screen and (min-height: 451px) {
   .mobile-description,
   .see-more {
     display: none;
@@ -79,13 +79,9 @@
     }
   }
 }
-@media screen and (max-height: 360px) {
+@media screen and (max-height: 450px) {
   .description,
   .stacks {
     display: none;
-  }
-
-  .site-card {
-    min-height: 350px;
   }
 }
