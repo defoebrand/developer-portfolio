@@ -16,9 +16,13 @@
             <div class="col-sm text p-2">
               <h4 class='title'>
                 <b>
-                  <%= app.title %></b>
+                  <%= app.title %>
+                </b>
               </h4>
               <div class="w-100"></div>
+              <p class="mobile-description">
+                <%= app.mobile_description %>
+              </p>
               <p class="description">
                 <%= app.description %>
               </p>
@@ -29,6 +33,9 @@
                   <% end %>
                 <% end %>
               </div>
+              <p class="see-more d-md-none">
+                <%= link_to 'See More', app_path(app.title) %>
+              </p>
               <%= link_to 'Use App', app.url %>
               <%= link_to 'View Code', app.code %>
               <div class="w-100"></div>

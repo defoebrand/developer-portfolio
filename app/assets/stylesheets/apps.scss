@@ -1,10 +1,10 @@
 // Place all the styles related to the Apps controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
 .apps {
   header {
     margin-left: 75px;
-    // border-bottom: 1px solid white;
   }
 
   a {
@@ -20,7 +20,6 @@
     right: 0;
     overflow-y: scroll;
     margin-left: 75px;
-    // border-top: 1px solid blue;
 
     h1 {
       color: orange;
@@ -35,29 +34,45 @@
       a {
         white-space: nowrap;
       }
-    }
 
-    .text {
-      min-width: 150px;
-      max-width: 650px;
-
-      .title {
-        color: white;
-      }
-
-      .description {
-        color: white;
+      .mock-up {
+        flex-grow: 1;
+        width: 200px;
+        max-width: 650px;
         @media screen and (max-height: 360px) {
-          height: 100px;
-          overflow-y: scroll;
+          max-height: 290px;
         }
       }
-    }
 
-    .mock-up {
-      flex-grow: 1;
-      max-width: 650px;
-      max-height: 100%;
+      .text {
+        min-width: 150px;
+        max-width: 650px;
+
+        .title {
+          color: white;
+        }
+
+        .mobile-description {
+          color: white;
+          @media screen and (min-height: 361px) {
+            display: none;
+          }
+        }
+
+        .description {
+          color: white;
+          @media screen and (max-height: 360px) {
+            display: none;
+          }
+        }
+
+        .see-more {
+          a {
+            color: #bfcbb9;
+            text-decoration: none;
+          }
+        }
+      }
     }
 
     .add {

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class GamesController < ApplicationController
-  before_action :set_game, only: %i[show edit update destroy]
+  before_action :set_game, only: %i[edit update destroy]
   before_action :check_is_admin?, only: %i[new edit create update destroy]
 
   # GET /games
@@ -12,7 +12,9 @@ class GamesController < ApplicationController
 
   # GET /games/1
   # GET /games/1.json
-  def show; end
+  def show
+    @game = Game.find_by(title: params[:title])
+  end
 
   # GET /games/new
   def new

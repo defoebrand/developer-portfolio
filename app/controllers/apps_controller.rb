@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class AppsController < ApplicationController
-  before_action :set_app, only: %i[show edit update destroy]
+  before_action :set_app, only: %i[edit update destroy]
   before_action :check_is_admin?, only: %i[new edit create update destroy]
 
   # GET /apps
@@ -12,7 +12,9 @@ class AppsController < ApplicationController
 
   # GET /apps/1
   # GET /apps/1.json
-  def show; end
+  def show
+    @app = App.find_by(title: params[:title])
+  end
 
   # GET /apps/new
   def new

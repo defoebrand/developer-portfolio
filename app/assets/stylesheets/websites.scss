@@ -9,7 +9,6 @@
 
   a {
     color: #117bdd;
-    // color: gold;
     font-family: Gotham;
   }
 
@@ -23,8 +22,7 @@
     margin-left: 75px;
 
     h1 {
-      // color: green;
-      color: blue;
+      color: green;
       font-family: Helvet;
       font-weight: 700;
     }
@@ -41,36 +39,38 @@
         flex-grow: 1;
         width: 200px;
         max-width: 650px;
-        // height: auto;
-        position: relative;
-        // max-height: 100%;
-        // margin-bottom: 300px;
-        // overflow-y: hidden;
-        // border: 10px solid gold;
-        img {
-          // border: 1px solid blue;
-          // position: absolute;
-          // top: 0;
-          // right: 0;
-          width: 100%;
-          max-height: 100%;
+        @media screen and (max-height: 360px) {
+          max-height: 290px;
         }
       }
-    }
 
-    .text {
-      min-width: 150px;
-      max-width: 650px;
+      .text {
+        min-width: 150px;
+        max-width: 650px;
 
-      .title {
-        color: white;
-      }
+        .title {
+          color: white;
+        }
 
-      .description {
-        color: white;
-        @media screen and (max-height: 360px) {
-          height: 100px;
-          overflow-y: scroll;
+        .mobile-description {
+          color: white;
+          @media screen and (min-height: 361px) {
+            display: none;
+          }
+        }
+
+        .description {
+          color: white;
+          @media screen and (max-height: 360px) {
+            display: none;
+          }
+        }
+
+        .see-more {
+          a {
+            color: #bfcbb9;
+            text-decoration: none;
+          }
         }
       }
     }

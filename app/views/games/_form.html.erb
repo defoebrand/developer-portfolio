@@ -1,53 +1,58 @@
 <%= form_with(model: game, local: true) do |form| %>
-  <% if game.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(game.errors.count, "error") %> prohibited this game from being saved:</h2>
+<% if game.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(game.errors.count, "error") %>
+      prohibited this game from being saved:</h2>
 
-      <ul>
-        <% game.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-    <div class="field">
-      <%= form.label :title %><br />
-      <%= form.text_field :title, autofocus: true, autocomplete: "Title", :maxlength => 25, :size => 20  %>
-    </div>
-
-    <div class="field">
-      <%= form.label :url %><br />
-      <%= form.text_field :url, autocomplete: "URL" %>
-    </div>
-
-    <div class="field">
-      <%= form.label :code %><br />
-      <%= form.text_field :code, autocomplete: "URL" %>
-    </div>
-
-    <div class="field">
-      <%= form.label :description %><br />
-      <%= form.text_field :description, autocomplete: "Description", :maxlength => 250, :size => 20 %>
-    </div>
-
-    <div class="field">
-      <%= form.label :image %><br />
-      <%= form.text_field :image, autocomplete: "Image Path" %>
-    </div>
-
-    <div class="icon-box">
-      <%= form.collection_check_boxes :stacks, Stack.all, :name, :name do |stack| %>
-        <div>
-          <div class="container">
-            <%= stack.check_box %>
-            <%= stack.value %>
-          </div>
-        </div>
+    <ul>
+      <% game.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
       <% end %>
-    </div>
-
-  <div class="actions">
-    <%= form.submit %>
+    </ul>
   </div>
+<% end %>
+
+<div class="field">
+  <%= form.label :title %><br/>
+  <%= form.text_field :title, autofocus: true, autocomplete: "Title", :maxlength => 25, :size => 20 %>
+</div>
+
+<div class="field">
+  <%= form.label :url %><br/>
+  <%= form.text_field :url, autocomplete: "URL" %>
+</div>
+
+<div class="field">
+  <%= form.label :code %><br/>
+  <%= form.text_field :code, autocomplete: "URL" %>
+</div>
+
+<div class="field">
+  <%= form.label :description %><br/>
+  <%= form.text_field :description, autocomplete: "Description", :maxlength => 250, :size => 20 %>
+</div>
+
+<div class="field">
+  <%= form.label :image %><br/>
+  <%= form.text_field :image, autocomplete: "Image Path" %>
+</div>
+
+<div class="icon-box">
+  <%= form.collection_check_boxes :stacks, Stack.all, :name, :name do |stack| %>
+  <div>
+    <div class="container">
+      <% if game.stacks.select { |lang| lang if lang.name == stack.value }.empty? %>
+        <%= stack.check_box %>
+      <% else %>
+        <%= stack.check_box(checked: true) %>
+      <% end %>
+      <%= stack.value %>
+    </div>
+  </div>
+<% end %>
+</div>
+
+<div class="actions">
+<%= form.submit %>
+</div>
 <% end %>

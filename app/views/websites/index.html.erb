@@ -2,7 +2,7 @@
   <main class="d-flex justify-content-center align-items-center">
     <div class="d-flex flex-column justify-content-start align-items-center text-center mt-3 content">
 
-      <header class="d-inline-flex flex-column fixed-top mt-2 text-center justify-content-center align-items-center border border-warning">
+      <header class="d-inline-flex flex-column fixed-top mt-2 text-center justify-content-center align-items-center">
         <h1>Websites</h1>
         <% if notice || alert %>
           <p id="notice"><%= notice %></p>
@@ -20,6 +20,9 @@
                 </b>
               </h4>
               <div class="w-100"></div>
+              <p class="mobile-description">
+                <%= website.mobile_description %>
+              </p>
               <p class="description">
                 <%= website.description %>
               </p>
@@ -30,6 +33,9 @@
                   <% end %>
                 <% end %>
               </div>
+              <p class="see-more d-md-none">
+                <%= link_to 'See More', website_path(website.title) %>
+              </p>
               <%= link_to 'Visit Website', website.url %>
               <%= link_to 'View Code', website.code %>
               <div class="w-100"></div>
@@ -38,9 +44,7 @@
                 <%= link_to 'Destroy', website, method: :delete, data: { confirm: 'Are you sure?' } %>
               <% end %>
             </div>
-            <div class='img-fluid img-thumbnail mock-up'>
-              <%= image_tag("#{website.image}", :alt => "#{website.title} Mockup") %>
-            </div>
+            <%= image_tag("#{website.image}", :alt => "#{website.title} Mockup", class: 'img-fluid img-thumbnail mock-up') %>
           </div>
         <% end %>
       </div>

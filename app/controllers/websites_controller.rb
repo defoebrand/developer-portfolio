@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class WebsitesController < ApplicationController
-  before_action :set_website, only: %i[show edit update destroy]
+  before_action :set_website, only: %i[edit update destroy]
   before_action :check_is_admin?, only: %i[new edit create update destroy]
 
   # GET /websites
@@ -12,7 +12,9 @@ class WebsitesController < ApplicationController
 
   # GET /websites/1
   # GET /websites/1.json
-  def show; end
+  def show
+    @website = Website.find_by(title: params[:title])
+  end
 
   # GET /websites/new
   def new

@@ -1,4 +1,24 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_website_path(@website) %> |
-<%= link_to 'Back', websites_path %>
+<% if notice %>
+  <p id="notice"><%= notice %></p>
+<% end %>
+<main class="d-flex justify-content-center align-items-center pl-5">
+  <div class="d-flex flex-column justify-content-center align-items-center text-center ml-4">
+    <h4 class='show-title'>
+      <b>
+        <%= @website.title %>
+      </b>
+    </h4>
+    <p class='show-description p-3'>
+      <%= @website.description %>
+    </p>
+    <div class="m-2">
+      <% unless @website.stacks.empty? %>
+        <% @website.stacks.each do |stack|%>
+          <%= content_tag(:p, stack.name, class: "btn btn-#{stack.color}") %>
+        <% end %>
+      <% end %>
+    </div>
+    <%= tag(:br) %>
+    <%= link_to 'Back', websites_path %>
+  </div>
+</main>

@@ -45,7 +45,6 @@ nav {
   // background: linear-gradient(90deg, rgba(52,58,64,1) 0%, rgba(152,152,152,1) 25%, rgba(175,163,177,1) 50%, rgba(152,152,152,1) 75%, rgba(52,58,64,1) 100%);
   // background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(52,58,64,1) 5%, rgba(152,152,152,1) 25%, rgba(175,163,177,1) 50%, rgba(152,152,152,1) 75%, rgba(52,58,64,1) 95%, rgba(0,0,0,1) 100%);
   border: 1px solid #9c440e;
-  overflow-y: hidden;
 
   a {
     position: relative;
@@ -93,4 +92,12 @@ nav {
 
 main {
   border: 1px solid #9c440e;
+}
+
+.show-title {
+  color: #bfcbb9;
+}
+
+.show-description {
+  color: white;
 }
