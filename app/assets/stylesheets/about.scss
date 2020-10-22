@@ -13,8 +13,11 @@
     position: fixed;
     top: 15px;
     bottom: 0;
-    left: 15px;
+    left: 25px;
     right: 0;
+    @media screen and (max-width: 1000px) {
+      left: 15px;
+    }
 
     .me {
       min-width: 140px;
