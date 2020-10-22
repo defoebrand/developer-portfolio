@@ -76,7 +76,7 @@ class AppsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def app_params
-    params.require(:app).permit(:title, :description, :url, :code, :image, stacks: [])
+    params.require(:app).permit(:title, :description, :mobile_description, :url, :code, :image, stacks: [])
   end
 
   def add_stacks(app_params)

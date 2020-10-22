@@ -1,25 +1,31 @@
+- OUGHT TO DO -
 address differences in  pop-up box positioning
 
-clean up GitHub repos
+consider adding amazon aws for images
 
+---------------------------------------------
+
+- WANT TO DO -
 swap color pattern from light to dark
 
+add chat function
 
+---------------------------------------------
+
+- CONSIDER TO DO -
 brief few sentences to describe personality
 what inspires you
 why you're a developer
 
-
 short description in about me section
 languages / frameworks / skills in about me section
 
-add chat function
+---------------------------------------------
 
-consider adding amazon aws for images
+- HAVE TO DO -
 
+fill in projects
 
 add portfolio to websites section
 
-
-short sales pitch in home page on hover of image or on click of button
- - second click for form
+clean up GitHub repos

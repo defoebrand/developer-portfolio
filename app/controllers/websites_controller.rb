@@ -77,7 +77,7 @@ class WebsitesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def website_params
-    params.require(:website).permit(:title, :description, :url, :code, :image, stacks: [])
+    params.require(:website).permit(:title, :description, :mobile_description, :url, :code, :image, stacks: [])
   end
 
   def add_stacks(website_params)
