@@ -50,6 +50,9 @@ nav {
     position: relative;
     // font-size: max(1%, 10px);
     font-size: calc(10px + 0.5vw);
+    @media screen and (max-height: 375px) {
+      font-size: calc(5px + 0.5vw);
+    }
 
     .fa,
     .fab,
@@ -84,7 +87,7 @@ nav {
   }
 
   .break-line {
-    @media screen and (max-height: 360px) {
+    @media screen and (max-height: 475px) {
       display: none;
     }
   }

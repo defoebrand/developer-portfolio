@@ -26,14 +26,14 @@
               <p class="description">
                 <%= website.description %>
               </p>
-              <div class="d-none d-md-block">
-                <% unless website.stacks.empty? %>
+              <% unless website.stacks.empty? %>
+                <div class="stacks">
                   <% website.stacks.each do |stack|%>
                     <%= content_tag(:p, stack.name, class: "btn btn-#{stack.color}") %>
                   <% end %>
-                <% end %>
-              </div>
-              <p class="see-more d-md-none">
+                </div>
+              <% end %>
+              <p class="see-more">
                 <%= link_to 'See More', website_path(website.title) %>
               </p>
               <%= link_to 'Visit Website', website.url %>
