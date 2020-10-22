@@ -39,7 +39,7 @@
         flex-grow: 1;
         width: 200px;
         max-width: 650px;
-        height: auto;
+        // height: auto;
         position: relative;
         // max-height: 100%;
         // margin-bottom: 300px;
@@ -50,7 +50,8 @@
           // position: absolute;
           // top: 0;
           // right: 0;
-          max-width: 100%;
+          width: 100%;
+          max-height: 100%;
         }
       }
     }
