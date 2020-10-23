@@ -1,10 +1,36 @@
-add email contact form to bottom corner
+- OUGHT TO DO -
+address differences in  pop-up box positioning
+ - animate pop-ups
 
-check auto-prefixer for different browser
+create active nav icon for current page
 
-swap color pattern from light to dark
+consider adding amazon aws for images
 
+add project tests with rspec
 
+---------------------------------------------
+
+- WANT TO DO -
+add color scheme changer
+
+add chat function
+
+---------------------------------------------
+
+- CONSIDER TO DO -
 brief few sentences to describe personality
 what inspires you
 why you're a developer
+
+short description in about me section
+languages / frameworks / skills in about me section
+
+add video doing elevator pitch
+
+---------------------------------------------
+
+- HAVE TO DO -
+
+clean up GitHub repos
+
+review project for accessibility enhancement

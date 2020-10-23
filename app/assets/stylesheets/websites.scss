@@ -1,48 +1,96 @@
 // Place all the styles related to the Websites controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
 .websites {
-  // overflow-y: scroll;
   header {
     margin-left: 75px;
   }
 
+  a {
+    color: #117bdd;
+    font-family: Gotham, serif;
+  }
+
   .content {
+    position: fixed;
+    top: 35px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: scroll;
     margin-left: 75px;
 
     h1 {
       color: green;
+      font-family: Helvet, serif;
+      font-weight: 700;
     }
 
-    a {
-      color: blue;
-    }
+    .site-card {
+      width: 80vw;
+      height: 80vh;
 
-    .text {
-      width: 250px;
-
-      .title {
-        color: white;
+      a {
+        white-space: nowrap;
       }
 
-      .description {
-        color: white;
-        // display: none;
-        // @media screen and (min-width: 560px) {
-        //   display: block;
-        // }
-      }
-    }
+      .mock-up {
+        flex-grow: 1;
+        width: 175px;
+        max-width: 650px;
 
-    .mock-up {
-      max-width: 200px;
-      min-width: 100px;
-      height: auto;
-      margin: auto;
+        @media screen and (max-height: 360px) {
+          max-height: 290px;
+        }
+      }
+
+      .text {
+        min-width: 150px;
+        max-width: 650px;
+
+        .description,
+        .mobile-description,
+        .title {
+          color: white;
+        }
+
+        .see-more {
+          a {
+            color: #bfcbb9;
+            text-decoration: none;
+          }
+        }
+      }
     }
 
     .add {
       margin-left: 75px;
     }
   }
+}
+
+@media screen and (min-height: 451px) {
+  .mobile-description,
+  .see-more {
+    display: none;
+  }
+
+  @media screen and (max-width: 700px) {
+    .site-card {
+      min-height: 700px;
+    }
+  }
+}
+
+@media screen and (max-height: 450px) {
+  .description,
+  .stacks {
+    display: none;
+  }
+}
+
+.description_field {
+  line-height: 25px;
+  white-space: normal;
 }

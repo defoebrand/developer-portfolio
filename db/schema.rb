@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_25_161603) do
+ActiveRecord::Schema.define(version: 2020_10_22_103534) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,17 @@ ActiveRecord::Schema.define(version: 2020_09_25_161603) do
   create_table "apps", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "url"
+    t.string "title"
+    t.text "description"
+    t.string "image"
+    t.string "code"
+    t.string "mobile_description"
+  end
+
+  create_table "apps_stacks", id: false, force: :cascade do |t|
+    t.bigint "stack_id", null: false
+    t.bigint "app_id", null: false
   end
 
   create_table "contact_form_submissions", force: :cascade do |t|
@@ -37,6 +48,29 @@ ActiveRecord::Schema.define(version: 2020_09_25_161603) do
   create_table "games", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "url"
+    t.string "title"
+    t.text "description"
+    t.string "image"
+    t.string "code"
+    t.string "mobile_description"
+  end
+
+  create_table "games_stacks", id: false, force: :cascade do |t|
+    t.bigint "stack_id", null: false
+    t.bigint "game_id", null: false
+  end
+
+  create_table "stacks", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "color"
+  end
+
+  create_table "stacks_websites", id: false, force: :cascade do |t|
+    t.bigint "stack_id", null: false
+    t.bigint "website_id", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,6 +82,7 @@ ActiveRecord::Schema.define(version: 2020_09_25_161603) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
+    t.string "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -59,6 +94,8 @@ ActiveRecord::Schema.define(version: 2020_09_25_161603) do
     t.string "title"
     t.text "description"
     t.string "image"
+    t.string "code"
+    t.string "mobile_description"
   end
 
 end

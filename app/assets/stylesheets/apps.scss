@@ -1,16 +1,91 @@
 // Place all the styles related to the Apps controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
 .apps {
-  h1 {
-    color: orange;
+  header {
+    margin-left: 75px;
   }
 
   a {
     color: brown;
+    font-family: Gotham, serif;
   }
 
-  .add {
+  .content {
+    position: fixed;
+    top: 35px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: scroll;
     margin-left: 75px;
+
+    h1 {
+      color: orange;
+      font-family: Helvet, serif;
+      font-weight: 700;
+    }
+
+    .site-card {
+      width: 80vw;
+      height: 80vh;
+
+      a {
+        white-space: nowrap;
+      }
+
+      .mock-up {
+        flex-grow: 1;
+        width: 200px;
+        max-width: 650px;
+
+        @media screen and (max-height: 360px) {
+          max-height: 290px;
+        }
+      }
+
+      .text {
+        min-width: 150px;
+        max-width: 650px;
+
+        .description,
+        .mobile-description,
+        .title {
+          color: white;
+        }
+
+        .see-more {
+          a {
+            color: #bfcbb9;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    .add {
+      margin-left: 75px;
+    }
+  }
+}
+
+@media screen and (min-height: 451px) {
+  .mobile-description,
+  .see-more {
+    display: none;
+  }
+
+  @media screen and (max-width: 700px) {
+    .site-card {
+      min-height: 700px;
+    }
+  }
+}
+
+@media screen and (max-height: 450px) {
+  .description,
+  .stacks {
+    display: none;
   }
 }
