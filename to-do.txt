@@ -1,12 +1,15 @@
 - OUGHT TO DO -
 address differences in  pop-up box positioning
+ - animate pop-ups
+
+create active nav icon for current page
 
 consider adding amazon aws for images
 
 ---------------------------------------------
 
 - WANT TO DO -
-swap color pattern from light to dark
+add color scheme changer
 
 add chat function
 
@@ -19,6 +22,8 @@ why you're a developer
 
 short description in about me section
 languages / frameworks / skills in about me section
+
+add video doing elevator pitch
 
 ---------------------------------------------
 
