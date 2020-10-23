@@ -9,7 +9,7 @@
 
   a {
     color: #117bdd;
-    font-family: Gotham;
+    font-family: Gotham, serif;
   }
 
   .content {
@@ -23,7 +23,7 @@
 
     h1 {
       color: green;
-      font-family: Helvet;
+      font-family: Helvet, serif;
       font-weight: 700;
     }
 
@@ -39,6 +39,7 @@
         flex-grow: 1;
         width: 175px;
         max-width: 650px;
+        
         @media screen and (max-height: 360px) {
           max-height: 290px;
         }
@@ -68,17 +69,20 @@
     }
   }
 }
+
 @media screen and (min-height: 451px) {
   .mobile-description,
   .see-more {
     display: none;
   }
+  
   @media screen and (max-width: 700px) {
     .site-card {
       min-height: 700px;
     }
   }
 }
+
 @media screen and (max-height: 450px) {
   .description,
   .stacks {

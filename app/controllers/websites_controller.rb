@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class WebsitesController < ApplicationController
   before_action :set_website, only: %i[edit update destroy]
   before_action :check_is_admin?, only: %i[new edit create update destroy]

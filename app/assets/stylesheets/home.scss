@@ -5,14 +5,17 @@
   font-family: Charming;
   src: url("/CHAR1B.TTF");
 }
+
 @font-face {
   font-family: Gotham;
   src: url("/GothamBook.ttf");
 }
+
 @font-face {
   font-family: Helvet;
   src: url("/HelveticaNeue Medium.ttf");
 }
+
 @font-face {
   font-family: Provical;
   src: url("/Provicali-w116n.ttf");
@@ -32,7 +35,7 @@
   h1,
   h3,
   h5 {
-    font-family: Provical;
+    font-family: Provical, serif;
     text-shadow: 3px 3px #403446;
   }
 
@@ -81,7 +84,7 @@
   }
 
   .logout {
-    font-family: Charming;
+    font-family: Charming, serif;
     color: white;
     text-decoration: none;
     font-size: 2rem;
@@ -121,6 +124,7 @@
       // opacity: 0.75;
       border-radius: 5px;
       z-index: 1;
+
       @media screen and (max-width: 576px) {
         width: 250px;
         left: calc(-100% + 80px);
@@ -141,6 +145,7 @@
 
     .employee-pop-out {
       left: calc(-100% - 40px);
+
       @media screen and (max-width: 576px) {
         left: calc(-100% + 125px);
         top: calc(-100% - 300px);
@@ -149,15 +154,16 @@
 
     .tutor-pop-out {
       left: calc(-100% - 280px);
+
       @media screen and (max-width: 576px) {
         left: calc(-100% + 50px);
         top: calc(-100% - 350px);
       }
     }
 
-    .employee-pop-out:before,
-    .tutor-pop-out:before,
-    .website-pop-out:before {
+    .employee-pop-out::before,
+    .tutor-pop-out::before,
+    .website-pop-out::before {
       background-color: blue;
       opacity: 0.25;
       top: 0;

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class GamesController < ApplicationController
   before_action :set_game, only: %i[edit update destroy]
   before_action :check_is_admin?, only: %i[new edit create update destroy]

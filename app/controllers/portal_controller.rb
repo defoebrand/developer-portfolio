@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class PortalController < ApplicationController
   before_action :set_contact, only: %i[web_form tutor_form employee_form]
   # GET /portal

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class AppsController < ApplicationController
   before_action :set_app, only: %i[edit update destroy]
   before_action :check_is_admin?, only: %i[new edit create update destroy]

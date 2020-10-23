@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class App < ApplicationRecord
   validates :title, :url, :mobile_description, :description, presence: true
   validates :title, length: {

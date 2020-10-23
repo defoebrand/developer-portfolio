@@ -28,13 +28,14 @@
 
 body {
   // background-color: black;
-  background: rgb(175,163,177);
-  // background: radial-gradient(circle, rgba(175,163,177,1) 0%, rgba(52,58,64,1) 100%);
-  background: radial-gradient(circle, rgba(102,87,118,1) 0%, rgba(40,34,46,1) 100%);
+  background: rgb(175, 163, 177);
+  // background: radial-gradient(circle, rgba(175, 163, 177, 1) 0%, rgba(52, 58, 64, 1) 100%);
+  background: radial-gradient(circle, rgba(102, 87, 118, 1) 0%, rgba(40, 34, 46, 1) 100%);
 }
 
 main {
   height: 100vh;
+  border: 1px solid #9c440e;
 }
 
 nav {
@@ -50,9 +51,11 @@ nav {
     position: relative;
     // font-size: max(1%, 10px);
     font-size: calc(10px + 0.5vw);
+
     @media screen and (max-height: 375px) {
       font-size: calc(7.55px + 0.5vw);
     }
+
     @media screen and (max-height: 300px) {
       font-size: calc(5px + 0.5vw);
     }
@@ -94,10 +97,6 @@ nav {
       display: none;
     }
   }
-}
-
-main {
-  border: 1px solid #9c440e;
 }
 
 .show-title {
