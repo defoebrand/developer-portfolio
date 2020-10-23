@@ -39,3 +39,6 @@ yarn-debug.log*
 .netlify
 
 /ssl_folder
+
+# Ignore test folder - RSpec to be added
+/test

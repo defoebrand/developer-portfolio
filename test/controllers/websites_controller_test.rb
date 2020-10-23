@@ -17,7 +17,7 @@ class WebsitesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create website' do
     assert_difference('Website.count') do
-      post websites_url, params: { website: {  } }
+      post websites_url, params: { website: {} }
     end
 
     assert_redirected_to website_url(Website.last)
@@ -34,7 +34,7 @@ class WebsitesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should update website' do
-    patch website_url(@website), params: { website: {  } }
+    patch website_url(@website), params: { website: {} }
     assert_redirected_to website_url(@website)
   end
 
