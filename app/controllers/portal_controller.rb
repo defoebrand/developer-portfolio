@@ -44,8 +44,6 @@ class PortalController < ApplicationController
     params.require(:contact).permit(:name, :email, :message)
   end
 
-  private
-
   def set_contact
     @contact = Contact.new
   end
