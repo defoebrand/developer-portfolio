@@ -1,17 +1,63 @@
 <%= form_with(model: app, local: true) do |form| %>
-  <% if app.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(app.errors.count, "error") %> prohibited this app from being saved:</h2>
+<% if app.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(app.errors.count, "error") %>
+      prohibited this app from being saved:</h2>
 
-      <ul>
-        <% app.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= form.submit %>
+    <ul>
+      <% app.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
   </div>
+<% end %>
+
+<div class="field">
+  <%= form.label :title %><br/>
+  <%= form.text_field :title, autofocus: true, autocomplete: "Title", :maxlength => 25, :size => 20 %>
+</div>
+
+<div class="field">
+  <%= form.label :url %><br/>
+  <%= form.text_area :url, autocomplete: "URL", size: '45x2' %>
+</div>
+
+<div class="field">
+  <%= form.label :code %><br/>
+  <%= form.text_area :code, autocomplete: "URL", size: '45x2' %>
+</div>
+
+<div class="field">
+  <%= form.label :description %><br/>
+  <%= form.text_area :description, autocomplete: "Description", :maxlength => 250, size: "45x5", class: 'description_field' %>
+</div>
+
+<div class="field">
+  <%= form.label :mobile_description %><br/>
+  <%= form.text_area :mobile_description, autocomplete: "Description", :maxlength => 100, size: "45x2" %>
+</div>
+
+<div class="field">
+  <%= form.label :image %><br/>
+  <%= form.text_area :image, autocomplete: "Image Path", size: '45x3' %>
+</div>
+
+<div class="icon-box">
+  <%= form.collection_check_boxes :stacks, Stack.all, :name, :name do |stack| %>
+  <div>
+    <div class="container">
+      <% if app.stacks.select { |lang| lang if lang.name == stack.value }.empty? %>
+        <%= stack.check_box %>
+      <% else %>
+        <%= stack.check_box(checked: true) %>
+      <% end %>
+      <%= stack.value %>
+    </div>
+  </div>
+<% end %>
+</div>
+
+<div class="actions">
+<%= form.submit %>
+</div>
 <% end %>

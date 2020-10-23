@@ -5,40 +5,40 @@ class WebsitesControllerTest < ActionDispatch::IntegrationTest
     @website = websites(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get websites_url
     assert_response :success
   end
 
-  test "should get new" do
+  test 'should get new' do
     get new_website_url
     assert_response :success
   end
 
-  test "should create website" do
+  test 'should create website' do
     assert_difference('Website.count') do
-      post websites_url, params: { website: {  } }
+      post websites_url, params: { website: {} }
     end
 
     assert_redirected_to website_url(Website.last)
   end
 
-  test "should show website" do
+  test 'should show website' do
     get website_url(@website)
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get edit_website_url(@website)
     assert_response :success
   end
 
-  test "should update website" do
-    patch website_url(@website), params: { website: {  } }
+  test 'should update website' do
+    patch website_url(@website), params: { website: {} }
     assert_redirected_to website_url(@website)
   end
 
-  test "should destroy website" do
+  test 'should destroy website' do
     assert_difference('Website.count', -1) do
       delete website_url(@website)
     end

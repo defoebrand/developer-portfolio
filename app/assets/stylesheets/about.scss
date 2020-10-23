@@ -1,9 +1,44 @@
 .about {
+  a,
   h1 {
-    color: gold;
+    color: white;
   }
 
-  a {
-    color: white;
+  .me,
+  b {
+    color: #bfcbb9;
+  }
+
+  .content {
+    position: fixed;
+    top: 15px;
+    bottom: 0;
+    left: 25px;
+    right: 0;
+
+    @media screen and (min-width: 1000px) {
+      left: 25px;
+    }
+
+    .me {
+      min-width: 140px;
+      overflow-y: auto;
+
+      .iframe-container {
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%;
+      }
+
+      .iframe-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
 }

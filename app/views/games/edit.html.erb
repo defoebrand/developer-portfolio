@@ -1,6 +1,8 @@
+<div class="d-flex flex-column justify-content-center align-items-center my-5">
 <h1>Editing Game</h1>
 
 <%= render 'form', game: @game %>
 
-<%= link_to 'Show', @game %> |
-<%= link_to 'Back', games_path %>
+<%# link_to 'Show', @game %>
+<%= link_to 'Back', games_path, :class => 'mt-3'%>
+</div>

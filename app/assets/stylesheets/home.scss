@@ -1,6 +1,25 @@
 // Place all the styles related to the Portal controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@font-face {
+  font-family: Charming;
+  src: url("/CHAR1B.TTF");
+}
+
+@font-face {
+  font-family: Gotham;
+  src: url("/GothamBook.ttf");
+}
+
+@font-face {
+  font-family: Helvet;
+  src: url("/HelveticaNeue Medium.ttf");
+}
+
+@font-face {
+  font-family: Provical;
+  src: url("/Provicali-w116n.ttf");
+}
 
 .home {
   section {
@@ -10,7 +29,14 @@
   }
 
   h1 {
-    color: rgb(197, 41, 217);
+    color: #c529d9;
+  }
+
+  h1,
+  h3,
+  h5 {
+    font-family: Provical, serif;
+    text-shadow: 3px 3px #403446;
   }
 
   a {
@@ -18,13 +44,23 @@
   }
 
   button {
+    // border-radius: 33%;
+    border: 0;
+    padding: 5px 10px;
+    margin: 10px;
+    font-weight: 700;
+    background-color: lightgray;
+
     a {
-      color: blue;
+      color: #241824;
+      text-decoration: none;
     }
   }
 
   div {
-    background-color: black;
+    // background-color: black;
+    // background-color: rgba(0, 0, 0, 0.15);
+    background-color: transparent;
   }
 
   h3 {
@@ -35,7 +71,113 @@
     color: white;
   }
 
-  button {
-    margin: 2px;
+  h5 {
+    color: #48a9a6;
+  }
+
+  .notice {
+    position: fixed;
+    top: 10px;
+    left: calc(50% - 50px);
+    right: calc(50% - 87.5px);
+    min-width: max-content;
+  }
+
+  .logout {
+    font-family: Charming, serif;
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+    letter-spacing: 0.3rem;
+  }
+
+  .login {
+    color: gray;
+  }
+
+  .content {
+    justify-content: space-around;
+    align-items: center;
+    min-width: 200px;
+    max-width: 500px;
+  }
+
+  .click-for-more-employee,
+  .click-for-more-tutor,
+  .click-for-more-website {
+    border: 1px solid blue;
+    position: relative;
+
+    .employee-pop-out,
+    .tutor-pop-out,
+    .website-pop-out {
+      position: absolute;
+      left: calc(-100% + 100px);
+      top: calc(-100% - 225px);
+      width: 600px;
+      max-width: 80vw;
+      height: auto;
+      border: 1px solid orange;
+      background-color: white;
+      padding: 15px;
+      display: none;
+      // opacity: 0.75;
+      border-radius: 5px;
+      z-index: 1;
+
+      @media screen and (max-width: 576px) {
+        width: 250px;
+        left: calc(-100% + 80px);
+        top: calc(-100% - 250px);
+      }
+
+      a.font-italic {
+        position: relative;
+        z-index: 3;
+      }
+
+      .close-out {
+        position: absolute;
+        top: 0;
+        right: 5px;
+      }
+    }
+
+    .employee-pop-out {
+      left: calc(-100% - 40px);
+
+      @media screen and (max-width: 576px) {
+        left: calc(-100% + 125px);
+        top: calc(-100% - 300px);
+      }
+    }
+
+    .tutor-pop-out {
+      left: calc(-100% - 280px);
+
+      @media screen and (max-width: 576px) {
+        left: calc(-100% + 50px);
+        top: calc(-100% - 350px);
+      }
+    }
+
+    .employee-pop-out::before,
+    .tutor-pop-out::before,
+    .website-pop-out::before {
+      background-color: blue;
+      opacity: 0.25;
+      top: 0;
+      left: 0;
+      position: absolute;
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+
+    .show-pop-out {
+      display: block;
+    }
   }
 }
