@@ -1,1 +1,1 @@
-json.array! @apps, partial: "apps/app", as: :app
+json.array! @apps, partial: 'apps/app', as: :app

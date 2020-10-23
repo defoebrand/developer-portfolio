@@ -1,4 +1,24 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_app_path(@app) %> |
-<%= link_to 'Back', apps_path %>
+<% if notice %>
+  <p id="notice"><%= notice %></p>
+<% end %>
+<main class="d-flex justify-content-center align-items-center pl-5">
+  <div class="d-flex flex-column justify-content-center align-items-center text-center ml-4">
+    <h4 class='show-title'>
+      <b>
+        <%= @app.title %>
+      </b>
+    </h4>
+    <p class='show-description p-3'>
+      <%= @app.description %>
+    </p>
+    <div class="m-2">
+      <% unless @app.stacks.empty? %>
+        <% @app.stacks.each do |stack|%>
+          <%= content_tag(:p, stack.name, class: "btn btn-#{stack.color}") %>
+        <% end %>
+      <% end %>
+    </div>
+    <%= tag(:br) %>
+    <%= link_to 'Back', apps_path %>
+  </div>
+</main>
