@@ -13,6 +13,7 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 */
 // @import "bootstrap-sprockets";
+// @import "bootstrap/scss/bootstrap";
 @import "bootstrap";
 @import "home.scss";
 @import "websites.scss";
@@ -25,26 +26,45 @@
 }
 
 body {
-  background-color: black;
+  // background-color: black;
+  background: rgb(175, 163, 177);
+  // background: radial-gradient(circle, rgba(175, 163, 177, 1) 0%, rgba(52, 58, 64, 1) 100%);
+  background: radial-gradient(circle, rgba(102, 87, 118, 1) 0%, rgba(40, 34, 46, 1) 100%);
 }
 
 main {
   height: 100vh;
+  border: 1px solid #9c440e;
 }
 
 nav {
   height: 100vh;
   padding: 5px;
   top: 0;
+  background: #1c1f22;
+  // background: linear-gradient(90deg, rgba(52,58,64,1) 0%, rgba(152,152,152,1) 25%, rgba(175,163,177,1) 50%, rgba(152,152,152,1) 75%, rgba(52,58,64,1) 100%);
+  // background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(52,58,64,1) 5%, rgba(152,152,152,1) 25%, rgba(175,163,177,1) 50%, rgba(152,152,152,1) 75%, rgba(52,58,64,1) 95%, rgba(0,0,0,1) 100%);
+  border: 1px solid #9c440e;
 
   a {
     position: relative;
+    // font-size: max(1%, 10px);
+    font-size: calc(10px + 0.5vw);
+
+    @media screen and (max-height: 375px) {
+      font-size: calc(7.55px + 0.5vw);
+    }
+
+    @media screen and (max-height: 300px) {
+      font-size: calc(5px + 0.5vw);
+    }
 
     .fa,
     .fab,
     .fas {
       font-size: 2em;
       padding: 10px;
+      text-shadow: 3px 3px #403446;
     }
 
     .fa:hover,
@@ -65,10 +85,32 @@ nav {
       background-color: white;
       border-radius: 5px;
     }
-
   }
 
   a:hover .tip {
     visibility: visible;
   }
+
+  .break-line {
+    @media screen and (max-height: 475px) {
+      display: none;
+    }
+  }
+}
+
+.show-title {
+  color: #bfcbb9;
+}
+
+.show-description {
+  color: white;
+}
+
+.scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scroll::-webkit-scrollbar {
+  display: none;
 }
