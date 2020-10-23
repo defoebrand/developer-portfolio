@@ -6,6 +6,8 @@ create active nav icon for current page
 
 consider adding amazon aws for images
 
+add project tests with rspec
+
 ---------------------------------------------
 
 - WANT TO DO -
@@ -29,8 +31,6 @@ add video doing elevator pitch
 
 - HAVE TO DO -
 
-fill in projects
-
-add portfolio to websites section
-
 clean up GitHub repos
+
+review project for accessibility enhancement
