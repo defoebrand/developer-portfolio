@@ -40,5 +40,3 @@ yarn-debug.log*
 
 /ssl_folder
 
-# Ignore test folder - RSpec to be added
-/test
