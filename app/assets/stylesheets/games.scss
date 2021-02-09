@@ -3,10 +3,6 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .games {
-  header {
-    margin-left: 75px;
-  }
-
   a {
     color: #e4c809;
     font-family: Gotham, serif;
@@ -14,12 +10,11 @@
 
   .content {
     position: fixed;
-    top: 35px;
+    top: 45px;
     bottom: 0;
     left: 0;
     right: 0;
     overflow-y: scroll;
-    margin-left: 75px;
 
     h1 {
       color: red;
@@ -62,10 +57,6 @@
           }
         }
       }
-    }
-
-    .add {
-      margin-left: 75px;
     }
   }
 }
