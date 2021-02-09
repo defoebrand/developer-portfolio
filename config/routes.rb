@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :websites, except: [:show]
   resources :websites, only: [:show], param: :title
   resources :portal
+  resources :nav_links, only: [:index]
   get '/about', to: 'portal#about'
   get '/web_form', to: 'portal#web_form'
   post '/web_form', to: 'portal#web_form_send'

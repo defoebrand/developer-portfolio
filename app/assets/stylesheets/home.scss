@@ -22,12 +22,6 @@
 }
 
 .home {
-  section {
-    width: max-content;
-    top: 0;
-    right: 0;
-  }
-
   h1 {
     color: #c529d9;
   }
@@ -81,18 +75,6 @@
     left: calc(50% - 50px);
     right: calc(50% - 87.5px);
     min-width: max-content;
-  }
-
-  .logout {
-    font-family: Charming, serif;
-    color: white;
-    text-decoration: none;
-    font-size: 2rem;
-    letter-spacing: 0.3rem;
-  }
-
-  .login {
-    color: gray;
   }
 
   .content {

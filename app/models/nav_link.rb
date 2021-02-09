@@ -1,0 +1,2 @@
+class NavLink < ApplicationRecord
+end
