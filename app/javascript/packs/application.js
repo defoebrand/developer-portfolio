@@ -21,36 +21,36 @@ require('channels');
 
 document.addEventListener('turbolinks:load', () => {
   $(document).ready(() => {
-    $('.web-form').mouseover(event => {
+    $('.web-form').mouseover(() => {
       $('.title-change').text('coder');
       $('.interest-change').text('debug code');
     });
 
-    $('.employee-form').mouseover(event => {
+    $('.employee-form').mouseover(() => {
       $('.title-change').text('self-starter');
       $('.interest-change').text('solve problems');
     });
 
-    $('.tutor-form').mouseover(event => {
+    $('.tutor-form').mouseover(() => {
       $('.title-change').text('teacher');
       $('.interest-change').text('help others');
     });
 
-    $('.click-for-more-website').click(event => {
+    $('.click-for-more-website').click(() => {
       // $('.website-pop-out').toggleClass('show-pop-out');
       $('.website-pop-out').toggle();
       $('.employee-pop-out').hide();
       $('.tutor-pop-out').hide();
     });
 
-    $('.click-for-more-employee').click(event => {
+    $('.click-for-more-employee').click(() => {
       // $('.employee-pop-out').toggleClass('show-pop-out');
       $('.employee-pop-out').toggle();
       $('.website-pop-out').hide();
       $('.tutor-pop-out').hide();
     });
 
-    $('.click-for-more-tutor').click(event => {
+    $('.click-for-more-tutor').click(() => {
       // $('.tutor-pop-out').toggleClass('show-pop-out');
       $('.tutor-pop-out').toggle();
       $('.website-pop-out').hide();
