@@ -15,10 +15,10 @@
 // @import "bootstrap-sprockets";
 // @import "bootstrap/scss/bootstrap";
 @import "home.scss";
-@import "websites.scss";
 @import "games.scss";
 @import "about.scss";
 @import "apps.scss";
+@import "websites.scss";
 @import "bootstrap";
 
 * {
@@ -135,10 +135,10 @@ section.signIn {
 }
 
 .navTop {
-  margin-top: 65px;
+  margin-top: 35px;
   overflow: hidden;
   max-width: 100vw;
-  max-height: calc(100vh - 65px);
+  max-height: calc(100vh - 35px);
 }
 
 .navLeft {
@@ -146,4 +146,21 @@ section.signIn {
   overflow: hidden;
   max-width: 100vw;
   max-height: 100vh;
+}
+
+.shiftLeft {
+  margin-left: 50px;
+}
+
+.shiftTop {
+  top: 65px;
+  left: 5px;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  justify-content: flex-start !important;
+  max-width: 25px;
+
+  h1 {
+    margin: 0;
+  }
 }

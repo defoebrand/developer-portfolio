@@ -38,17 +38,26 @@ const NavBar = ({ links }) => {
 
   useEffect(() => {
     const main = document.querySelector('main div');
+    const header = document.querySelector('header');
     const settings = document.querySelector('.signIn');
     if (dimensions.width <= dimensions.height) {
       setDirection(horizDirection);
       main.classList.remove('navLeft');
       main.classList.add('navTop');
+      if (header) {
+        header.classList.remove('shiftLeft');
+        header.classList.add('shiftTop');
+      }
       settings.classList.remove('topRight');
       settings.classList.add('bottomLeft');
     } else {
       setDirection(vertDirection);
       main.classList.remove('navTop');
       main.classList.add('navLeft');
+      if (header) {
+        header.classList.remove('shiftTop');
+        header.classList.add('shiftLeft');
+      }
       settings.classList.remove('bottomLeft');
       settings.classList.add('topRight');
     }
