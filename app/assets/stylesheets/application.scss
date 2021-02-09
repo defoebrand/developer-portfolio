@@ -100,8 +100,6 @@ nav {
 
 section.signIn {
   width: max-content;
-  top: 7.5px;
-  right: 7.5px;
 }
 
 .show-title {
@@ -119,4 +117,19 @@ section.signIn {
 
 .scroll::-webkit-scrollbar {
   display: none;
+}
+
+.topBar {
+  height: auto;
+  width: 100vw;
+}
+
+.topRight {
+  top: 7.5px;
+  right: 7.5px;
+}
+
+.bottomLeft {
+  bottom: 7.5px;
+  left: 7.5px;
 }
