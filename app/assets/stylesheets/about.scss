@@ -4,6 +4,10 @@
     color: white;
   }
 
+  h1 {
+    padding-top: 15px;
+  }
+
   .me,
   b {
     color: #bfcbb9;
@@ -12,7 +16,7 @@
   .content {
     padding: 15px;
     position: fixed;
-    top: 0;
+    top: 5px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -23,7 +27,16 @@
 
       p {
         font-size: calc(10px + 0.5vw);
+        font-weight: 700;
       }
     }
+  }
+
+  .AboutImage {
+    width: 50%;
+    border-radius: 50%;
+    margin: 15px auto;
+    min-width: 100px;
+    max-width: 350px;
   }
 }
