@@ -4,6 +4,10 @@
     color: white;
   }
 
+  h1 {
+    padding-top: 15px;
+  }
+
   .me,
   b {
     color: #bfcbb9;
@@ -25,5 +29,13 @@
         font-size: calc(10px + 0.5vw);
       }
     }
+  }
+
+  .AboutImage {
+    width: 50%;
+    border-radius: 50%;
+    margin: 15px auto;
+    min-width: 100px;
+    max-width: 350px;
   }
 }
