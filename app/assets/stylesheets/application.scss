@@ -15,10 +15,10 @@
 // @import "bootstrap-sprockets";
 // @import "bootstrap/scss/bootstrap";
 @import "home.scss";
-@import "websites.scss";
-@import "games.scss";
-@import "apps.scss";
 @import "about.scss";
+@import "websites.scss";
+@import "apps.scss";
+@import "games.scss";
 @import "bootstrap";
 
 * {
@@ -33,7 +33,7 @@ body {
 }
 
 main {
-  height: 100vh;
+  height: calc(100vh - 2px);
   border: 1px solid #9c440e;
 }
 
@@ -73,7 +73,7 @@ nav {
       filter: invert(100%);
     }
 
-    .tip {
+    .tipLeft {
       position: absolute;
       visibility: hidden;
       top: 15px;
@@ -85,9 +85,26 @@ nav {
       background-color: white;
       border-radius: 5px;
     }
+
+    .tipTop {
+      position: absolute;
+      visibility: hidden;
+      top: 50px;
+      left: 0;
+      min-width: max-content;
+      padding: 2px 5px;
+      color: gray;
+      font-weight: bold;
+      background-color: white;
+      border-radius: 5px;
+    }
   }
 
-  a:hover .tip {
+  a:hover .tipLeft {
+    visibility: visible;
+  }
+
+  a:hover .tipTop {
     visibility: visible;
   }
 
@@ -95,6 +112,23 @@ nav {
     @media screen and (max-height: 475px) {
       display: none;
     }
+  }
+}
+
+section.signIn {
+  width: max-content;
+  z-index: 3;
+
+  .logout {
+    font-family: Charming, serif;
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+    letter-spacing: 0.3rem;
+  }
+
+  .login {
+    color: gray;
   }
 }
 
@@ -113,4 +147,50 @@ nav {
 
 .scroll::-webkit-scrollbar {
   display: none;
+}
+
+.topBar {
+  height: auto;
+  width: 100vw;
+}
+
+.topRight {
+  top: 7.5px;
+  right: 7.5px;
+}
+
+.bottomLeft {
+  bottom: 7.5px;
+  left: 7.5px;
+}
+
+.navTop {
+  margin-top: 35px;
+  overflow: hidden;
+  max-width: 100vw;
+  max-height: calc(100vh - 35px);
+}
+
+.navLeft {
+  margin-left: 50px;
+  overflow: hidden;
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+.shiftLeft {
+  margin-left: 50px;
+}
+
+.shiftTop {
+  top: 65px;
+  left: 5px;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  justify-content: flex-start !important;
+  max-width: 25px;
+
+  h1 {
+    margin: 0;
+  }
 }

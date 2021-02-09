@@ -1,0 +1,23 @@
+<nav class="d-flex flex-column col-sm justify-content-around align-items-center position-absolute">
+  <%= render 'layouts/navItem', icon: '<i class="fa fa-home"></i>', url: '/', name: 'Home'  %>
+
+  <br class="break-line">
+
+  <%= render 'layouts/navItem', icon: '<i class="fas fa-user-tie"></i>', url: '/about', name: 'About Me'  %>
+
+  <br class="break-line">
+
+  <%= render 'layouts/navItem', icon: '<i class="fa fa-code"></i>', url: '/websites', name: 'My Websites'  %>
+  <%= render 'layouts/navItem', icon: '<i class="fas fa-mobile-alt"></i>', url: '/apps', name: 'My Apps'  %>
+  <%= render 'layouts/navItem', icon: '<i class="fa fa-gamepad"></i>', url: '/games', name: 'My Games'  %>
+
+  <br class="break-line">
+  <% @links.sort_by(&:order).each do |link| %>
+      <%= render 'layouts/navItem', icon: "<i class='#{link.icon}'></i>", url: link.url, name: link.name  %>
+  <% end %>
+
+  <%# react_component 'NavItem', {name: 'GitHub', url: 'https://github.com/defoebrand', icon: 'fab fa-github' } %>
+  <%# react_component 'NavItem', {name: 'LinkedIn', url: 'https://www.linkedin.com/in/defoebrand/', icon: 'fab fa-linkedin' } %>
+  <%# react_component 'NavItem', {name: 'Medium', url: 'https://medium.com/@defoebrand', icon: 'fab fa-medium' } %>
+
+</nav> 
