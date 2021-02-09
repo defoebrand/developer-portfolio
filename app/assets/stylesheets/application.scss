@@ -117,6 +117,19 @@ nav {
 
 section.signIn {
   width: max-content;
+  z-index: 3;
+
+  .logout {
+    font-family: Charming, serif;
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+    letter-spacing: 0.3rem;
+  }
+
+  .login {
+    color: gray;
+  }
 }
 
 .show-title {
