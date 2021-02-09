@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_22_103534) do
+ActiveRecord::Schema.define(version: 2021_02_09_131141) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,11 +54,23 @@ ActiveRecord::Schema.define(version: 2020_10_22_103534) do
     t.string "image"
     t.string "code"
     t.string "mobile_description"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_games_on_user_id"
   end
 
   create_table "games_stacks", id: false, force: :cascade do |t|
     t.bigint "stack_id", null: false
     t.bigint "game_id", null: false
+  end
+
+  create_table "nav_links", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
+    t.string "icon"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "order"
+    t.string "direction"
   end
 
   create_table "stacks", force: :cascade do |t|
@@ -98,4 +110,5 @@ ActiveRecord::Schema.define(version: 2020_10_22_103534) do
     t.string "mobile_description"
   end
 
+  add_foreign_key "games", "users"
 end

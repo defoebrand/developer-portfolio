@@ -10,7 +10,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="stylesheet">
   </head>
   <body>
-    <%= render 'layouts/navbar' %>
+    <%# render 'layouts/navbar', links: @links %>
+    <%= react_component 'NavBar', links: NavLink.all %>
     <%= render 'layouts/settings' %>
     <%= yield %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

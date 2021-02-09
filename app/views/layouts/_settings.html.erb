@@ -1,4 +1,4 @@
-<section class="position-absolute d-flex flex-column text-center mt-3 mr-3 signIn">
+<section class="position-absolute d-flex flex-column text-center signIn">
   <% if user_signed_in? %>
     <%= link_to "Hello #{current_user.name}!", destroy_user_session_path, method: :delete, class: 'logout' %>
   <% else %>
