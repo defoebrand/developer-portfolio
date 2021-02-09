@@ -10,6 +10,7 @@ const vertDirection = 'd-flex flex-column col-sm justify-content-around align-it
 
 const NavBar = ({ links }) => {
   const [direction, setDirection] = useState();
+  const [location, setLocation] = useState();
 
   const [dimensions, setDimensions] = useState({
     width: window.innerWidth,
@@ -42,6 +43,7 @@ const NavBar = ({ links }) => {
     const settings = document.querySelector('.signIn');
     if (dimensions.width <= dimensions.height) {
       setDirection(horizDirection);
+      setLocation('top');
       main.classList.remove('navLeft');
       main.classList.add('navTop');
       if (header) {
@@ -52,6 +54,7 @@ const NavBar = ({ links }) => {
       settings.classList.add('bottomLeft');
     } else {
       setDirection(vertDirection);
+      setLocation('left');
       main.classList.remove('navTop');
       main.classList.add('navLeft');
       if (header) {
@@ -73,6 +76,7 @@ const NavBar = ({ links }) => {
             name={link.name}
             url={link.url}
             icon={link.icon}
+            location={location}
           />
         ) : (
           <NavItem
@@ -80,6 +84,7 @@ const NavBar = ({ links }) => {
             name={link.name}
             url={link.url}
             icon={link.icon}
+            location={location}
           />
         )))}
 

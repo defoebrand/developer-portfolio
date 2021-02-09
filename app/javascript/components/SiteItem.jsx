@@ -1,25 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Option = ({ name, url, icon }) => (
-  <a href={url}>
-    <span className="tip">{name}</span>
-    <span>
-      <i className={icon} />
-    </span>
-  </a>
-);
+const Option = ({
+  name, url, icon, location,
+}) => {
+  const tipDirection = location === 'left' ? 'tipLeft' : 'tipTop';
+
+  return (
+    <a href={url}>
+      <span className={tipDirection}>{name}</span>
+      <span>
+        <i className={icon} />
+      </span>
+    </a>
+  );
+};
 
 Option.defaultProps = {
   name: '',
   url: '',
   icon: '',
+  location: 'left',
 };
 
 Option.propTypes = {
   name: PropTypes.string,
   url: PropTypes.string,
   icon: PropTypes.string,
+  location: PropTypes.string,
 };
 
 export default Option;

@@ -73,7 +73,7 @@ nav {
       filter: invert(100%);
     }
 
-    .tip {
+    .tipLeft {
       position: absolute;
       visibility: hidden;
       top: 15px;
@@ -85,9 +85,26 @@ nav {
       background-color: white;
       border-radius: 5px;
     }
+
+    .tipTop {
+      position: absolute;
+      visibility: hidden;
+      top: 50px;
+      left: 0;
+      min-width: max-content;
+      padding: 2px 5px;
+      color: gray;
+      font-weight: bold;
+      background-color: white;
+      border-radius: 5px;
+    }
   }
 
-  a:hover .tip {
+  a:hover .tipLeft {
+    visibility: visible;
+  }
+
+  a:hover .tipTop {
     visibility: visible;
   }
 
