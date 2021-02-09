@@ -37,13 +37,18 @@ const NavBar = ({ links }) => {
   });
 
   useEffect(() => {
+    const main = document.querySelector('main div');
     const settings = document.querySelector('.signIn');
     if (dimensions.width <= dimensions.height) {
       setDirection(horizDirection);
+      main.classList.remove('navLeft');
+      main.classList.add('navTop');
       settings.classList.remove('topRight');
       settings.classList.add('bottomLeft');
     } else {
       setDirection(vertDirection);
+      main.classList.remove('navTop');
+      main.classList.add('navLeft');
       settings.classList.remove('bottomLeft');
       settings.classList.add('topRight');
     }

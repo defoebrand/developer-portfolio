@@ -17,8 +17,8 @@
 @import "home.scss";
 @import "websites.scss";
 @import "games.scss";
-@import "apps.scss";
 @import "about.scss";
+@import "apps.scss";
 @import "bootstrap";
 
 * {
@@ -33,7 +33,7 @@ body {
 }
 
 main {
-  height: 100vh;
+  height: calc(100vh - 2px);
   border: 1px solid #9c440e;
 }
 
@@ -132,4 +132,18 @@ section.signIn {
 .bottomLeft {
   bottom: 7.5px;
   left: 7.5px;
+}
+
+.navTop {
+  margin-top: 65px;
+  overflow: hidden;
+  max-width: 100vw;
+  max-height: calc(100vh - 65px);
+}
+
+.navLeft {
+  margin-left: 50px;
+  overflow: hidden;
+  max-width: 100vw;
+  max-height: 100vh;
 }
