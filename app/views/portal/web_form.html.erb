@@ -1,47 +1,49 @@
 <body class='web_form'>
-  <main class="d-flex justify-content-center align-items-center pl-5">
-    <div class="d-flex flex-column justify-content-center align-items-center my-5 text-center ml-4 content scroll">
-      <h1>Hello!</h1>
-      <p class='p-3'>Thank you for your contacting me.</p>
+  <main class="d-flex justify-content-center align-items-center">
+    <div class="d-flex flex-column justify-content-center align-items-center text-center content">
+      <div  class="container d-flex flex-column me scroll">
+        <h1>Thank you for reaching out to me!</h1>
 
-      <%= form_for :contact do |form| %>
-      <p>
-        Please share your preferred name, a contact email, and brief message.
-        </p>
-        <% if @contact.errors.any? %>
-          <div id="error_explanation">
-            <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+        <%= form_for :contact do |form| %>
+        <p>
+          Please share your preferred name, a contact email, and brief message.
+          </p>
+          <% if @contact.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
 
-            <ul>
-              <% @contact.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-              <% end %>
-            </ul>
+              <ul>
+                <% @contact.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="field">
+            <%= form.label :name %><br />
+            <%= form.text_field :name, autofocus: true, class: 'form_text' %>
+          </div>
+
+          <div class="field">
+            <%= form.label :email %><br />
+            <%= form.text_field :email, class: 'form_text' %>
+          </div>
+
+          <div class="field">
+            <%= form.label :message %><br />
+            <%= form.text_area :message, rows: 6, class: 'form_text' %>
+          </div>
+
+
+          <div class="actions mt-3 text-center">
+            <%=  form.submit "Send" %>
           </div>
         <% end %>
 
-        <div class="field">
-          <%= form.label :name %><br />
-          <%= form.text_field :name, autofocus: true, autocomplete: "Name" %>
-        </div>
-
-        <div class="field">
-          <%= form.label :email %><br />
-          <%= form.text_field :email, autocomplete: "email" %>
-        </div>
-
-        <div class="field">
-          <%= form.label :message %><br />
-          <%= form.text_area :message, rows: 6, cols: 21 %>
-        </div>
-
-
-        <div class="actions mt-3 text-center">
-          <%=  form.submit "Send" %>
-        </div>
-      <% end %>
-
-
+      </div>
     </div>
   </main>
 </body>
+
+
