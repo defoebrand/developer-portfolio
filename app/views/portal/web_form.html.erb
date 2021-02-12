@@ -2,9 +2,12 @@
   <main class="d-flex justify-content-center align-items-center pl-5">
     <div class="d-flex flex-column justify-content-center align-items-center my-5 text-center ml-4">
       <h1>Hello!</h1>
-      <p class='p-3'>Thank you for your interest in having me develop your online presence.</p>
+      <p class='p-3'>Thank you for your contacting me.</p>
 
       <%= form_for :contact do |form| %>
+      <p>
+        Please share your preferred name, a contact email, and brief message.
+        </p>
         <% if @contact.errors.any? %>
           <div id="error_explanation">
             <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
