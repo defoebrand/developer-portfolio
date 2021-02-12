@@ -19,6 +19,7 @@
 @import "websites.scss";
 @import "apps.scss";
 @import "games.scss";
+@import "web_form.scss";
 @import "bootstrap";
 
 * {
@@ -173,7 +174,6 @@ section.signIn {
 
 .navLeft {
   margin-left: 50px;
-  overflow: hidden;
   max-width: 100vw;
   max-height: 100vh;
   padding-right: 25px;

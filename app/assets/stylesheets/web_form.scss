@@ -1,0 +1,22 @@
+.web_form {
+  main {
+    padding-top: 50px;
+
+    h1,
+    p,
+    label {
+      color: #bfcbb9;
+    }
+
+    form {
+      padding: 15px;
+      padding-bottom: 50px;
+    }
+  }
+
+  .navLeft {
+    margin-bottom: 15px !important;
+    overflow-y: scroll !important;
+    padding-top: 50px;
+  }
+}

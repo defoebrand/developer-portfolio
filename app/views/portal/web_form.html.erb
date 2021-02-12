@@ -1,6 +1,6 @@
 <body class='web_form'>
   <main class="d-flex justify-content-center align-items-center pl-5">
-    <div class="d-flex flex-column justify-content-center align-items-center my-5 text-center ml-4">
+    <div class="d-flex flex-column justify-content-center align-items-center my-5 text-center ml-4 content scroll">
       <h1>Hello!</h1>
       <p class='p-3'>Thank you for your contacting me.</p>
 
@@ -32,7 +32,7 @@
 
         <div class="field">
           <%= form.label :message %><br />
-          <%= form.text_field :message, autocomplete: "Message" %>
+          <%= form.text_area :message, autocomplete: "Message" %>
         </div>
 
 
