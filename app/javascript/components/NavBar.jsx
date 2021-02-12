@@ -9,8 +9,10 @@ const horizDirection = 'd-flex col-sm justify-content-around align-items-center 
 const vertDirection = 'd-flex flex-column col-sm justify-content-around align-items-center position-absolute';
 
 const NavBar = ({ links }) => {
-  const [direction, setDirection] = useState();
-  const [location, setLocation] = useState();
+  const [direction, setDirection] = useState(() => (
+    window.innerWidth > window.innerHeight ? vertDirection : horizDirection));
+  const [location, setLocation] = useState(() => (
+    window.innerWidth > window.innerHeight ? 'left' : 'top'));
 
   const [dimensions, setDimensions] = useState({
     width: window.innerWidth,
@@ -27,10 +29,6 @@ const NavBar = ({ links }) => {
       height: window.innerHeight,
     });
   };
-
-  useEffect(() => {
-    testDimensions();
-  }, []);
 
   window.addEventListener('resize', () => {
     clearInterval(movementTimer);
