@@ -1,3 +1,14 @@
+- HAVE TO DO -
+
+clean up GitHub repos
+
+review project for accessibility enhancement
+
+Add svelte / java / tcl to stacks
+
+---------------------------------------------
+
+
 - OUGHT TO DO -
 address differences in  pop-up box positioning
  - animate pop-ups
@@ -29,8 +40,3 @@ add video doing elevator pitch
 
 ---------------------------------------------
 
-- HAVE TO DO -
-
-clean up GitHub repos
-
-review project for accessibility enhancement
