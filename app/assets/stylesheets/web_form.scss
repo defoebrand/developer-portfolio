@@ -1,16 +1,18 @@
 .web_form {
   main {
-    padding-top: 50px;
-
     h1,
     p,
     label {
       color: #bfcbb9;
     }
 
+    h1 {
+      margin-top: 150px;
+    }
+
     form {
       padding: 15px;
-      padding-bottom: 50px;
+      padding-bottom: 25px;
     }
   }
 
