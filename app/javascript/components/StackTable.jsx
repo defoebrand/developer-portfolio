@@ -1,5 +1,4 @@
 import React from 'react';
-// import Table from 'react-bootstrap/Table';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 
@@ -9,7 +8,7 @@ const cardStyle = {
 };
 
 const StackTable = () => (
-  <div className="d-flex flex-wrap justify-content-center align-items-center" style={{ color: 'black' }}>
+  <div className="d-flex flex-wrap justify-content-center align-items-center mb-5" style={{ color: 'black' }}>
     <Card style={cardStyle}>
       <Card.Header style={{ fontWeight: 700 }}>Languages</Card.Header>
       <ListGroup variant="flush">

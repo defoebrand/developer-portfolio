@@ -8,15 +8,12 @@ const style = {
   fontSize: 'calc(20px + 1vw)',
 };
 
-const Message = () => {
-  console.log('hello');
-  return (
-    <form action="/web_form" method="get">
-      <button className="contact-btn" type="submit">
-        CONTACT ME NOW
-      </button>
-    </form>
-  );
-};
+const Message = () => (
+  <form action="/web_form" method="get">
+    <button className="contact-btn" type="submit">
+      CONTACT ME NOW
+    </button>
+  </form>
+);
 
 export default Message;
