@@ -1,0 +1,48 @@
+.web_form {
+  h1,
+  p,
+  label {
+    color: #bfcbb9;
+  }
+
+  h1 {
+    padding-top: 15px;
+  }
+
+  label {
+    margin: 10px auto;
+  }
+
+  form {
+    padding: 15px;
+  }
+
+  .content {
+    padding: 15px;
+    position: fixed;
+    top: 5px;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+
+    .me {
+      min-width: 140px;
+      overflow-y: auto;
+
+      p {
+        font-size: calc(15px + 0.25vw);
+        font-weight: 700;
+      }
+    }
+  }
+
+  .navLeft {
+    padding: 10px !important;
+    top: 0 !important;
+  }
+
+  .form_text {
+    width: 75vw;
+    max-width: 500px;
+  }
+}

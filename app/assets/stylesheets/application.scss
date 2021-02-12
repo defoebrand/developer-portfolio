@@ -14,11 +14,12 @@
 */
 // @import "bootstrap-sprockets";
 // @import "bootstrap/scss/bootstrap";
-@import "about.scss";
-@import "home.scss";
 @import "websites.scss";
+@import "about.scss";
 @import "apps.scss";
 @import "games.scss";
+@import "home.scss";
+@import "web_form.scss";
 @import "bootstrap";
 
 * {
@@ -173,7 +174,6 @@ section.signIn {
 
 .navLeft {
   margin-left: 50px;
-  overflow: hidden;
   max-width: 100vw;
   max-height: 100vh;
   padding-right: 25px;
