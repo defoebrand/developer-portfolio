@@ -194,3 +194,19 @@ section.signIn {
     margin: 0;
   }
 }
+
+.chat {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  color: white !important;
+  font-size: calc(20px + 1vw);
+}
+
+.contact-btn {
+  padding: 7.5px;
+  border-radius: 4px;
+  border: 1px solid lightgray;
+  background-color: gray;
+  color: white;
+}
