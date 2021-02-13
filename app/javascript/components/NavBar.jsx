@@ -42,8 +42,11 @@ const NavBar = ({ links }) => {
     if (dimensions.width <= dimensions.height) {
       setDirection(horizDirection);
       setLocation('top');
-      main.classList.remove('navLeft');
-      main.classList.add('navTop');
+      if (main) {
+        main.classList.remove('navLeft');
+        main.classList.add('navTop');
+      }
+
       if (header) {
         header.classList.remove('shiftLeft');
         header.classList.add('shiftTop');
@@ -53,8 +56,11 @@ const NavBar = ({ links }) => {
     } else {
       setDirection(vertDirection);
       setLocation('left');
-      main.classList.remove('navTop');
-      main.classList.add('navLeft');
+
+      if (main) {
+        main.classList.remove('navTop');
+        main.classList.add('navLeft');
+      }
       if (header) {
         header.classList.remove('shiftTop');
         header.classList.add('shiftLeft');
