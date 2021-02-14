@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   post '/employee_form', to: 'portal#web_form_send'
   get '/tutor_form', to: 'portal#tutor_form'
   post '/tutor_form', to: 'portal#web_form_send'
-  get '/chat', to: 'portal#chat'
+  get '/video_chat', to: 'portal#chat'
   root 'portal#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
