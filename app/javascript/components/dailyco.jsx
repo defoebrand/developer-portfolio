@@ -1,8 +1,10 @@
 import React from 'react';
 import DailyIframe from '@daily-co/daily-js';
 
-const Room = () => {
-  const callFrame = DailyIframe.createFrame();
+const VideoChat = () => {
+  const callFrame = DailyIframe.createFrame({
+    showFullscreenButton: true,
+  });
   callFrame.join({ url: 'https://defoebrand.daily.co/Brandon' });
   return (
     <>
@@ -10,4 +12,4 @@ const Room = () => {
   );
 };
 
-export default Room;
+export default VideoChat;
