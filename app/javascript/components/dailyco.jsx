@@ -29,7 +29,7 @@ const VideoChat = ({ token, classRoom }) => {
   });
   if (token) {
     callFrame.join({ url: `https://defoebrand.daily.co/${classRoom}`, token });
-    console.log('we gotta token!');
+    console.log('we got a token!');
   } else {
     callFrame.join({ url: `https://defoebrand.daily.co/${classRoom}` });
     console.log('No token!');

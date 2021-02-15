@@ -49,7 +49,7 @@
           <% else %>
           <%= form_for :contact, url: request_call_path, method: :post do |form| %>
           <p>
-            Please share your preferred name, a contact email, and a brief message.
+            Please share your name and a brief message.
             </p>
             <% if @contact.errors.any? %>
               <div id="error_explanation">
