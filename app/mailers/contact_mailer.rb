@@ -9,9 +9,9 @@ class ContactMailer < ApplicationMailer
     mail(to: me, subject: 'Email from Portfolio')
   end
 
-  def enter_room(recipient)
+  def enter_room(recipient, sender)
     @contact = recipient
-    @sender = current_user
+    @sender = sender
     mail(to: @contact.email, subject: 'Join me for a call')
   end
 

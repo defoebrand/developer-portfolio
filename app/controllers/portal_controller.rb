@@ -63,7 +63,7 @@ class PortalController < ApplicationController
     email_token = create_email_token(current_user.room_name, @contact.name)
     @contact.update(room_token: email_token)
     @contact.update(room_name: current_user.room_name)
-    ContactMailer.with(user: @contact).enter_room(@contact).deliver_now
+    ContactMailer.with(user: @contact).enter_room(@contact, current_user).deliver_now
     # Contact.first.destroy
     # flash[:notice] = 'Hello'
     # render :index
