@@ -6,7 +6,7 @@ class ContactMailer < ApplicationMailer
     me = 'defoe.brand@gmail.com'
     @contact = contact
     # @url = 'http://example.com/login'
-    mail(to: me, subject: 'Email from Portfolio')
+    mail(to: me, subject: "Email from #{contact.name}")
   end
 
   def enter_room(recipient, sender)
@@ -20,6 +20,6 @@ class ContactMailer < ApplicationMailer
     me = 'defoe.brand@gmail.com'
     @contact = contact
     # @url = 'http://example.com/login'
-    mail(to: me, subject: 'Incoming Call from <%= contact.name %>')
+    mail(to: me, subject: "Incoming Call from #{contact.name}")
   end
 end
