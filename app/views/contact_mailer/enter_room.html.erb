@@ -5,7 +5,7 @@
   </head>
   <body>
     <h1>Hello <%= @contact.name %>!</h1>
-    <p>This is <%= current_user.name %></p>
+    <p>This is <%= @sender.name %></p>
     <p><%= @contact.message %></p>
     <p>Click
       <a href='https://www.defoebrand.com/video_chat?format=<%= @contact.room_name %>&room_token=<%= @contact.room_token %>'>

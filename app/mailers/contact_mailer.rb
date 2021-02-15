@@ -11,6 +11,7 @@ class ContactMailer < ApplicationMailer
 
   def enter_room(recipient)
     @contact = recipient
+    @sender = current_user
     mail(to: @contact.email, subject: 'Join me for a call')
   end
 

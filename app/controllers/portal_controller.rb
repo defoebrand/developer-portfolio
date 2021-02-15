@@ -58,6 +58,7 @@ class PortalController < ApplicationController
   end
 
   def start_room
+    p current_user
     @contact = Contact.create(contact_params)
     email_token = create_email_token(current_user.room_name, @contact.name)
     @contact.update(room_token: email_token)
@@ -146,7 +147,7 @@ class PortalController < ApplicationController
 
   def create_token(params)
     puts params
-    # return params[:room_token] if params[:room_token]
+    return params[:room_token] if params[:room_token]
 
     url = URI('https://api.daily.co/v1/meeting-tokens')
 
@@ -163,7 +164,8 @@ class PortalController < ApplicationController
 
     token_id = JSON.parse(token)['token']
 
-    params[:room_token] || token_id
+    # params[:room_token] || token_id
+    token_id
   end
 
   def create_email_token(roomname, contact)
