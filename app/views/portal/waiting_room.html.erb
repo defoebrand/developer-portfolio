@@ -5,7 +5,7 @@
         <div class=''>
         
           <% if user_signed_in? %>
-          <%= form_for :contact do |form| %>
+          <%= form_for :contact, url: waiting_room_path, method: :post do |form| %>
           <p>
             Enter your name, the recipient's email, and a brief message.
             </p>

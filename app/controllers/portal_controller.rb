@@ -1,5 +1,11 @@
 class PortalController < ApplicationController
   before_action :set_contact, only: %i[web_form tutor_form employee_form]
+
+  require 'uri'
+  require 'net/http'
+  require 'openssl'
+  require 'securerandom'
+
   # GET /portal
   # GET /portal.json
   def index; end
@@ -43,7 +49,12 @@ class PortalController < ApplicationController
   end
 
   def meeting_room
-    @uuid = 'uniqueStringHere'
+    p params
+    # callee = User.find_by(name: params[:format])
+    # contact = Contact.find(params[:format])
+    @token = create_token
+    @classroom = params[:format]
+    # @token = this_is_a_test(params[:format])
   end
 
   def start_room
@@ -52,7 +63,11 @@ class PortalController < ApplicationController
     # Contact.first.destroy
     # flash[:notice] = 'Hello'
     # render :index
-    redirect_to video_chat_path, notice: 'Your message was sent!'
+    # this_is_a_test
+    # call_id = SecureRandom.uuid
+    # call_id = @contact.name
+    # create_room(call_id)
+    redirect_to video_chat_path(current_user.name), notice: 'Your message was sent!'
   end
 
   def send_request
@@ -62,7 +77,89 @@ class PortalController < ApplicationController
     # Contact.first.destroy
     # flash[:notice] = 'Hello'
     # render :index
-    redirect_to video_chat_path, notice: 'Your message was sent!'
+    # this_is_a_test('Brandon')
+    redirect_to video_chat_path('Brandon'), notice: 'Your message was sent!'
+  end
+
+  def this_is_a_test(name)
+    p name
+    # name = 'Classroom' if name == 'Brandon'
+    url = URI('https://api.daily.co/v1/meeting-tokens')
+
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+    request = Net::HTTP::Post.new(url)
+    request['Content-Type'] = 'application/json'
+    request['Authorization'] = 'Bearer 84a3583043afeb6745cf0b8f1e885f38b871d494b3d95e9260f4fa5235cd516c'
+    request.body = '{"properties":{"room_name":"' + name + '"}}'
+
+    response = http.request(request)
+    puts response.read_body
+    response.read_body
+  end
+
+  def create_room(room_id)
+    url = URI('https://api.daily.co/v1/rooms')
+
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+    request = Net::HTTP::Post.new(url)
+    request['Content-Type'] = 'application/json'
+    request['Authorization'] = 'Bearer 84a3583043afeb6745cf0b8f1e885f38b871d494b3d95e9260f4fa5235cd516c'
+    request.body = '{"properties":{"autojoin":true,"enable_screenshare":true,"enable_knocking":true,"enable_chat":true,
+    "start_video_off":false,"start_audio_off":false},"privacy":"private","name":"' + room_id + '"}'
+    response = http.request(request)
+    puts response.read_body
+    hash = JSON.parse response.read_body
+    if hash['id']
+      url = URI('https://api.daily.co/v1/meeting-tokens')
+
+      http = Net::HTTP.new(url.host, url.port)
+      http.use_ssl = true
+      http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+      request = Net::HTTP::Post.new(url)
+      request['Content-Type'] = 'application/json'
+      request['Authorization'] = 'Bearer 84a3583043afeb6745cf0b8f1e885f38b871d494b3d95e9260f4fa5235cd516c'
+      request.body = '{"properties":{"room_name":"' + room_id + '","is_owner":true,"user_name":"Brandon","enable_screenshare":true,"start_video_off":false,"start_audio_off":false}}'
+
+      response = http.request(request)
+      # puts response.read_body
+      token = response.read_body
+      puts 'here is the token'
+      token_id = JSON.parse(token)['token']
+      # puts token_id['token']
+    end
+    # localStorage['room_token'] = token_id['token']
+    # puts token_id['token']
+    redirect_to "/video_chat/#{token_id}", notice: 'Your message was sent!'
+    # response.read_body
+  end
+
+  def create_token
+    url = URI('https://api.daily.co/v1/meeting-tokens')
+
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+    request = Net::HTTP::Post.new(url)
+    request['Content-Type'] = 'application/json'
+    request['Authorization'] = 'Bearer 84a3583043afeb6745cf0b8f1e885f38b871d494b3d95e9260f4fa5235cd516c'
+    request.body = user_signed_in? ? current_user.room_token : ''
+    # '{"properties":{"room_name":"' + className + '","is_owner":false,"user_name":"Brandon","enable_screenshare":true,"start_video_off":false,"start_audio_off":false}}'
+    puts request.body
+    response = http.request(request)
+    token = response.read_body
+    puts token
+
+    token_id = JSON.parse(token)['token']
+
+    token_id
   end
 
   private
