@@ -11,7 +11,7 @@
   </head>
   <body>
     <%# render 'layouts/navbar', links: @links %>
-    <%= react_component 'NavBar', links: NavLink.all %>
+    <%= react_component 'NavBar', links: NavLink.all, user: user_signed_in? %>
     <%= render 'layouts/settings' %>
     <%= yield %>
     <%= render 'layouts/messenger' %>
