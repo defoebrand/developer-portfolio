@@ -70,7 +70,8 @@ class PortalController < ApplicationController
     # call_id = SecureRandom.uuid
     # call_id = @contact.name
     # create_room(call_id)
-    redirect_to video_chat_path(current_user.room_name), notice: 'Your message was sent!'
+    redirect_to video_chat_path('format' => current_user.room_name, 'room_token' => current_user.room_token),
+                notice: 'Your message was sent!'
   end
 
   def send_request
