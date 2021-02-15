@@ -5,21 +5,13 @@
   </head>
   <body>
     <h1>Hello <%= @contact.name %>!</h1>
-    <p>This is Brandon</p>
+    <p>This is <%= current_user.name %></p>
     <p><%= @contact.message %></p>
-    <a href='https://www.defoebrand.com/video_chat?format=<%= @contact.room_name %>&room_token=<%= @contact.room_token %>'>Click to Enter Room</a>
-    <p><%= @contact.room_token %></p>
-    <!-- <h1>Welcome to example.com, <%# @contact.name %></h1>
-    <p>
-      You have successfully signed up to example.com,
-      your username is: <%# @contact.name %>.<br>
-      This is an html form
+    <p>Click
+      <a href='https://www.defoebrand.com/video_chat?format=<%= @contact.room_name %>&room_token=<%= @contact.room_token %>'>
+        <strong> Here </strong>
+      </a>
+      to enter the room.
     </p>
-    <p>
-      To login to the site, just follow this link: <%# @url %>.
-    </p>
-    <p>Thanks for joining and have a great day!</p>
-    <p><%# @contact.email %></p>
-    <p><%#  @contact.message %></p> -->
   </body>
 </html>

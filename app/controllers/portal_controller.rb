@@ -59,7 +59,7 @@ class PortalController < ApplicationController
 
   def start_room
     @contact = Contact.create(contact_params)
-    email_token = create_email_token(current_user.room_name)
+    email_token = create_email_token(current_user.room_name, @contact.name)
     @contact.update(room_token: email_token)
     @contact.update(room_name: current_user.room_name)
     ContactMailer.with(user: @contact).enter_room(@contact).deliver_now
@@ -145,7 +145,8 @@ class PortalController < ApplicationController
   end
 
   def create_token(params)
-    puts params[:room_token]
+    return params[:room_token] if params[:room_token]
+
     url = URI('https://api.daily.co/v1/meeting-tokens')
 
     http = Net::HTTP.new(url.host, url.port)
@@ -163,10 +164,10 @@ class PortalController < ApplicationController
 
     token_id = JSON.parse(token)['token']
 
-    params[:room_token] || token_id
+    token_id
   end
 
-  def create_email_token(roomname)
+  def create_email_token(roomname, contact)
     url = URI('https://api.daily.co/v1/meeting-tokens')
 
     http = Net::HTTP.new(url.host, url.port)
@@ -176,7 +177,9 @@ class PortalController < ApplicationController
     request = Net::HTTP::Post.new(url)
     request['Content-Type'] = 'application/json'
     request['Authorization'] = 'Bearer 84a3583043afeb6745cf0b8f1e885f38b871d494b3d95e9260f4fa5235cd516c'
-    request.body = '{"properties":{"room_name":"' + roomname + '","is_owner":false,"user_name":"Brandon","enable_screenshare":true,"start_video_off":false,"start_audio_off":false}}'
+    request.body = '{"properties":{"room_name":"' +
+                   roomname + '","is_owner":false,"user_name":"' +
+                   contact + '","enable_screenshare":true,"start_video_off":false,"start_audio_off":false}}'
     puts request.body
     response = http.request(request)
     token = response.read_body
