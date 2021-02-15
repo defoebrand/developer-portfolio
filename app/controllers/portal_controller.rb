@@ -145,6 +145,7 @@ class PortalController < ApplicationController
   end
 
   def create_token(params)
+    puts params[:room_token]
     url = URI('https://api.daily.co/v1/meeting-tokens')
 
     http = Net::HTTP.new(url.host, url.port)
@@ -162,7 +163,7 @@ class PortalController < ApplicationController
 
     token_id = JSON.parse(token)['token']
 
-    token_id
+    params[:room_token] || token_id
   end
 
   def create_email_token(roomname)
