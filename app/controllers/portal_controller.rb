@@ -52,7 +52,7 @@ class PortalController < ApplicationController
     p params
     # callee = User.find_by(name: params[:format])
     # contact = Contact.find(params[:format])
-    @token = create_token(params[:room_token])
+    @token = create_token(params)
     @classroom = params[:format]
     # @token = this_is_a_test(params[:format])
   end
@@ -70,7 +70,7 @@ class PortalController < ApplicationController
     # call_id = SecureRandom.uuid
     # call_id = @contact.name
     # create_room(call_id)
-    redirect_to video_chat_path('format' => current_user.room_name, 'room_token' => current_user.room_token),
+    redirect_to video_chat_path(current_user.room_name),
                 notice: 'Your message was sent!'
   end
 
@@ -144,7 +144,7 @@ class PortalController < ApplicationController
     # response.read_body
   end
 
-  def create_token(token)
+  def create_token(params)
     url = URI('https://api.daily.co/v1/meeting-tokens')
 
     http = Net::HTTP.new(url.host, url.port)
@@ -154,7 +154,7 @@ class PortalController < ApplicationController
     request = Net::HTTP::Post.new(url)
     request['Content-Type'] = 'application/json'
     request['Authorization'] = 'Bearer 84a3583043afeb6745cf0b8f1e885f38b871d494b3d95e9260f4fa5235cd516c'
-    request.body = user_signed_in? ? current_user.room_token : token
+    request.body = user_signed_in? ? current_user.room_token : params[:room_token]
     puts request.body
     response = http.request(request)
     token = response.read_body
