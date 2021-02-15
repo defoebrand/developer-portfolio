@@ -145,7 +145,8 @@ class PortalController < ApplicationController
   end
 
   def create_token(params)
-    return params[:room_token] if params[:room_token]
+    puts params
+    # return params[:room_token] if params[:room_token]
 
     url = URI('https://api.daily.co/v1/meeting-tokens')
 
@@ -157,14 +158,12 @@ class PortalController < ApplicationController
     request['Content-Type'] = 'application/json'
     request['Authorization'] = 'Bearer 84a3583043afeb6745cf0b8f1e885f38b871d494b3d95e9260f4fa5235cd516c'
     request.body = user_signed_in? ? current_user.room_token : params[:room_token]
-    puts request.body
     response = http.request(request)
     token = response.read_body
-    puts token
 
     token_id = JSON.parse(token)['token']
 
-    token_id
+    params[:room_token] || token_id
   end
 
   def create_email_token(roomname, contact)
