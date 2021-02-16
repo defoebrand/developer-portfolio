@@ -28,7 +28,7 @@
 
             <div class="field">
               <%= form.label :email %><br />
-              <%= form.text_field :email, class: 'form_text' %>
+              <%= form.text_field :email,  value: '', class: 'form_text' %>
             </div>
 
             <div class="field">
@@ -41,6 +41,15 @@
               <%=  form.submit "Create Room" %>
             </div>
           <% end %>
+          
+        <div class='my-3'>
+          <% @students.each do |student| %>
+            <div>  
+              <p><%= student.name %>: <%= student.email %></p>
+            </div>
+          <% end %>
+        </div>
+        
           
             <!-- <h1>Start Meeting</h1>
             <form action='/video_chat'>

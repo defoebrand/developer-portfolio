@@ -39,6 +39,7 @@ class PortalController < ApplicationController
 
   def waiting_room
     @contact = Contact.new
+    @students = Student.all
     # @contact = Contact.create(contact_params)
     # # @user = Contact.first
     # ContactMailer.with(user: @user).contact_me.deliver_now
@@ -191,6 +192,16 @@ class PortalController < ApplicationController
     token_id
   end
 
+  def schedule
+    @students = Student.all
+    @student = Student.new
+  end
+
+  def new_student
+    @student = Student.create(student_params)
+    redirect_to '/schedule'
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
@@ -201,6 +212,10 @@ class PortalController < ApplicationController
   # Only allow a list of trusted parameters through.
   def contact_params
     params.require(:contact).permit(:name, :email, :message)
+  end
+
+  def student_params
+    params.require(:student).permit(:name, :email)
   end
 
   def set_contact
