@@ -3,15 +3,9 @@
     <div class="d-flex flex-column justify-content-center align-items-center text-center content">
       <div class="container d-flex flex-column me scroll">
         <div class='my-3'>
-          <% @students.each do |student| %>
-            <div>  
-              <p><%= student.name %>: <%= student.email %></p>
-            </div>
-          <% end %>
-          
           <%= form_for :student do |form| %>
           <p>
-            Please share your preferred name, a contact email, and brief message.
+            Please add the preferred name and a contact email.
             </p>
             <% if @student.errors.any? %>
               <div id="error_explanation">
@@ -37,9 +31,16 @@
 
 
             <div class="actions mt-3 text-center">
-              <%=  form.submit "Send" %>
+              <%=  form.submit "Add Student" %>
             </div>
           <% end %>
+          
+          <div class='mt-5'>  
+          <% @students.each do |student| %>
+              <p><%= student.name %>: <%= student.email %></p>
+          <% end %>
+        </div>
+          
 
         </div>
       </div>
