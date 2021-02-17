@@ -217,7 +217,7 @@ class PortalController < ApplicationController
   end
 
   def student_params
-    params.require(:student).permit(:name, :email)
+    params.require(:student).permit(:name, :email, :time_slot)
   end
 
   def set_contact
