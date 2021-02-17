@@ -160,7 +160,9 @@ class PortalController < ApplicationController
     request = Net::HTTP::Post.new(url)
     request['Content-Type'] = 'application/json'
     request['Authorization'] = 'Bearer 84a3583043afeb6745cf0b8f1e885f38b871d494b3d95e9260f4fa5235cd516c'
+    p 'hello'
     request.body = user_signed_in? ? current_user.room_token : params[:room_token]
+    p request.body
     response = http.request(request)
     token = response.read_body
 
