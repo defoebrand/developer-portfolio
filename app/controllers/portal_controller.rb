@@ -54,12 +54,14 @@ class PortalController < ApplicationController
     # callee = User.find_by(name: params[:format])
     # contact = Contact.find(params[:format])
     @token = create_token(params)
+    p 'hello'
+    p @token
     @classroom = params[:format]
     # @token = this_is_a_test(params[:format])
   end
 
   def start_room
-    p current_user
+    # p current_user
     @contact = Contact.create(contact_params)
     email_token = create_email_token(current_user.room_name, @contact.name)
     @contact.update(room_token: email_token)
@@ -77,7 +79,7 @@ class PortalController < ApplicationController
   end
 
   def send_request
-    p params
+    # p params
     @contact = Contact.create(contact_params)
     ContactMailer.with(user: @contact).request_call(@contact).deliver_now
     # Contact.first.destroy
@@ -88,7 +90,7 @@ class PortalController < ApplicationController
   end
 
   def this_is_a_test(name)
-    p name
+    # p name
     # name = 'Classroom' if name == 'Brandon'
     url = URI('https://api.daily.co/v1/meeting-tokens')
 
@@ -147,8 +149,8 @@ class PortalController < ApplicationController
   end
 
   def create_token(params)
-    puts params
-    puts current_user
+    # puts params
+    # puts current_user
     return params[:room_token] if params[:room_token]
 
     url = URI('https://api.daily.co/v1/meeting-tokens')
@@ -160,9 +162,9 @@ class PortalController < ApplicationController
     request = Net::HTTP::Post.new(url)
     request['Content-Type'] = 'application/json'
     request['Authorization'] = 'Bearer 84a3583043afeb6745cf0b8f1e885f38b871d494b3d95e9260f4fa5235cd516c'
-    p 'hello'
+    # p 'hello'
     request.body = user_signed_in? ? current_user.room_token : params[:room_token]
-    p request.body
+    # p request.body
     response = http.request(request)
     token = response.read_body
 
