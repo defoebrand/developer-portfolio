@@ -27,6 +27,7 @@ const StackTable = () => (
         <ListGroup.Item>MS Access*</ListGroup.Item>
         <ListGroup.Item>{' '}</ListGroup.Item>
         <ListGroup.Item>{' '}</ListGroup.Item>
+        <ListGroup.Item>{' '}</ListGroup.Item>
       </ListGroup>
     </Card>
     <Card style={cardStyle}>
@@ -37,6 +38,7 @@ const StackTable = () => (
         <ListGroup.Item>React / Redux</ListGroup.Item>
         <ListGroup.Item>Rails</ListGroup.Item>
         <ListGroup.Item>{' '}</ListGroup.Item>
+        <ListGroup.Item>{' '}</ListGroup.Item>
       </ListGroup>
     </Card>
     <Card style={cardStyle}>
@@ -45,6 +47,7 @@ const StackTable = () => (
         <ListGroup.Item>Jest</ListGroup.Item>
         <ListGroup.Item>React Testing Library</ListGroup.Item>
         <ListGroup.Item>RSpec / MiniTest</ListGroup.Item>
+        <ListGroup.Item>{' '}</ListGroup.Item>
         <ListGroup.Item>{' '}</ListGroup.Item>
         <ListGroup.Item>{' '}</ListGroup.Item>
       </ListGroup>

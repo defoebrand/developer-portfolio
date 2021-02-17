@@ -7,7 +7,7 @@
           <% if user_signed_in? %>
           <%= form_for :contact, url: waiting_room_path, method: :post do |form| %>
           <p>
-            Enter your name, the recipient's email, and a brief message.
+            Enter the recipient's name, the recipient's email, and a brief message.
             </p>
             <% if @contact.errors.any? %>
               <div id="error_explanation">
