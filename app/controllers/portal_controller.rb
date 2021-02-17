@@ -148,6 +148,7 @@ class PortalController < ApplicationController
 
   def create_token(params)
     puts params
+    puts current_user
     return params[:room_token] if params[:room_token]
 
     url = URI('https://api.daily.co/v1/meeting-tokens')
