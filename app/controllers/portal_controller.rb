@@ -50,12 +50,9 @@ class PortalController < ApplicationController
   end
 
   def meeting_room
-    p params
     # callee = User.find_by(name: params[:format])
     # contact = Contact.find(params[:format])
     @token = create_token(params)
-    p 'hello'
-    p @token
     @classroom = params[:format]
     # @token = this_is_a_test(params[:format])
   end
@@ -86,7 +83,7 @@ class PortalController < ApplicationController
     # flash[:notice] = 'Hello'
     # render :index
     # this_is_a_test('Brandon')
-    redirect_to video_chat_path('Brandon'), notice: 'Your message was sent!'
+    redirect_to video_chat_path('Conference_Room'), notice: 'Your message was sent!'
   end
 
   def this_is_a_test(name)
@@ -162,14 +159,14 @@ class PortalController < ApplicationController
     request = Net::HTTP::Post.new(url)
     request['Content-Type'] = 'application/json'
     request['Authorization'] = 'Bearer 84a3583043afeb6745cf0b8f1e885f38b871d494b3d95e9260f4fa5235cd516c'
-    p 'hello'
+    # p 'hello'
     request.body = user_signed_in? ? current_user.room_token : params[:room_token]
-    p request.body
+    # p request.body
     response = http.request(request)
     token = response.read_body
-    p token
+    # p token
     token_id = JSON.parse(token)['token']
-    p token_id
+    # p token_id
     # params[:room_token] || token_id
     token_id
   end
