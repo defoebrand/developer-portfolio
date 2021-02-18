@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :websites, except: [:show]
   resources :websites, only: [:show], param: :title
   resources :portal
-  resources :students, only: [:show, :new]
+  resources :students, only: [:show, :new, :create]
   resources :nav_links, only: [:index]
   get '/about', to: 'portal#about'
   get '/web_form', to: 'portal#web_form'
@@ -27,7 +27,6 @@ Rails.application.routes.draw do
   post '/request_call', to: 'portal#send_request'
   get '/video_chat', to: 'portal#meeting_room'
   get '/schedule', to: 'students#index'
-  post '/schedule', to: 'portal#new_student'
   root 'portal#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -11,4 +11,15 @@ class StudentsController < ApplicationController
   def new
     @student = Student.new
   end
+
+  def create
+    @student = Student.create(student_params)
+    redirect_to '/schedule'
+  end
+
+  private
+
+  def student_params
+    params.require(:student).permit(:name, :email, :time_slot)
+  end
 end

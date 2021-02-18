@@ -6,8 +6,6 @@
           <h1><%= @student.name %></h1>
           <div class='mt-5'>  
               <p><%= @student.email %></p>
-              <p><%= @student.date_slot %></p>
-              <p><%= @student.time_slot %></p>
           </div>
         <h2>Edit User</h2>
           <%= form_for :student do |form| %>
@@ -36,15 +34,15 @@
               <%= form.text_field :email, class: 'form_text' %>
             </div>
             
-            <div class="field">
-              <%= form.label :date_slot %><br />
-              <%= form.date_select :date_slot, class: 'form_text' %>
+            <!-- <div class="field">
+              <%#= form.label :date_slot %><br />
+              <%#= form.date_select :date_slot, class: 'form_text' %>
             </div>
 
             <div class="field">
-              <%= form.label :time_slot %><br />
-              <%= form.time_select :time_slot, class: 'form_text' %>
-            </div>
+              <%#= form.label :time_slot %><br />
+              <%#= form.time_select :time_slot, class: 'form_text' %>
+            </div> -->
             
             <div class="actions mt-3 text-center">
               <%=  form.submit "Add Student" %>

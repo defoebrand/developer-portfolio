@@ -3,8 +3,8 @@
     <div class="d-flex flex-column justify-content-center align-items-center text-center content">
       <div class="container d-flex flex-column me scroll">
         <div class='my-3'>
-          <%= react_component 'StudentForm', student: @student %>
-          <%= form_for :student do |form| %>
+          <%#= react_component 'StudentForm', student: @student %>
+          <%= form_for :student, url: students_path, method: :post do |form| %>
           <p>
             Please add the preferred name and a contact email.
             </p>
@@ -30,15 +30,15 @@
               <%= form.text_field :email, class: 'form_text' %>
             </div>
             
-            <div class="field">
-              <%= form.label :date_slot %><br />
-              <%= form.date_select :date_slot, class: 'form_text' %>
+            <!-- <div class="field">
+              <%#= form.label :date_slot %><br />
+              <%#= form.date_select :date_slot, class: 'form_text' %>
             </div>
 
             <div class="field">
-              <%= form.label :time_slot %><br />
-              <%= form.time_select :time_slot, class: 'form_text' %>
-            </div>
+              <%#= form.label :time_slot %><br />
+              <%#= form.time_select :time_slot, class: 'form_text' %>
+            </div> -->
             
             <div class="actions mt-3 text-center">
               <%=  form.submit "Add Student" %>
