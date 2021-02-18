@@ -1,0 +1,18 @@
+<body class="about">
+  <main class="d-flex justify-content-center align-items-center">
+    <div class="d-flex flex-column justify-content-center align-items-center text-center content">
+      <div class="container d-flex flex-column me scroll">
+        <div class='my-3'>
+          <div class='mt-5'>  
+            <% @students.each do |student| %>
+              <%= link_to student.name, student_url(student) %>
+              <br/>
+              <!-- <p><%#= student.name %>: <%#= student.email %></p> -->
+            <% end %>
+          </div>
+          <%= link_to 'Add Student', new_student_path, class: 'btn' %>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>

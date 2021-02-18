@@ -44,9 +44,17 @@
           
         <div class='my-3'>
           <% @students.each do |student| %>
-            <div>  
-              <p><%= student.name %>: <%= student.email %></p>
-            </div>
+            <!-- <div>   -->
+              <!-- <button href="/student/#{student}" class='my-2'> -->
+                <%= student.name %>
+              <!-- </button> -->
+              <%= student.email %>
+              
+              <br />
+              
+
+              <!-- <p><%#= student.name %>: <%#= student.email %></p> -->
+            <!-- </div> -->
           <% end %>
         </div>
         

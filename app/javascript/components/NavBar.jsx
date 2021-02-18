@@ -142,7 +142,7 @@ NavBar.propTypes = {
   links: PropTypes.arrayOf(
     PropTypes.shape(),
   ),
-  user: PropTypes.boolean,
+  user: PropTypes.bool,
 };
 
 NavBar.defaultProps = {
