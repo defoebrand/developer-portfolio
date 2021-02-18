@@ -17,6 +17,12 @@ class StudentsController < ApplicationController
     redirect_to '/schedule'
   end
 
+  def update
+    @student = Student. find(params[:id])
+    @student.update(student_params)
+    redirect_to schedule_path
+  end
+
   private
 
   def student_params

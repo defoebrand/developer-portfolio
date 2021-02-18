@@ -8,7 +8,7 @@
               <p><%= @student.email %></p>
           </div>
         <h2>Edit User</h2>
-          <%= form_for :student do |form| %>
+          <%= form_for :student, url: student_path, method: :put do |form| %>
           <p>
             Please add the preferred name and a contact email.
             </p>
@@ -45,7 +45,7 @@
             </div> -->
             
             <div class="actions mt-3 text-center">
-              <%=  form.submit "Add Student" %>
+              <%=  form.submit "Update Student" %>
             </div>
           <% end %>
           
