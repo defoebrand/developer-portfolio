@@ -1,2 +1,0 @@
-class AppoitmentsController < ApplicationController
-end

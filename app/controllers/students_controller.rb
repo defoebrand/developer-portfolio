@@ -1,11 +1,14 @@
 class StudentsController < ApplicationController
   def index
+    @appointments = Appointment.all
     @students = Student.all
     @student = Student.new
   end
 
   def show
     @student = Student.find(params[:id])
+    @appointment = Appointment.new
+    @teacher = current_user
   end
 
   def new
