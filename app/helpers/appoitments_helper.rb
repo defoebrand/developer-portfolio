@@ -1,0 +1,2 @@
+module AppoitmentsHelper
+end
