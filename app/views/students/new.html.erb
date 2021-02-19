@@ -39,6 +39,8 @@
               <%#= form.label :time_slot %><br />
               <%#= form.time_select :time_slot, class: 'form_text' %>
             </div> -->
+            <%= form.hidden_field :teacher_id, value: @teacher.id  %>
+
             
             <div class="actions mt-3 text-center">
               <%=  form.submit "Add Student" %>

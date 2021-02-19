@@ -13,8 +13,9 @@ class AppointmentsController < ApplicationController
     # new_params['time'] = new_time
     # p new_params
     # @appointment = Appointment.create!(new_params)
+    @student = Student.find(appt_params[:student_id])
     @appointment = Appointment.create!(appt_params)
-    redirect_to '/schedule'
+    redirect_to student_path(@student)
   end
 
   private

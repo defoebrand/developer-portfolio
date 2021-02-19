@@ -4,7 +4,7 @@
       <div class="container d-flex flex-column me scroll">
         <div class='my-3'>
           <% @appointments.each do |appointment| %>
-            <p><%= appointment.date %>: <%= appointment.time %></p>
+            <p><%= appointment.date.strftime("%^a") %> | <%= appointment.date %>: <%= appointment.time.strftime("%H:%M:%S") %></p> 
             <br/>
           <% end %>
             <h1><%= @student.name %></h1>
@@ -36,7 +36,7 @@
           <% end %>
             
         <h2 class='mt-5'>Edit User</h2>
-          <%= form_for :student, url: student_path, method: :put do |form| %>
+          <%= form_for :student, url: student_path, method: :patch do |form| %>
           <p>
             Please add the preferred name and a contact email.
             </p>
@@ -55,6 +55,7 @@
             <div class="field">
               <%= form.text_field :name, autofocus: true, class: 'form_text' %>
               <%= form.text_field :email, class: 'form_text' %>
+              <%= form.hidden_field :teacher_id, value: @student.teacher_id  %>
               <%=  form.submit "Update Student" %>
             </div>
           <% end %>

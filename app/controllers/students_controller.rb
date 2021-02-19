@@ -14,22 +14,23 @@ class StudentsController < ApplicationController
 
   def new
     @student = Student.new
+    @teacher = current_user
   end
 
   def create
-    @student = Student.create(student_params)
-    redirect_to '/schedule'
+    @student = Student.create!(student_params)
+    redirect_to student_path(@student)
   end
 
   def update
     @student = Student. find(params[:id])
-    @student.update(student_params)
-    redirect_to schedule_path
+    @student.update!(student_params)
+    redirect_to student_path(@student)
   end
 
   private
 
   def student_params
-    params.require(:student).permit(:name, :email, :time_slot)
+    params.require(:student).permit(:name, :email, :teacher_id, :time_slot)
   end
 end
