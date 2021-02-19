@@ -9,7 +9,6 @@
             <h3><%= @appointment.date %> -<%= @appointment.time.strftime("%H:%M:%S") %>  </h3>
               <p class='mb-5'><%= @appointment.notes %> </p>
               <%= form_for :appointment, url: appointment_path(@appointment), method: :patch do |form| %>
-              <%#= form_for :appointment do |form| %>
                 <p class='mt-5'>Please re-enter any necessary changes to the notes. Be sure to copy original notes into text field as any updates will replace all current notes.</p>
                 <% if @appointment.errors.any? %>
                   <div id="error_explanation">

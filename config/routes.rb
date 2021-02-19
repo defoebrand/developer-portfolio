@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   get '/video_chat', to: 'portal#meeting_room'
   get '/schedule', to: 'appointments#schedule'
   get '/contacts', to: 'students#index'
+  post '/update_student', to: 'students#update'
   root 'portal#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

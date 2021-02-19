@@ -4,12 +4,9 @@
       <div class="container d-flex flex-column me scroll">
         <div class='my-3'>
           <div class='mt-5'>  
-            
-            <%# <%= react_component 'AppointmentBook', appointments: @appointments %>
             <% @students.each do |student| %>
-              <%= link_to student.name, student_url(student) %>
+              <h2><%= link_to student.name, student_url(student) %></h2>
               <br/>
-              <!-- <p><%#= student.name %>: <%#= student.email %></p> -->
             <% end %>
           </div>
           <%= link_to 'Add Student', new_student_path, class: 'btn' %>

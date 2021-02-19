@@ -13,16 +13,6 @@ class PortalController < ApplicationController
     # @contact = Contact.new
   end
 
-  # GET /tutor_form
-  def tutor_form
-    # @contact = Contact.new
-  end
-
-  # GET /employee_form
-  def employee_form
-    # @contact = Contact.new
-  end
-
   # POST /web_form
   def web_form_send
     @contact = Contact.create(contact_params)

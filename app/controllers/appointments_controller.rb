@@ -10,14 +10,6 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-    # new_date = Date.parse(appt_params['date'])
-    # new_time = Time.parse(appt_params['time'], new_date)
-    # p new_time
-    # appt_params['time'] = Time.parse(appt_params['time'], Date.parse(appt_params['date']))
-    # new_params = appt_params.except(:time)
-    # new_params['time'] = new_time
-    # p new_params
-    # @appointment = Appointment.create!(new_params)
     @student = Student.find(appt_params[:student_id])
     @appointment = Appointment.create!(appt_params)
     redirect_to student_path(@student)

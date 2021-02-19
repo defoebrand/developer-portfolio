@@ -5,93 +5,77 @@
         <div class=''>
         
           <% if user_signed_in? %>
-          <%= form_for :contact, url: waiting_room_path, method: :post do |form| %>
-          <p>
-            Enter the recipient's name, the recipient's email, and a brief message.
-            </p>
-            <% if @contact.errors.any? %>
-              <div id="error_explanation">
-                <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+            <%= form_for :contact, url: waiting_room_path, method: :post do |form| %>
+              <p>Enter the recipient's name, the recipient's email, and a brief message.</p>
+              <% if @contact.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
 
-                <ul>
-                  <% @contact.errors.full_messages.each do |message| %>
-                    <li><%= message %></li>
-                  <% end %>
-                </ul>
+                  <ul>
+                    <% @contact.errors.full_messages.each do |message| %>
+                      <li><%= message %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              <% end %>
+
+              <div class="field">
+                <%= form.label :name %><br />
+                <%= form.text_field :name, autofocus: true, class: 'form_text' %>
+              </div>
+
+              <div class="field">
+                <%= form.label :email %><br />
+                <%= form.text_field :email,  value: '', class: 'form_text' %>
+              </div>
+
+              <div class="field">
+                <%= form.label :message %><br />
+                <%= form.text_area :message, rows: 6, class: 'form_text' %>
+              </div>
+
+
+              <div class="actions mt-3 text-center">
+                <%=  form.submit "Create Room" %>
               </div>
             <% end %>
-
-            <div class="field">
-              <%= form.label :name %><br />
-              <%= form.text_field :name, autofocus: true, class: 'form_text' %>
-            </div>
-
-            <div class="field">
-              <%= form.label :email %><br />
-              <%= form.text_field :email,  value: '', class: 'form_text' %>
-            </div>
-
-            <div class="field">
-              <%= form.label :message %><br />
-              <%= form.text_area :message, rows: 6, class: 'form_text' %>
-            </div>
-
-
-            <div class="actions mt-3 text-center">
-              <%=  form.submit "Create Room" %>
-            </div>
-          <% end %>
-          
-        <div class='my-3'>
-          <% @appointments.sort_by{|appt|appt.time}.sort_by{|appt| appt.date}.each do |appointment| %>
-            <% if (appointment.time.hour > Time.now.hour) && (appointment.date.day == Date.today.day)%>
-               <p><%= appointment.time.strftime("%H:%M") %> - <%= appointment.student.name %> - <%=  appointment.student.email %></p> 
-               <p><%= appointment.notes %></p>
+          <div class='my-3'>
+            <% @appointments.sort_by{|appt|appt.time}.sort_by{|appt| appt.date}.each do |appointment| %>
+              <% if (appointment.time.hour > Time.now.hour) && (appointment.date.day == Date.today.day)%>
+                 <p><%= appointment.time.strftime("%H:%M") %> - <%= appointment.student.name %> - <%=  appointment.student.email %></p> 
+                 <p><%= appointment.notes %></p>
+              <% end %>
             <% end %>
-          <% end %>
-      
-          
-            <!-- <h1>Start Meeting</h1>
-            <form action='/video_chat'>
-              <input type='submit' value='Create Room'></input>
-            </form> -->
           <% else %>
-          <%= form_for :contact, url: request_call_path, method: :post do |form| %>
-          <p>
-            Please share your name and a brief message.
-            </p>
-            <% if @contact.errors.any? %>
-              <div id="error_explanation">
-                <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+            <%= form_for :contact, url: request_call_path, method: :post do |form| %>
+              <p>Please share your name and a brief message.</p>
+              <% if @contact.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
 
-                <ul>
-                  <% @contact.errors.full_messages.each do |message| %>
-                    <li><%= message %></li>
-                  <% end %>
-                </ul>
+                  <ul>
+                    <% @contact.errors.full_messages.each do |message| %>
+                      <li><%= message %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              <% end %>
+
+              <div class="field">
+                <%= form.label :name %><br />
+                <%= form.text_field :name, autofocus: true, class: 'form_text' %>
+              </div>
+
+              <div class="field">
+                <%= form.label :message %><br />
+                <%= form.text_area :message, rows: 6, class: 'form_text' %>
+              </div>
+
+
+              <div class="actions mt-3 text-center">
+                <%=  form.submit "Start Call" %>
               </div>
             <% end %>
-
-            <div class="field">
-              <%= form.label :name %><br />
-              <%= form.text_field :name, autofocus: true, class: 'form_text' %>
-            </div>
-
-            <div class="field">
-              <%= form.label :message %><br />
-              <%= form.text_area :message, rows: 6, class: 'form_text' %>
-            </div>
-
-
-            <div class="actions mt-3 text-center">
-              <%=  form.submit "Start Call" %>
-            </div>
-          <% end %>
-          
-            <!-- <h1>Join Meeting</h1>
-            <form action='/video_chat'>
-              <input type='submit' value='Join Room'></input>
-            </form> -->
           <% end %>
         </div>
       </div>
