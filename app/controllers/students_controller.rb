@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
   def index
-    @appointments = Appointment.all
+    @appointments = Appointment.all # .where('date == ? AND time > ?', Date.new, Time.now)
     @students = Student.all
     @student = Student.new
   end
@@ -8,6 +8,7 @@ class StudentsController < ApplicationController
   def show
     @student = Student.find(params[:id])
     @appointment = Appointment.new
+    @appointments = @student.appointments
     @teacher = current_user
   end
 

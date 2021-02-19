@@ -7,8 +7,11 @@
             
             <%# <%= react_component 'AppointmentBook', appointments: @appointments %>
             <% @appointments.each do |appointment| %>
-              <p><%= appointment.date %>: <%= appointment.date %> - <%= link_to appointment.student.name, student_url(appointment.student) %></p>
-              <br/>
+            <% if (appointment.time.hour > Time.now.hour) && (appointment.date.day >= Date.today.day)%>
+               <p><%= appointment.date.strftime("%^a") %> | <%= appointment.date %>: <%= appointment.time.strftime("%H:%M:%S") %> - <%= link_to appointment.student.name, student_url(appointment.student) %></p> 
+
+               <br/>
+              <% end %>
             <% end %>
             <% @students.each do |student| %>
               <%= link_to student.name, student_url(student) %>

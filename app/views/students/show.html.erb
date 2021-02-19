@@ -3,6 +3,10 @@
     <div class="d-flex flex-column justify-content-center align-items-center text-center content">
       <div class="container d-flex flex-column me scroll">
         <div class='my-3'>
+          <% @appointments.each do |appointment| %>
+            <p><%= appointment.date %>: <%= appointment.time %></p>
+            <br/>
+          <% end %>
             <h1><%= @student.name %></h1>
             <p><%= @student.email %></p>
           

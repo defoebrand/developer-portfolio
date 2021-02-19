@@ -49,6 +49,10 @@
                 <%= student.name %>
               <!-- </button> -->
               <%= student.email %>
+              <% if student.appointments.third  && student.appointments.third.date == Date.today %>
+              <%= student.appointments.third.time %>
+              <%#= Date.yesterday %>
+              <% end %>
               
               <br />
               
