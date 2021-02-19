@@ -64,6 +64,8 @@
               <%= form.date_field :date, class: 'form_text' %>
               <%= form.time_field :time, class: 'form_text' %>
               <%=  form.submit "Add Appointment" %>
+              <br/>
+              <%= form.text_area :notes, class: 'form_text mt-4' %>
             </div>
           <% end %>
           
