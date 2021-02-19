@@ -43,25 +43,12 @@
           <% end %>
           
         <div class='my-3'>
-          <% @students.each do |student| %>
-            <!-- <div>   -->
-              <!-- <button href="/student/#{student}" class='my-2'> -->
-                <%= student.name %>
-              <!-- </button> -->
-              <%= student.email %>
-              <% if student.appointments.third  && student.appointments.third.date == Date.today %>
-              <%= student.appointments.third.time %>
-              <%#= Date.yesterday %>
-              <% end %>
-              
-              <br />
-              
-
-              <!-- <p><%#= student.name %>: <%#= student.email %></p> -->
-            <!-- </div> -->
+          <% @appointments.sort_by{|appt|appt.time}.sort_by{|appt| appt.date}.each do |appointment| %>
+            <% if (appointment.time.hour > Time.now.hour) && (appointment.date.day == Date.today.day)%>
+               <p><%= appointment.time.strftime("%H:%M") %> - <%= appointment.student.name %> - <%=  appointment.student.email %></p> 
+            <% end %>
           <% end %>
-        </div>
-        
+      
           
             <!-- <h1>Start Meeting</h1>
             <form action='/video_chat'>

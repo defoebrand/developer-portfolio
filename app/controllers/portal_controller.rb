@@ -35,7 +35,8 @@ class PortalController < ApplicationController
 
   def waiting_room
     @contact = Contact.new
-    @students = Student.all
+    # @students = Student.all
+    @appointments = Appointment.all
     # @contact = Contact.create(contact_params)
     # # @user = Contact.first
     # ContactMailer.with(user: @user).contact_me.deliver_now

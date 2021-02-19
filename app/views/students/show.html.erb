@@ -38,7 +38,7 @@
         <h2 class='mt-5'>Edit User</h2>
           <%= form_for :student, url: student_path, method: :patch do |form| %>
           <p>
-            Please add the preferred name and a contact email.
+            Please enter the preferred name and contact email.
             </p>
             <% if @student.errors.any? %>
               <div id="error_explanation">
