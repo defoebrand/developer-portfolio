@@ -4,6 +4,11 @@ class AppointmentsController < ApplicationController
     render json: @appointments
   end
 
+  def show
+    @appointment = Appointment.find(params[:id])
+    # @appointments = Appointment.new
+  end
+
   def create
     # new_date = Date.parse(appt_params['date'])
     # new_time = Time.parse(appt_params['time'], new_date)
@@ -18,6 +23,12 @@ class AppointmentsController < ApplicationController
     redirect_to student_path(@student)
   end
 
+  def update
+    @appointment = Appointment.find(params[:id])
+    @appointment.update!(appt_params)
+    redirect_to appointment_path(@appointment)
+  end
+
   def schedule
     @appointments = Appointment.all # .where('date == ? AND time > ?', Date.new, Time.now)
     @students = Student.all
@@ -27,6 +38,6 @@ class AppointmentsController < ApplicationController
   private
 
   def appt_params
-    params.require(:appointment).permit(:date, :time, :user_id, :student_id)
+    params.require(:appointment).permit(:date, :time, :user_id, :student_id, :notes)
   end
 end

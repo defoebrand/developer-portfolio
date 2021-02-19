@@ -46,6 +46,7 @@
           <% @appointments.sort_by{|appt|appt.time}.sort_by{|appt| appt.date}.each do |appointment| %>
             <% if (appointment.time.hour > Time.now.hour) && (appointment.date.day == Date.today.day)%>
                <p><%= appointment.time.strftime("%H:%M") %> - <%= appointment.student.name %> - <%=  appointment.student.email %></p> 
+               <p><%= appointment.notes %></p>
             <% end %>
           <% end %>
       

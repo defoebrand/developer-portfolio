@@ -3,38 +3,8 @@
     <div class="d-flex flex-column justify-content-center align-items-center text-center content">
       <div class="container d-flex flex-column me scroll">
         <div class='my-3'>
-          <% @appointments.each do |appointment| %>
-            <p><%= appointment.date.strftime("%^a") %> | <%= appointment.date %>: <%= appointment.time.strftime("%H:%M:%S") %></p> 
-            <br/>
-          <% end %>
-            <h1><%= @student.name %></h1>
-            <p><%= @student.email %></p>
-          
-          <%= form_for :appointment, url: appointments_path, method: :post do |form| %>
-            <p class='mt-4'>
-              Please add appointment date and time.
-            </p>
-            <% if @appointment.errors.any? %>
-            <div id="error_explanation">
-              <h2><%= pluralize(@appointment.errors.count, "error") %> prohibited this contact from being saved:</h2>
-              
-              <ul>
-                <% @appointment.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-                <% end %>
-              </ul>
-            </div>
-            <% end %>
-            
-            <div class="field">
-              <%= form.hidden_field :student_id, value: @student.id  %>
-              <%= form.hidden_field :user_id, value: @teacher.id  %>
-              <%= form.date_field :date, class: 'form_text' %>
-              <%= form.time_field :time, class: 'form_text' %>
-              <%=  form.submit "Add Appointment" %>
-            </div>
-          <% end %>
-            
+          <h1><%= @student.name %></h1>
+          <p><%= @student.email %></p>
         <h2 class='mt-5'>Edit User</h2>
           <%= form_for :student, url: student_path, method: :patch do |form| %>
           <p>
@@ -59,6 +29,45 @@
               <%=  form.submit "Update Student" %>
             </div>
           <% end %>
+          <br/>
+
+          <div class='mt-5'>
+            <% @appointments.each do |appointment| %>
+            <p><%= appointment.date.strftime("%^a") %> | <%= appointment.date %>: <%= appointment.time.strftime("%H:%M:%S") %>
+            <small><%= link_to 'View', appointment_path(appointment), class: 'btn'%> </small>
+            </p>
+            <br/>
+            <% end %>
+          </div>
+
+          
+          <%= form_for :appointment, url: appointments_path, method: :post do |form| %>
+            <p>
+              Please add appointment date and time.
+            </p>
+            <% if @appointment.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@appointment.errors.count, "error") %> prohibited this contact from being saved:</h2>
+              
+              <ul>
+                <% @appointment.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+            <% end %>
+            
+            <div class="field">
+              <%= form.hidden_field :student_id, value: @student.id  %>
+              <%= form.hidden_field :user_id, value: @teacher.id  %>
+              <%= form.date_field :date, class: 'form_text' %>
+              <%= form.time_field :time, class: 'form_text' %>
+              <%=  form.submit "Add Appointment" %>
+            </div>
+          <% end %>
+          
+          <br/>
+
 
         </div>
       </div>
