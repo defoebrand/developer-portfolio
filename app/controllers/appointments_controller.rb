@@ -18,6 +18,12 @@ class AppointmentsController < ApplicationController
     redirect_to student_path(@student)
   end
 
+  def schedule
+    @appointments = Appointment.all # .where('date == ? AND time > ?', Date.new, Time.now)
+    @students = Student.all
+    @student = Student.new
+  end
+
   private
 
   def appt_params

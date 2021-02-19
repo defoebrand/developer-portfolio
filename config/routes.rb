@@ -27,7 +27,8 @@ Rails.application.routes.draw do
   post '/waiting_room', to: 'portal#start_room'
   post '/request_call', to: 'portal#send_request'
   get '/video_chat', to: 'portal#meeting_room'
-  get '/schedule', to: 'students#index'
+  get '/schedule', to: 'appointments#schedule'
+  get '/contacts', to: 'students#index'
   root 'portal#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
