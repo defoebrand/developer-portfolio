@@ -5,7 +5,7 @@
         <div class='my-3'>
           <div class='mt-5'>  
             <% @appointments.sort_by{|appt|appt.time}.sort_by{|appt| appt.date}.each do |appointment| %>
-              <% if (appointment.date.day > Date.today.day) || (appointment.date.day == Date.today.day) && (appointment.time.hour > Time.now.hour) %>
+              <% if (appointment.date >= Date.today) && (appointment.time.hour > Time.now.hour) %>
                  <p><%= appointment.date.strftime("%^a") %> | <%= appointment.date %>: <%= appointment.time.strftime("%H:%M:%S") %> - <%= link_to appointment.student.name, student_url(appointment.student) %> <small><%= link_to 'Notes', appointment_path(appointment.id), class: 'btn' %></small></p> 
                  <br/>
               <% end %>
