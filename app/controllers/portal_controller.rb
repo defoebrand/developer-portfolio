@@ -46,20 +46,24 @@ class PortalController < ApplicationController
 
   def start_room
     # p current_user
-    @contact = Contact.create(contact_params)
-    email_token = create_email_token(current_user.room_name, @contact.name)
-    @contact.update(room_token: email_token)
-    @contact.update(room_name: current_user.room_name)
-    ContactMailer.with(user: @contact).enter_room(@contact, current_user).deliver_now
+    p contact_params
+    # @contact = Contact.create(contact_params)
+    # email_token = create_email_token(current_user.room_name, contact_params[:name])
+    # @contact.update(room_token: email_token)
+    # @contact.update(room_name: current_user.room_name)
+    # ContactMailer.with(user: contact_params[:name]).enter_room(contact_params, current_user).deliver_now
     # Contact.first.destroy
     # flash[:notice] = 'Hello'
     # render :index
     # this_is_a_test
     # call_id = SecureRandom.uuid
     # call_id = @contact.name
-    # create_room(call_id)
-    redirect_to video_chat_path(current_user.room_name),
-                notice: 'Your message was sent!'
+    room_name = 'with_Brandon'
+    create_room(room_name)
+    # redirect_to video_chat_path(call_id),
+    #             notice: 'Your message was sent!'
+    # redirect_to video_chat_path(current_user.room_name),
+    #             notice: 'Your message was sent!'
   end
 
   def send_request
