@@ -59,7 +59,9 @@ module PortalHelper
     request['Authorization'] = 'Bearer 84a3583043afeb6745cf0b8f1e885f38b871d494b3d95e9260f4fa5235cd516c'
     request.body = '{"properties":{"autojoin":true,"enable_screenshare":true,"enable_knocking":false,"enable_chat":true,
     "redirect_on_meeting_exit":"https://www.defoebrand.com/schedule",
-      "start_video_off":false,"start_audio_off":false},"privacy":"private","name":"' + room_name + '"}'
+    "start_video_off":false,"start_audio_off":false},"privacy":"private","name":"' + room_name + '"}'
+    response = http.request(request)
+    puts response.body
 
     redirect_to video_chat_path(room_name),
                 notice: 'Your message was sent!'
