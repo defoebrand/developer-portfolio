@@ -6,7 +6,6 @@ class AppointmentsController < ApplicationController
 
   def show
     @appointment = Appointment.find(params[:id])
-    # @appointments = Appointment.new
   end
 
   def create
@@ -22,7 +21,7 @@ class AppointmentsController < ApplicationController
   end
 
   def schedule
-    @appointments = Appointment.all # .where('date == ? AND time > ?', Date.new, Time.now)
+    @appointments = Appointment.all
     @students = Student.all
     @student = Student.new
   end

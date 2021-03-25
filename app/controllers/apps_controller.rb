@@ -2,28 +2,18 @@ class AppsController < ApplicationController
   before_action :set_app, only: %i[edit update destroy]
   before_action :check_is_admin?, only: %i[new edit create update destroy]
 
-  # GET /apps
-  # GET /apps.json
   def index
     @apps = App.all
   end
 
-  # GET /apps/1
-  # GET /apps/1.json
   def show
     @app = App.find_by(title: params[:title])
   end
 
-  # GET /apps/new
   def new
     @app = App.new
   end
 
-  # GET /apps/1/edit
-  def edit; end
-
-  # POST /apps
-  # POST /apps.json
   def create
     @app = App.new(app_params.except(:stacks))
 
@@ -39,8 +29,6 @@ class AppsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /apps/1
-  # PATCH/PUT /apps/1.json
   def update
     respond_to do |format|
       if @app.update(app_params.except(:stacks))
@@ -54,8 +42,6 @@ class AppsController < ApplicationController
     end
   end
 
-  # DELETE /apps/1
-  # DELETE /apps/1.json
   def destroy
     @app.stacks.clear
     @app.destroy
@@ -67,12 +53,10 @@ class AppsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_app
     @app = App.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def app_params
     params.require(:app).permit(:title, :description, :mobile_description, :url, :code, :image, stacks: [])
   end
@@ -83,7 +67,7 @@ class AppsController < ApplicationController
     app_params.slice(:stacks).values.flatten.each do |stack_name|
       @array << stack_name unless stack_name.empty?
     end
-    @stacks = Stack.all # eager_load(:tracktions)
+    @stacks = Stack.all
     @array.size.times do |xyz|
       @app.stacks << @stacks.find_by(name: @array[xyz])
     end
