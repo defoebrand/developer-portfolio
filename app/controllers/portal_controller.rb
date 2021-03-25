@@ -18,9 +18,14 @@ class PortalController < ApplicationController
   end
 
   def start_room
+    @contact = Contact.find_or_create_by(email: contact_params[:email])
+    unless @contact.room_token
+      email_token = create_email_token(current_user.room_name, @contact.name)
+      @contact.update(room_token: email_token)
+    end
+    @contact.update(room_name: current_user.room_name) unless @contact.room_name == current_user.room_name
     ContactMailer.with(user: @contact).enter_room(@contact, current_user).deliver_now
-    room_name = 'with_Brandon'
-    create_room(room_name)
+    create_room(current_user.room_name)
   end
 
   def send_request
