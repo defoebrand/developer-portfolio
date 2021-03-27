@@ -5,6 +5,7 @@
 # below each fixture, per the syntax in the comments below
 
 good_game:
+  id: 1
   url: http://www.google.com
   title: Test Game Title
   description: Test Game Desc
