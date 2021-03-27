@@ -1,0 +1,58 @@
+<body class="about">
+  <main class="d-flex justify-content-center align-items-center">
+    <div class="d-flex flex-column justify-content-center align-items-center text-center content">
+      <div class="container d-flex flex-column me scroll">
+        <div class='my-3'>
+          <%= form_for :student do |form| %>
+          <p>
+            Please add the preferred name and a contact email.
+            </p>
+            <% if @student.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@student.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+                <ul>
+                  <% @student.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+
+            <div class="field">
+              <%= form.label :name %><br />
+              <%= form.text_field :name, autofocus: true, class: 'form_text' %>
+            </div>
+
+            <div class="field">
+              <%= form.label :email %><br />
+              <%= form.text_field :email, class: 'form_text' %>
+            </div>
+            
+            <div class="field">
+              <%= form.label :date_slot %><br />
+              <%= form.date_select :date_slot, class: 'form_text' %>
+            </div>
+
+            <div class="field">
+              <%= form.label :time_slot %><br />
+              <%= form.time_select :time_slot, class: 'form_text' %>
+            </div>
+            
+            <div class="actions mt-3 text-center">
+              <%=  form.submit "Add Student" %>
+            </div>
+          <% end %>
+          
+          <div class='mt-5'>  
+          <% @students.each do |student| %>
+              <p><%= student.name %>: <%= student.email %></p>
+          <% end %>
+        </div>
+          
+
+        </div>
+      </div>
+    </div>
+  </main>
+</body>

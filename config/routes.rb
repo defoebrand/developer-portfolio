@@ -17,14 +17,18 @@ Rails.application.routes.draw do
   resources :websites, except: [:show]
   resources :websites, only: [:show], param: :title
   resources :portal
+  resources :students, only: [:show, :new, :create, :update]
+  resources :appointments
   resources :nav_links, only: [:index]
   get '/about', to: 'portal#about'
   get '/web_form', to: 'portal#web_form'
   post '/web_form', to: 'portal#web_form_send'
-  get '/employee_form', to: 'portal#employee_form'
-  post '/employee_form', to: 'portal#web_form_send'
-  get '/tutor_form', to: 'portal#tutor_form'
-  post '/tutor_form', to: 'portal#web_form_send'
+  get '/waiting_room', to: 'portal#waiting_room'
+  post '/waiting_room', to: 'portal#start_room'
+  post '/request_call', to: 'portal#send_request'
+  get '/video_chat', to: 'portal#meeting_room'
+  get '/schedule', to: 'appointments#schedule'
+  get '/contacts', to: 'students#index'
+  post '/update_student', to: 'students#update'
   root 'portal#index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

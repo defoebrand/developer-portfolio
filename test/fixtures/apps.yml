@@ -4,8 +4,59 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-# column: value
+good_app:
+  url: http://www.google.com
+  title: Test App Title
+  description: Test App Desc
+  mobile_description: Test App Mobile Desc
+  
+only_url:
+  url: http://www.google.com
+
+only_title:
+  title: Test App Title
+
+only_description:
+  description: Test App Desc
+
+only_mobile_description:
+  mobile_description: Test App Mobile Desc
+
+url_title:
+  url: http://www.google.com
+  title: Test App Title
+
+url_desc:
+  url: http://www.google.com
+  description: Test App Desc
+
+url_mob_desc:
+  url: http://www.google.com
+  mobile_description: Test App Mobile Desc
+
+title_desc:
+  title: Test App Title
+  description: Test App Desc
+
+title_mob_desc:
+  title: Test App Title
+  mobile_description: Test App Mobile Desc
+
+desc_mob_desc:
+  description: Test App Desc
+  mobile_description: Test App Mobile Desc
+
+url_title_desc:
+  url: http://www.google.com
+  title: Test App Title
+  description: Test App Desc
+
+url_title_mob_desc:
+  url: http://www.google.com
+  title: Test App Title
+  mobile_description: Test App Mobile Desc
+
+url_desc_mob_desc:
+  url: http://www.google.com
+  description: Test App Desc
+  mobile_description: Test App Mobile Desc

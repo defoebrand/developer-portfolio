@@ -1,0 +1,85 @@
+<body class="about">
+  <main class="d-flex justify-content-center align-items-center">
+    <div class="d-flex flex-column justify-content-center align-items-center text-center content">
+      <div class="container d-flex flex-column me scroll">
+        <div class='my-3'>
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed d-flex flex-column p-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  <h1><%= @student.name %></h1>
+                  <br/>
+                  <p><%= @student.email %></p>
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <h2 class='mt-5'>Edit User</h2>
+                    <%= form_for :student, url: update_student_path  do |form| %>
+                    <p>
+                      Please enter the preferred name and contact email.
+                      </p>
+                      <% if @student.errors.any? %>
+                        <div id="error_explanation">
+                          <h2><%= pluralize(@student.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+                          <ul>
+                            <% @student.errors.full_messages.each do |message| %>
+                              <li><%= message %></li>
+                            <% end %>
+                          </ul>
+                        </div>
+                      <% end %>
+
+                      <div class="field">
+                        <%= form.text_field :name, autofocus: true, class: 'form_text' %>
+                        <%= form.text_field :email, class: 'form_text' %>
+                        <%= form.hidden_field :teacher_id, value: @student.teacher_id  %>
+                        <%= form.hidden_field :id, value: @student.id  %>
+                        <%=  form.submit "Update Student" %>
+                      </div>
+                    <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br/>
+          <%= form_for :appointment, url: appointments_path, method: :post do |form| %>
+            <p>Please add appointment date and time. </p>
+            <% if @appointment.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@appointment.errors.count, "error") %> prohibited this contact from being saved:</h2>
+              
+              <ul>
+                <% @appointment.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+            <% end %>
+            
+            <div class="field">
+              <%= form.hidden_field :student_id, value: @student.id  %>
+              <%= form.hidden_field :user_id, value: @teacher.id  %>
+              <%= form.date_field :date, class: 'form_text' %>
+              <%= form.time_field :time, class: 'form_text' %>
+              <%=  form.submit "Add Appointment" %>
+              <br/>
+              <%= form.text_area :notes, class: 'form_text mt-4' %>
+            </div>
+          <% end %>
+          
+          <br/>
+          <div class='mt-5'>
+            <% @appointments.sort_by{|appt|appt.time}.sort_by{|appt| appt.date}.reverse.each do |appointment| %>
+            <p><%= appointment.date.strftime("%^a") %> | <%= appointment.date %>: <%= appointment.time.strftime("%H:%M:%S") %>
+            <small><%= link_to 'View', appointment_path(appointment), class: 'btn'%> </small>
+            </p>
+            <br/>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>

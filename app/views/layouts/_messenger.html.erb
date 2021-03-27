@@ -1,6 +1,5 @@
 <section class="position-absolute d-flex text-center">
   <% if user_signed_in? %>
-    <%#= link_to "Hello #{current_user.name}!", destroy_user_session_path, method: :delete, class: 'logout' %>
     <%= link_to '<i class="fas fa-comments"></i>'.html_safe, web_form_path, class: 'chat' %>
   <% else %>
     <%= link_to '<i class="fas fa-comments"></i>'.html_safe, web_form_path, class: 'chat' %>
