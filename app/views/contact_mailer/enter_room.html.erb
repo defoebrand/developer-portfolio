@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hello <%= @contact.name %>!</h1>
+    <p>This is <%= @sender.name %></p>
+    <p><%= @contact.message %></p>
+    <p>Click
+      <a href='https://www.defoebrand.com/video_chat?format=<%= @contact.room_name %>&room_token=<%= @contact.room_token %>'>
+        <strong> Here </strong>
+      </a>
+      to enter the room.
+    </p>
+  </body>
+</html>

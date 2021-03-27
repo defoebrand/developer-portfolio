@@ -3,9 +3,62 @@
 # This model initially had no columns defined. If you add columns to the
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-# column: value
+
+good_game:
+  id: 1
+  url: http://www.google.com
+  title: Test Game Title
+  description: Test Game Desc
+  mobile_description: Test Game Mobile Desc
+  
+only_url:
+  url: http://www.google.com
+
+only_title:
+  title: Test Game Title
+
+only_description:
+  description: Test Game Desc
+
+only_mobile_description:
+  mobile_description: Test Game Mobile Desc
+
+url_title:
+  url: http://www.google.com
+  title: Test Game Title
+
+url_desc:
+  url: http://www.google.com
+  description: Test Game Desc
+
+url_mob_desc:
+  url: http://www.google.com
+  mobile_description: Test Game Mobile Desc
+
+title_desc:
+  title: Test Game Title
+  description: Test Game Desc
+
+title_mob_desc:
+  title: Test Game Title
+  mobile_description: Test Game Mobile Desc
+
+desc_mob_desc:
+  description: Test Game Desc
+  mobile_description: Test Game Mobile Desc
+
+url_title_desc:
+  url: http://www.google.com
+  title: Test Game Title
+  description: Test Game Desc
+
+url_title_mob_desc:
+  url: http://www.google.com
+  title: Test Game Title
+  mobile_description: Test Game Mobile Desc
+
+url_desc_mob_desc:
+  url: http://www.google.com
+  description: Test Game Desc
+  mobile_description: Test Game Mobile Desc
+

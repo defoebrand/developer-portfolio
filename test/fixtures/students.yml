@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+good_student:
+  id: 1
+  name: GoodStudent
+  email: MyGoodStudent@test.com
+  teacher_id: 1
+
+student_only_name:
+  name: BadStudent
+
+student_only_email:
+  email: MyBadStudent@test.com

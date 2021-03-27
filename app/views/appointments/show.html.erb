@@ -1,0 +1,37 @@
+<body class="about">
+  <main class="d-flex justify-content-center align-items-center">
+    <div class="d-flex flex-column justify-content-center align-items-center text-center content">
+      <div class="container d-flex flex-column me scroll">
+        <div class='my-3'>
+          <div class='mt-5'>  
+            
+            <h1><%= @appointment.student.name %></h1>
+            <h3><%= @appointment.date %> -<%= @appointment.time.strftime("%H:%M:%S") %>  </h3>
+              <p class='mb-5'><%= @appointment.notes %> </p>
+              <%= form_for :appointment, url: appointment_path(@appointment), method: :patch do |form| %>
+                <p class='mt-5'>Please re-enter any necessary changes to the notes. Be sure to copy original notes into text field as any updates will replace all current notes.</p>
+                <% if @appointment.errors.any? %>
+                  <div id="error_explanation">
+                    <h2><%= pluralize(@appointment.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+                    <ul>
+                      <% @appointment.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                <% end %>
+
+                <div class="field">
+                  <%= form.text_area :notes, autofocus: true, class: 'form_text' %>
+                  <br/>
+                  <%=  form.submit "Update Appointment", class: 'mt-3 mb-5' %>
+                </div>
+              <% end %>
+            
+            <%= link_to 'Student', student_path(@appointment.student) %> | <%= link_to 'Schedule', schedule_path %>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>

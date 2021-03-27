@@ -14,12 +14,13 @@
 */
 // @import "bootstrap-sprockets";
 // @import "bootstrap/scss/bootstrap";
-@import "websites.scss";
-@import "about.scss";
-@import "apps.scss";
-@import "games.scss";
 @import "home.scss";
+@import "video_chat.scss";
 @import "web_form.scss";
+@import "games.scss";
+@import "apps.scss";
+@import "about.scss";
+@import "websites.scss";
 @import "bootstrap";
 
 * {

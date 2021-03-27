@@ -15,9 +15,4 @@
   <% @links.sort_by(&:order).each do |link| %>
       <%= render 'layouts/navItem', icon: "<i class='#{link.icon}'></i>", url: link.url, name: link.name  %>
   <% end %>
-
-  <%# react_component 'NavItem', {name: 'GitHub', url: 'https://github.com/defoebrand', icon: 'fab fa-github' } %>
-  <%# react_component 'NavItem', {name: 'LinkedIn', url: 'https://www.linkedin.com/in/defoebrand/', icon: 'fab fa-linkedin' } %>
-  <%# react_component 'NavItem', {name: 'Medium', url: 'https://medium.com/@defoebrand', icon: 'fab fa-medium' } %>
-
 </nav> 

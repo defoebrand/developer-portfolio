@@ -1,50 +1,43 @@
 class PortalController < ApplicationController
-  before_action :set_contact, only: %i[web_form tutor_form employee_form]
-  # GET /portal
-  # GET /portal.json
-  def index; end
+  include PortalHelper
+  before_action :set_contact, only: %i[web_form_send start_room send_request]
 
-  # def about; end
-
-  # GET /web_form
-  def web_form
-    # @contact = Contact.new
-  end
-
-  # GET /tutor_form
-  def tutor_form
-    # @contact = Contact.new
-  end
-
-  # GET /employee_form
-  def employee_form
-    # @contact = Contact.new
-  end
-
-  # POST /web_form
   def web_form_send
-    @contact = Contact.create(contact_params)
-    @user = Contact.first
-    ContactMailer.with(user: @user).contact_me.deliver_now
-    Contact.first.destroy
-    # flash[:notice] = 'Hello'
-    # render :index
+    ContactMailer.with(user: @contact).contact_me(@contact).deliver_now
     redirect_to root_path, notice: 'Your message was sent!'
+  end
+
+  def waiting_room
+    @contact = Contact.new
+    @appointments = Appointment.all
+  end
+
+  def meeting_room
+    @token = create_token(params)
+    @classroom = params[:format]
+  end
+
+  def start_room
+    @contact = Contact.find_or_create_by(email: contact_params[:email])
+    email_token = create_email_token(current_user.room_name, @contact.name)
+    @contact.update(room_token: email_token)
+    @contact.update(room_name: current_user.room_name) unless @contact.room_name == current_user.room_name
+    ContactMailer.with(user: @contact).enter_room(@contact, current_user).deliver_now
+    create_room(current_user.room_name)
+  end
+
+  def send_request
+    ContactMailer.with(user: @contact).request_call(@contact).deliver_now
+    redirect_to video_chat_path('Conference_Room'), notice: 'Your message was sent!'
   end
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
-  # def set_website
-  #   @website = Website.find(params[:id])
-  # end
-
-  # Only allow a list of trusted parameters through.
   def contact_params
     params.require(:contact).permit(:name, :email, :message)
   end
 
   def set_contact
-    @contact = Contact.new
+    @contact = Contact.find_or_create_by(email: contact_params[:email])
   end
 end
