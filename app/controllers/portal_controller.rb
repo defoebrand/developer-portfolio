@@ -2,6 +2,10 @@ class PortalController < ApplicationController
   include PortalHelper
   before_action :set_contact, only: %i[web_form_send start_room send_request]
 
+  def web_form
+    @contact = Contact.new
+  end
+
   def web_form_send
     ContactMailer.with(user: @contact).contact_me(@contact).deliver_now
     redirect_to root_path, notice: 'Your message was sent!'
